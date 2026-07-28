@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>St. Theresa of the Child Jesus Naiberi Parish | Official Website</title>
+  <meta name="description" content="Official website of St. Theresa of the Child Jesus Naiberi Parish, Uasin Gishu County, Kenya (Catholic Diocese of Eldoret). Mass times, Sacraments, M-Pesa Giving, and Ministries." />
+  <meta name="keywords" content="Naiberi Parish, Catholic Church Kenya, Eldoret Diocese, St Therese of Lisieux, Uasin Gishu, M-Pesa Paybill 522522, Sunday Mass Swahili English" />
+
+  <!-- Google Fonts: Cinzel, Inter, Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Vector Icons CDN (Zero Emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Apple-Vatican-Government Service Portal Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================
+       TOP LITURGICAL & DIOCESE BAR
+       ======================================================== -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <div class="top-bar-badge">
+        <span><i class="fa-solid fa-cross" style="color: var(--gold-light);"></i> CATHOLIC DIOCESE OF ELDORET | UASIN GISHU DEANERY</span>
+        <span style="opacity: 0.6;">•</span>
+        <span><i class="fa-solid fa-location-dot" style="color: var(--gold-light);"></i> Naiberi, Kenya</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="#donate" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart" style="color: var(--gold-light);"></i> M-Pesa Paybill: <strong>522522</strong> (NAIBERI)</a>
+        <span>|</span>
+        <a href="#news" onclick="appController.navigateTo('news')"><i class="fa-solid fa-file-pdf" style="color: var(--gold-light);"></i> Weekly Bulletin (PDF)</a>
+        <span>|</span>
+        <a href="#member-portal" onclick="appController.navigateTo('member-portal')"><i class="fa-solid fa-user" style="color: var(--gold-light);"></i> Parishioner Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       STICKY GLASSMORPHIC NAVIGATION BAR
+       ======================================================== -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <!-- Logo & Title -->
+      <div class="brand" onclick="appController.navigateTo('home')">
+        <div class="brand-logo"><i class="fa-solid fa-cross"></i></div>
+        <div class="brand-text">
+          <h1>ST. THERESA'S NAIBERI</h1>
+          <span>Catholic Parish • Diocese of Eldoret</span>
+        </div>
+      </div>
+
+      <!-- Main Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-item active" data-view="home" onclick="appController.navigateTo('home')">Home</li>
+        <li class="nav-item" data-view="about" onclick="appController.navigateTo('about')">About</li>
+        <li class="nav-item" data-view="patron-saint" onclick="appController.navigateTo('patron-saint')">St. Thérèse</li>
+        <li class="nav-item" data-view="mass-schedule" onclick="appController.navigateTo('mass-schedule')">Mass Times</li>
+        <li class="nav-item" data-view="sacraments" onclick="appController.navigateTo('sacraments')">Sacraments</li>
+        <li class="nav-item" data-view="ministries" onclick="appController.navigateTo('ministries')">Ministries</li>
+        <li class="nav-item" data-view="events" onclick="appController.navigateTo('events')">Events</li>
+        <li class="nav-item" data-view="news" onclick="appController.navigateTo('news')">News</li>
+        <li class="nav-item" data-view="donate" onclick="appController.navigateTo('donate')">Give</li>
+        <li class="nav-item" data-view="contact" onclick="appController.navigateTo('contact')">Contact</li>
+      </ul>
+
+      <!-- Action Buttons & Theme Toggle -->
+      <div class="nav-actions">
+        <button class="btn btn-gold" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online</button>
+        <button class="icon-btn" title="Ring Solemn Angelus Bell" onclick="appController.showBellModal()"><i class="fa-solid fa-bell"></i></button>
+        <button class="icon-btn" id="theme-toggle-icon" title="Toggle Dark/Light Mode" onclick="appController.toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+        <button class="mobile-toggle" onclick="appController.openMobileDrawer()"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       1. NATIVE MOBILE BOTTOM TAB BAR (< 768px)
+       ======================================================== -->
+  <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav-container">
+      <div class="mobile-nav-item active" data-view="home" onclick="appController.navigateTo('home')">
+        <span class="icon"><i class="fa-solid fa-house"></i></span>
+        <span class="text">Home</span>
+      </div>
+      <div class="mobile-nav-item" data-view="mass-schedule" onclick="appController.navigateTo('mass-schedule')">
+        <span class="icon"><i class="fa-solid fa-church"></i></span>
+        <span class="text">Masses</span>
+      </div>
+      <div class="mobile-nav-item give-cta" data-view="donate" onclick="appController.navigateTo('donate')">
+        <span class="icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+        <span class="text">GIVE</span>
+      </div>
+      <div class="mobile-nav-item" data-view="patron-saint" onclick="appController.navigateTo('patron-saint')">
+        <span class="icon"><i class="fa-solid fa-spa"></i></span>
+        <span class="text">Novena</span>
+      </div>
+      <div class="mobile-nav-item" onclick="appController.openMobileDrawer()">
+        <span class="icon"><i class="fa-solid fa-bars"></i></span>
+        <span class="text">Menu</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       2. APPLE-STYLE FULL-SCREEN GLASSMORPHIC MOBILE DRAWER
+       ======================================================== -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" onclick="appController.closeMobileDrawer(event)">
+    <div class="mobile-drawer" id="mobile-drawer" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1.4rem; color: var(--gold);"><i class="fa-solid fa-cross"></i></span>
+          <div>
+            <h4 style="margin:0; font-size:1rem;">St. Theresa's Naiberi</h4>
+            <small style="color:var(--text-gold);">Diocese of Eldoret</small>
+          </div>
+        </div>
+        <button class="icon-btn" style="width:36px; height:36px;" onclick="appController.closeMobileDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- User Profile Snippet -->
+      <div class="drawer-profile-snippet">
+        <small style="color:var(--text-muted); text-transform:uppercase;">Parish Portal</small>
+        <p style="font-weight:700; font-size:1.05rem; margin:0.2rem 0;">Welcome, Parishioner <i class="fa-solid fa-dove" style="color: var(--gold);"></i></p>
+        <small style="color:var(--gold);">St. Joseph SCC (Naiberi)</small>
+      </div>
+
+      <!-- Grouped Navigation -->
+      <div class="drawer-section-title">LITURGICAL & WORSHIP</div>
+      <ul class="drawer-links">
+        <li class="drawer-item" data-view="home" onclick="appController.navigateTo('home'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-house" style="margin-right:0.6rem; color: var(--gold);"></i> Home Page</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="mass-schedule" onclick="appController.navigateTo('mass-schedule'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-church" style="margin-right:0.6rem; color: var(--gold);"></i> Mass & Confession Schedule</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="patron-saint" onclick="appController.navigateTo('patron-saint'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-spa" style="margin-right:0.6rem; color: var(--gold);"></i> St. Thérèse Little Way Novena</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="homilies" onclick="appController.navigateTo('homilies'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-headphones" style="margin-right:0.6rem; color: var(--gold);"></i> Homilies & Audio Sermons</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="livestream" onclick="appController.navigateTo('livestream'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-video" style="margin-right:0.6rem; color: var(--gold);"></i> Live Sanctuary Stream</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+      </ul>
+
+      <div class="drawer-section-title">SACRAMENTS & MINISTRIES</div>
+      <ul class="drawer-links">
+        <li class="drawer-item" data-view="sacraments" onclick="appController.navigateTo('sacraments'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-dove" style="margin-right:0.6rem; color: var(--gold);"></i> The Seven Sacraments</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="ministries" onclick="appController.navigateTo('ministries'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-users" style="margin-right:0.6rem; color: var(--gold);"></i> Small Christian Communities & CWA</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="leadership" onclick="appController.navigateTo('leadership'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-user-tie" style="margin-right:0.6rem; color: var(--gold);"></i> Clergy & Parish Leadership</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="events" onclick="appController.navigateTo('events'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-calendar-days" style="margin-right:0.6rem; color: var(--gold);"></i> Events & Harambee Calendar</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+      </ul>
+
+      <div class="drawer-section-title">GIVING & PORTALS</div>
+      <ul class="drawer-links">
+        <li class="drawer-item" data-view="donate" onclick="appController.navigateTo('donate'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-hand-holding-heart" style="margin-right:0.6rem; color: var(--gold);"></i> M-Pesa Paybill Giving</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="register" onclick="appController.navigateTo('register'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-file-pen" style="margin-right:0.6rem; color: var(--gold);"></i> Parishioner Family Registration</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="member-portal" onclick="appController.navigateTo('member-portal'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-user-check" style="margin-right:0.6rem; color: var(--gold);"></i> My Member Portal & QR ID</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="library" onclick="appController.navigateTo('library'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-book-bible" style="margin-right:0.6rem; color: var(--gold);"></i> Catholic Digital Library</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="contact" onclick="appController.navigateTo('contact'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-location-dot" style="margin-right:0.6rem; color: var(--gold);"></i> Contact & Google Maps</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="admin-portal" onclick="appController.navigateTo('admin-portal'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-shield-halved" style="margin-right:0.6rem; color: var(--gold);"></i> Secretariat Admin Portal</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+      </ul>
+
+      <!-- Mobile Emergency Call & WhatsApp Quick Buttons -->
+      <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color); display:flex; flex-direction:column; gap:0.8rem;">
+        <a href="tel:+254733987654" class="btn btn-primary" style="text-align:center; padding:0.85rem;"><i class="fa-solid fa-phone-volume"></i> Emergency Priest Hotline</a>
+        <a href="https://wa.me/254720123456" target="_blank" class="btn" style="background:#25D366; color:#fff; text-align:center; padding:0.85rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Parish Office</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MAIN APPLICATION VIEWS CONTROLLER
+       ======================================================== -->
+  <main class="main-content">
+
+    <!-- 1. HOME VIEW (Flagship Apple + Vatican Experience) -->
+    <section class="view-section active" id="view-home">
+      <!-- Massive Hero Section -->
+      <div class="hero-section">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fa-solid fa-cross"></i> IN THE HEART OF THE CHURCH, I WILL BE LOVE</div>
+          <h1 class="hero-title">Welcome to St. Theresa of the Child Jesus Naiberi Parish</h1>
+          <p class="hero-subtitle">
+            A vibrant, Eucharistic digital church in Naiberi, Uasin Gishu County, Kenya—inspiring faith, connecting Small Christian Communities, and serving in love through The Little Way.
+          </p>
+          <div class="hero-daily-scripture">
+            <p>"My vocation is love! In the heart of the Church, my Mother, I will be Love."</p>
+            <span>— ST. THÉRÈSE OF LISIEUX (PATRONESS OF MISSIONS)</span>
+          </div>
+          <div class="hero-cta">
+            <button class="btn btn-gold" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> Mass Schedule</button>
+            <button class="btn btn-primary" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('livestream')"><i class="fa-solid fa-video"></i> Watch Live Stream</button>
+            <button class="btn btn-outline" style="padding: 1rem 2.2rem; font-size: 1.05rem; color: #fff; border-color: #fff;" onclick="appController.navigateTo('register')"><i class="fa-solid fa-dove"></i> Become a Parishioner</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parish Statistics Counters -->
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-users" style="color: var(--gold);"></i></div>
+            <div class="stat-number">1,420+</div>
+            <div class="stat-label">Registered Parishioners</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-house-chimney-window" style="color: var(--gold);"></i></div>
+            <div class="stat-number">14</div>
+            <div class="stat-label">Small Christian Communities (SCCs)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-dove" style="color: var(--gold);"></i></div>
+            <div class="stat-number">185+</div>
+            <div class="stat-label">Baptisms & Confirmations (2026)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-spa" style="color: var(--gold);"></i></div>
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">Spiritual Roses Offered</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parish Priest Welcome Message -->
+      <div class="section-wrapper">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; align-items:center; background:var(--bg-card); padding:3.5rem; border-radius:28px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+          <div>
+            <span class="section-subtitle">PASTORAL WELCOME MESSAGE</span>
+            <h2 class="section-title" style="margin:0.5rem 0 1rem;">"Come and Worship With Us in Simplicity and Joy"</h2>
+            <p style="font-size:1.08rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">
+              On behalf of the Catholic Diocese of Eldoret and our parish pastoral team, I welcome you to St. Theresa of the Child Jesus Naiberi Parish. Whether you are a lifelong Catholic, a student in Uasin Gishu, or seeking peace in Christ, our church doors are always open to you.
+            </p>
+            <p style="font-size:1.08rem; color:var(--text-muted); line-height:1.7; margin-bottom:2rem;">
+              Let us walk together in our Jumuiya Small Christian Communities and emulate St. Thérèse by offering our daily lives with immense love.
+            </p>
+            <div style="display:flex; align-items:center; gap:1.2rem;">
+              <img src="assets/images/st-therese.jpg" alt="Rev. Fr. Michael Omondi" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--gold); object-fit:cover;" />
+              <div>
+                <h4 style="font-size:1.15rem; margin:0;">Rev. Fr. Michael Omondi</h4>
+                <p style="font-size:0.85rem; color:var(--text-gold); font-weight:600; margin:0;">Parish Priest (Father-in-Charge)</p>
+              </div>
+            </div>
+          </div>
+          <div style="position:relative;">
+            <img src="assets/images/sanctuary-altar.jpg" alt="Naiberi Parish Sanctuary Altar" style="width:100%; border-radius:20px; box-shadow:var(--shadow-md); border:2px solid var(--border-gold);" />
+            <div style="position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(11,60,111,0.9); color:#fff; padding:0.8rem 1.4rem; border-radius:12px; backdrop-filter:blur(10px);">
+              <small style="text-transform:uppercase; font-weight:600; color:var(--gold-light);">Main Sanctuary</small>
+              <p style="margin:0; font-weight:700;">Eucharistic Altar & Tabernacle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Sacraments & Ministries Showcases -->
+      <div class="section-wrapper" style="background:var(--bg-secondary); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+        <div class="section-header">
+          <span class="section-subtitle">THE SEVEN SACRAMENTS & MINISTRIES</span>
+          <h2 class="section-title">Grow in Faith and Christian Vocation</h2>
+          <p class="section-desc">Explore Sacramental preparation guidelines and join our active pastoral ministries.</p>
+        </div>
+        <div class="cards-grid">
+          <div class="info-card">
+            <div>
+              <span class="badge badge-gold"><i class="fa-solid fa-dove"></i> Sacrament</span>
+              <h3 style="font-size:1.4rem; margin:1rem 0 0.5rem;">Holy Eucharist & Sunday Mass</h3>
+              <p style="color:var(--text-muted); margin-bottom:1.5rem;">Join us every Sunday for Swahili Mass (7:00 AM), English High Mass (9:00 AM), and Youth Mass (11:30 AM).</p>
+            </div>
+            <button class="btn btn-primary" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> View Mass Schedule</button>
+          </div>
+          <div class="info-card">
+            <div>
+              <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Ministry</span>
+              <h3 style="font-size:1.4rem; margin:1rem 0 0.5rem;">Small Christian Communities (SCCs)</h3>
+              <p style="color:var(--text-muted); margin-bottom:1.5rem;">Our 14 Jumuiya Ndogo Ndogo za Kikristu form the heartbeat of neighborhood fellowship and prayer in Naiberi.</p>
+            </div>
+            <button class="btn btn-outline" onclick="appController.navigateTo('about')"><i class="fa-solid fa-location-dot"></i> Find My Jumuiya SCC</button>
+          </div>
+          <div class="info-card">
+            <div>
+              <span class="badge badge-green"><i class="fa-solid fa-hand-holding-heart"></i> Giving</span>
+              <h3 style="font-size:1.4rem; margin:1rem 0 0.5rem;">M-Pesa Giving & Tithe Portal</h3>
+              <p style="color:var(--text-muted); margin-bottom:1.5rem;">Support parish evangelization and community borehole projects via M-Pesa Paybill 522522 with instant PDF receipts.</p>
+            </div>
+            <button class="btn btn-gold" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT & HISTORY VIEW -->
+    <section class="view-section" id="view-about">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">ABOUT ST. THERESA'S NAIBERI</span>
+          <h2 class="section-title">A Beacon of Faith in Uasin Gishu County</h2>
+          <p class="section-desc">Learn about our parish history, Catholic Diocese of Eldoret heritage, and pastoral vision.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2.5rem; margin-bottom:4rem;">
+          <div class="info-card">
+            <span class="badge badge-gold"><i class="fa-solid fa-cross"></i> Our Vision</span>
+            <h3 style="margin:1rem 0;">A United Digital & Pastoral Family</h3>
+            <p style="color:var(--text-muted); line-height:1.7;">To be an exemplary, Christ-centered Catholic Parish in the Diocese of Eldoret where every parishioner encounters the love of God through active participation in Word, Sacrament, and Small Christian Communities.</p>
+          </div>
+          <div class="info-card">
+            <span class="badge badge-blue"><i class="fa-solid fa-dove"></i> Our Mission</span>
+            <h3 style="margin:1rem 0;">Evangelization & The Little Way</h3>
+            <p style="color:var(--text-muted); line-height:1.7;">To proclaim the Gospel of Jesus Christ in Naiberi through authentic liturgical worship, catechetical formation, youth empowerment, and compassionate Caritas outreach to the vulnerable.</p>
+          </div>
+          <div class="info-card">
+            <span class="badge badge-green"><i class="fa-solid fa-heart"></i> Parish Motto</span>
+            <h3 style="margin:1rem 0;">"In the heart of the Church, I will be Love"</h3>
+            <p style="color:var(--text-muted); line-height:1.7;">Inspired by St. Thérèse of Lisieux, we believe that ordinary acts of service performed with extraordinary love transform families and society.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card); padding:3rem; border-radius:24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+          <h3 style="font-size:1.8rem; margin-bottom:1rem; color:var(--royal-blue);">Parish Boundaries & Outstations</h3>
+          <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.8; margin-bottom:1.5rem;">
+            St. Theresa of the Child Jesus Naiberi Parish is situated in Naiberi, along the Eldoret-Kaptagat highway in Uasin Gishu County, Kenya. Our parish boundaries extend across Naiberi center, Kaptagat border communities, and neighboring rural centers, organized into 14 active Small Christian Communities (Jumuiya Ndogo Ndogo za Kikristu).
+          </p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="alert('Downloading Naiberi Parish Constitution & Pastoral Strategic Plan (PDF)...')"><i class="fa-solid fa-file-pdf"></i> Download Parish Constitution</button>
+            <button class="btn btn-outline" onclick="appController.navigateTo('contact')"><i class="fa-solid fa-map-location-dot"></i> View Interactive Maps</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PATRON SAINT (ST. THÉRÈSE OF LISIEUX & VIRTUAL ROSE SHRINE) -->
+    <section class="view-section" id="view-patron-saint">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">DOCTOR OF THE CHURCH & PATRONESS OF MISSIONS</span>
+          <h2 class="section-title">St. Thérèse of the Child Jesus (The Little Flower)</h2>
+          <p class="section-desc">"I will spend my heaven doing good upon earth. I will let fall a shower of roses."</p>
+        </div>
+
+        <!-- St. Thérèse Biography & Little Way Grid -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; align-items:center; margin-bottom:4rem;">
+          <div>
+            <img src="assets/images/st-therese.jpg" alt="St. Therese of Lisieux with Roses" style="width:100%; border-radius:24px; box-shadow:var(--shadow-md); border:3px solid var(--gold);" />
+          </div>
+          <div>
+            <span class="badge badge-gold" style="margin-bottom:1rem;"><i class="fa-solid fa-calendar-days"></i> Feast Day: October 1</span>
+            <h3 style="font-size:2rem; margin-bottom:1rem;">The Little Way of Spiritual Childhood</h3>
+            <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
+              Born in France in 1873, Thérèse Martin entered the Carmelite convent of Lisieux at age 15. Although her life was short and hidden, her spiritual autobiography <em>Story of a Soul</em> inspired millions worldwide.
+            </p>
+            <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.8; margin-bottom:2rem;">
+              Her "Little Way" teaches us that holiness is attainable for everyone by doing ordinary daily tasks with immense love and absolute trust in God's mercy. She was proclaimed a Doctor of the Church by St. John Paul II in 1997.
+            </p>
+            <div style="padding:1.5rem; background:rgba(201,162,39,0.12); border-left:4px solid var(--gold); border-radius:12px;">
+              <p style="font-style:italic; font-size:1.1rem; color:var(--text-main); margin-bottom:0.5rem;">
+                "Miss no single opportunity of making some small sacrifice, here by a smiling look, there by a kindly word; always doing the smallest right and doing it all for love."
+              </p>
+              <small style="font-weight:700; color:var(--gold-dark);">— ST. THÉRÈSE OF LISIEUX</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Virtual Rose Petal Shrine & Novena -->
+        <div class="therese-shrine" id="therese-shrine">
+          <div id="rose-shower-container" class="rose-petal-container"></div>
+          <span class="badge badge-gold"><i class="fa-solid fa-spa"></i> INTERACTIVE PARISH SHRINE</span>
+          <h3 style="font-size:2.2rem; margin:1rem 0;">Offer a Spiritual Rose to St. Thérèse</h3>
+          <p style="max-width:640px; margin:0 auto 2rem; color:var(--text-muted);">
+            Join parishioners across Uasin Gishu and around the world in offering a spiritual rose and praying the miraculous 9-Day Novena to St. Thérèse of Lisieux.
+          </p>
+
+          <div style="margin:2rem 0; font-size:1.3rem;">
+            <i class="fa-solid fa-spa" style="color:var(--gold);"></i> Total Spiritual Roses Offered: <strong id="rose-counter-display" style="color:var(--gold-dark); font-size:1.8rem;">1,842</strong>
+          </div>
+
+          <button class="btn btn-gold" style="padding:1rem 2.5rem; font-size:1.1rem; box-shadow:0 10px 30px rgba(201,162,39,0.5);" onclick="thereseShrine.offerSpiritualRose()">
+            <i class="fa-solid fa-spa"></i> Drop a Rose & Pray Novena
+          </button>
+
+          <!-- Hidden Novena Prayer Card (Revealed on click) -->
+          <div id="novena-prayer-card" style="display:none; margin-top:3rem; padding:2rem; background:var(--bg-modal); border:2px solid var(--gold); border-radius:20px; text-align:left;">
+            <h4 style="font-size:1.4rem; color:var(--royal-blue); margin-bottom:1rem; text-align:center;">The Miraculous Novena Prayer to St. Thérèse</h4>
+            <p style="line-height:1.8; color:var(--text-main); font-size:1.02rem; margin-bottom:1.5rem;">
+              "O Little Therese of the Child Jesus, please pick for me a rose from the heavenly gardens and send it to me as a message of love. O Little Flower of Jesus, ask God today to grant the favor I now place with confidence in your hands... <em>(mention your prayer intention)</em>. St. Therese, help me to always believe as you did, in God's great love for me, so that I might imitate your 'Little Way' each day. Amen."
+            </p>
+            <div style="text-align:center;">
+              <button class="btn btn-primary" onclick="appController.navigateTo('prayer-requests')"><i class="fa-solid fa-hands-praying"></i> Add Intention to Parish Prayer Wall</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LEADERSHIP & CLERGY VIEW -->
+    <section class="view-section" id="view-leadership">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">CLERGY, RELIGIOUS & PARISH COUNCIL</span>
+          <h2 class="section-title">Parish Leadership Directory</h2>
+          <p class="section-desc">Meet our Father-in-Charge, Assistant Priest, Catechists, Religious Sisters, and pastoral leaders.</p>
+        </div>
+
+        <div class="cards-grid" id="leadership-container"></div>
+      </div>
+    </section>
+
+    <!-- 5. MASS & CONFESSION SCHEDULE VIEW -->
+    <section class="view-section" id="view-mass-schedule">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">HOLY EUCHARIST, ADORATION & CONFESSION</span>
+          <h2 class="section-title">Liturgical & Mass Timetable</h2>
+          <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
+
+          <!-- Filter Pills -->
+          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
+            <button class="btn btn-primary mass-filter-btn" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="mass-schedule-container"></div>
+      </div>
+    </section>
+
+    <!-- 6. THE SEVEN SACRAMENTS VIEW -->
+    <section class="view-section" id="view-sacraments">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">HOLY MYSTERIES OF THE CHURCH</span>
+          <h2 class="section-title">Sacramental Preparation & Registration</h2>
+          <p class="section-desc">Comprehensive requirements, preparation sessions, and online appointment booking for all 7 Sacraments.</p>
+        </div>
+
+        <div class="cards-grid" id="sacraments-container"></div>
+      </div>
+    </section>
+
+    <!-- 7. MINISTRIES DIRECTORY VIEW -->
+    <section class="view-section" id="view-ministries">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">APOSTOLATE & PASTORAL GROUPS</span>
+          <h2 class="section-title">Parish Ministries & Small Christian Communities</h2>
+          <p class="section-desc">There is a place for everyone in God's vineyard. Find a ministry that resonates with your gifts and join today.</p>
+        </div>
+
+        <div class="cards-grid" id="ministries-container"></div>
+      </div>
+    </section>
+
+    <!-- 8. EVENTS & HARAMBEE CALENDAR VIEW -->
+    <section class="view-section" id="view-events">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">COMMUNITY LIFE & RETREATS</span>
+          <h2 class="section-title">Parish Events & Harambee Calendar</h2>
+          <p class="section-desc">Register for upcoming feast days, youth congresses, and family life retreats with instant QR tickets.</p>
+        </div>
+
+        <div class="cards-grid" id="events-container"></div>
+      </div>
+    </section>
+
+    <!-- 9. NEWS PORTAL & WEEKLY BULLETIN VIEW -->
+    <section class="view-section" id="view-news">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">PARISH BULLETIN & ANNOUNCEMENTS</span>
+          <h2 class="section-title">News & Weekly Liturgical Bulletin</h2>
+          <p class="section-desc">Stay informed about confirmations, Caritas development projects, and Sunday liturgical rosters.</p>
+        </div>
+
+        <div class="cards-grid" id="news-container"></div>
+      </div>
+    </section>
+
+    <!-- 10. HOMILIES & AUDIO SERMONS VIEW -->
+    <section class="view-section" id="view-homilies">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">BREAKING THE WORD OF GOD</span>
+          <h2 class="section-title">Parish Homilies & Audio Archive</h2>
+          <p class="section-desc">Listen to recorded Sunday sermons by Rev. Fr. Michael Omondi and parish clergy.</p>
+        </div>
+
+        <div class="cards-grid" id="homilies-container"></div>
+      </div>
+    </section>
+
+    <!-- 11. PARISH GALLERY VIEW -->
+    <section class="view-section" id="view-gallery">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">VISUAL DIGITAL ARCHIVE</span>
+          <h2 class="section-title">Sacred Architecture & Parish Life Gallery</h2>
+          <p class="section-desc">High-resolution masonry view of our Naiberi sanctuary, Eucharistic celebrations, choir, and youth.</p>
+        </div>
+
+        <div class="cards-grid-4">
+          <div class="info-card" style="padding:0; overflow:hidden;">
+            <img src="assets/images/hero-church.jpg" alt="Naiberi Parish Exterior" style="width:100%; height:260px; object-fit:cover;" />
+            <div style="padding:1.2rem;"><strong>Church Exterior & Gardens</strong><p style="color:var(--text-muted); font-size:0.85rem;">Naiberi Sanctuary</p></div>
+          </div>
+          <div class="info-card" style="padding:0; overflow:hidden;">
+            <img src="assets/images/sanctuary-altar.jpg" alt="Sanctuary Altar" style="width:100%; height:260px; object-fit:cover;" />
+            <div style="padding:1.2rem;"><strong>Sanctuary Altar & Tabernacle</strong><p style="color:var(--text-muted); font-size:0.85rem;">Eucharistic Celebration</p></div>
+          </div>
+          <div class="info-card" style="padding:0; overflow:hidden;">
+            <img src="assets/images/st-therese.jpg" alt="St. Therese Artwork" style="width:100%; height:260px; object-fit:cover;" />
+            <div style="padding:1.2rem;"><strong>St. Thérèse Patron Shrine</strong><p style="color:var(--text-muted); font-size:0.85rem;">Parish Feast Day</p></div>
+          </div>
+          <div class="info-card" style="padding:0; overflow:hidden;">
+            <img src="assets/images/hero-church.jpg" alt="Parishioners Worshipping" style="width:100%; height:260px; object-fit:cover;" />
+            <div style="padding:1.2rem;"><strong>Jumuiya SCC Thanksgiving</strong><p style="color:var(--text-muted); font-size:0.85rem;">Sunday High Mass</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. LIVE STREAMING VIEW -->
+    <section class="view-section" id="view-livestream">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">DIGITAL SANCTUARY STREAMING</span>
+          <h2 class="section-title">Live Mass & Eucharistic Adoration</h2>
+          <p class="section-desc">Watch Sunday High Mass live from Naiberi Sanctuary or view past recorded liturgies.</p>
+        </div>
+
+        <div style="max-width:960px; margin:0 auto; background:var(--bg-card); border-radius:24px; overflow:hidden; border:2px solid var(--gold); box-shadow:var(--shadow-lg);">
+          <div style="position:relative; padding-top:56.25%; background:#000;">
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('assets/images/sanctuary-altar.jpg') center/cover;">
+              <span class="badge badge-gold" style="margin-bottom:1rem; font-size:0.95rem;"><i class="fa-solid fa-circle" style="color: #E53935;"></i> LIVE STREAM SIMULATOR</span>
+              <h3 style="color:#fff; font-size:1.8rem; margin-bottom:0.5rem; text-align:center;">Sunday 9:00 AM English High Mass</h3>
+              <p style="color:#CBD5E1; margin-bottom:2rem;">St. Theresa of the Child Jesus Naiberi Parish • Diocese of Eldoret</p>
+              <button class="btn btn-gold" style="padding:1rem 2.5rem; font-size:1.1rem;" onclick="alert('Live stream playback initialized! Broadcasting high-definition audio and video from Naiberi Sanctuary.')"><i class="fa-solid fa-play"></i> Start Live Stream Playback</button>
+            </div>
+          </div>
+          <div style="padding:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <strong style="font-size:1.1rem;">Next Scheduled Broadcast:</strong>
+              <p style="color:var(--text-muted); margin:0;">Sunday at 7:00 AM (Swahili Mass) & 9:00 AM (English High Mass)</p>
+            </div>
+            <button class="btn btn-outline" onclick="appController.navigateTo('prayer-requests')"><i class="fa-solid fa-hands-praying"></i> Send Live Prayer Intention</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. ONLINE GIVING & M-PESA PAYBILL VIEW (With PDF Receipt Generator!) -->
+    <section class="view-section" id="view-donate">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">TITHE, THANKSGIVING & BUILDING FUND</span>
+          <h2 class="section-title">Online Giving & M-Pesa Paybill Portal</h2>
+          <p class="section-desc">Support the mission of evangelization in Naiberi. All online contributions generate an official printable PDF Parish Receipt.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:3rem; margin-bottom:4rem;">
+          <!-- Left: Giving Category Selector & M-Pesa Form -->
+          <div class="glass-card" style="padding:2.5rem;">
+            <span class="badge badge-gold" style="margin-bottom:1rem;"><i class="fa-solid fa-hand-holding-heart"></i> KENYA M-PESA GIVING</span>
+            <h3 style="font-size:1.6rem; margin-bottom:0.5rem;">Make a Contribution</h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;" id="selected-fund-label">Selected Category: Tithe & Weekly Thanksgiving</p>
+
+            <!-- Category Pills -->
+            <div class="scrollable-chips" style="margin-bottom:1.8rem;">
+              <button class="btn btn-primary fund-btn" onclick="mpesaPortal.selectFund('Tithe & Weekly Thanksgiving', this)">Tithe & Thanksgiving</button>
+              <button class="btn btn-outline fund-btn" onclick="mpesaPortal.selectFund('Church Building Fund', this)">Building Fund</button>
+              <button class="btn btn-outline fund-btn" onclick="mpesaPortal.selectFund('Caritas Needy Fund', this)">Caritas Charity</button>
+              <button class="btn btn-outline fund-btn" onclick="mpesaPortal.selectFund('Priest Support / Mass Intention', this)">Mass Intention</button>
+            </div>
+
+            <!-- M-Pesa Input Form -->
+            <form onsubmit="mpesaPortal.simulateMPesaDonation(event)">
+              <div style="margin-bottom:1.2rem;">
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Your Full Name (or Family Name)</label>
+                <input type="text" id="mpesa-donor-name" required placeholder="e.g., Mr. & Mrs. Paul Kipkemboi" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+              </div>
+              <div style="margin-bottom:1.2rem;">
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Small Christian Community (Jumuiya SCC)</label>
+                <input type="text" id="mpesa-jumuiya" required placeholder="e.g., St. Joseph SCC (Naiberi)" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+              </div>
+              <div style="margin-bottom:1.2rem;">
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">M-Pesa Phone Number (Safaricom)</label>
+                <input type="tel" id="mpesa-phone" required placeholder="e.g., 0720 123 456" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+              </div>
+              <div style="margin-bottom:2rem;">
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Contribution Amount (KES)</label>
+                <input type="number" id="mpesa-amount" required min="10" placeholder="e.g., 2000" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+              </div>
+              <button type="submit" class="btn btn-gold" style="width:100%; padding:1rem; font-size:1.08rem;">
+                <i class="fa-solid fa-hand-holding-heart"></i> Send M-Pesa Contribution & Get PDF Receipt
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Official Parish Bank & Paybill Information -->
+          <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2rem;">
+            <div class="info-card" style="background:var(--royal-blue-dark); color:#fff;">
+              <span class="badge" style="background:var(--gold); color:#000; margin-bottom:1rem;"><i class="fa-solid fa-shield-halved"></i> OFFICIAL M-PESA DETAILS</span>
+              <h3 style="color:#fff; font-size:1.8rem; margin-bottom:1rem;">Safaricom M-Pesa Paybill</h3>
+              <p style="font-size:1.4rem; color:var(--gold-light); margin-bottom:0.5rem;">Paybill Number: <strong>522522</strong></p>
+              <p style="font-size:1.2rem; margin-bottom:1.5rem;">Account Number: <strong>NAIBERI PARISH</strong></p>
+              <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.7;">
+                1. Go to M-Pesa on your mobile phone<br>
+                2. Select <strong>Lipa na M-Pesa -> Pay Bill</strong><br>
+                3. Enter Business No: <strong>522522</strong><br>
+                4. Enter Account No: <strong>NAIBERI PARISH</strong> (or your Jumuiya name)
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h3 style="font-size:1.4rem; margin-bottom:0.8rem;">Bank Account Transfer</h3>
+              <p style="color:var(--text-muted); margin-bottom:0.4rem;"><strong>Bank Name:</strong> Kenya Commercial Bank (KCB), Eldoret Branch</p>
+              <p style="color:var(--text-muted); margin-bottom:0.4rem;"><strong>Account Name:</strong> St. Theresa of the Child Jesus Naiberi Parish</p>
+              <p style="color:var(--text-muted); margin-bottom:1rem;"><strong>Account Number:</strong> 1122334455</p>
+              <button class="btn btn-outline" style="width:100%;" onclick="alert('Bank transfer details copied to clipboard!')"><i class="fa-solid fa-copy"></i> Copy Bank Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donation History Table -->
+        <div class="gov-table-wrapper" style="padding:1.5rem;">
+          <h3 style="margin:0 0 1rem 1rem;">Recent Session Contribution Receipts</h3>
+          <table class="gov-table">
+            <thead>
+              <tr>
+                <th>Tx Code</th>
+                <th>Parishioner & SCC</th>
+                <th>Fund Category</th>
+                <th>Amount (KES)</th>
+                <th>Date & Time</th>
+              </tr>
+            </thead>
+            <tbody id="donor-history-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. PARISH PRAYER WALL & CANDLE LIGHTING VIEW -->
+    <section class="view-section" id="view-prayer-requests">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">SPIRITUAL INTERCESSION & INTENTIONS</span>
+          <h2 class="section-title">Parish Prayer Wall & Virtual Candle</h2>
+          <p class="section-desc">Submit your prayer intentions to be remembered by our priests during daily morning Holy Mass.</p>
+        </div>
+
+        <div style="max-width:700px; margin:0 auto; background:var(--bg-card); padding:3rem; border-radius:24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+          <h3 style="font-size:1.6rem; margin-bottom:1.5rem; text-align:center;"><i class="fa-solid fa-fire-flame-curved" style="color: var(--gold);"></i> Light a Virtual Prayer Candle</h3>
+          <form onsubmit="event.preventDefault(); alert('Your prayer intention has been placed on the St. Thérèse Parish Altar! Our priests will include it in tomorrow morning\'s Holy Sacrifice of the Mass.'); this.reset();">
+            <div style="margin-bottom:1.2rem;">
+              <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Your Name (Optional)</label>
+              <input type="text" placeholder="e.g., A Parishioner from Naiberi" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+            </div>
+            <div style="margin-bottom:1.2rem;">
+              <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Type of Prayer Request</label>
+              <select style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);">
+                <option>Thanksgiving Prayer</option>
+                <option>Healing & Comfort for the Sick</option>
+                <option>Special Intention / Family Peace</option>
+                <option>Holy Mass Intention for Departed Soul</option>
+              </select>
+            </div>
+            <div style="margin-bottom:2rem;">
+              <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Your Prayer Intention</label>
+              <textarea rows="4" required placeholder="Write your intention here..." style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main); font-family:inherit;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width:100%; padding:1rem; font-size:1.08rem;">
+              <i class="fa-solid fa-fire-flame-curved"></i> Light Candle & Submit Intention
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. PARISHIONER REGISTRATION VIEW -->
+    <section class="view-section" id="view-register">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">JOIN OUR CATHOLIC COMMUNITY</span>
+          <h2 class="section-title">Parishioner Registration Form</h2>
+          <p class="section-desc">Register your family in Naiberi Parish and connect with your neighborhood Small Christian Community (SCC).</p>
+        </div>
+
+        <div style="max-width:760px; margin:0 auto; background:var(--bg-card); padding:3rem; border-radius:24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
+          <form onsubmit="event.preventDefault(); alert('Congratulations! Your family registration has been recorded in the Naiberi Parish Secretariat. Welcome to our parish family!'); appController.navigateTo('member-portal');">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem; margin-bottom:1.2rem;">
+              <div>
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Head of Family Name</label>
+                <input type="text" required placeholder="e.g., Mr. & Mrs. Peter Kiprono" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+              </div>
+              <div>
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Phone Number</label>
+                <input type="tel" required placeholder="+254 700 000 000" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+              </div>
+            </div>
+            <div style="margin-bottom:1.2rem;">
+              <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Small Christian Community (Jumuiya Ndogo Ndogo)</label>
+              <select style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);">
+                <option>St. Joseph Small Christian Community</option>
+                <option>St. Francis of Assisi SCC</option>
+                <option>St. Monica Women SCC</option>
+                <option>St. Anthony of Padua SCC</option>
+                <option>St. Peter the Apostle SCC</option>
+              </select>
+            </div>
+            <div style="margin-bottom:2rem;">
+              <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Sacraments Received (Check all that apply)</label>
+              <div style="display:flex; flex-wrap:wrap; gap:1.2rem; font-size:0.9rem; margin-top:0.5rem;">
+                <label><input type="checkbox" checked /> Baptism</label>
+                <label><input type="checkbox" checked /> First Holy Communion</label>
+                <label><input type="checkbox" checked /> Confirmation</label>
+                <label><input type="checkbox" /> Holy Matrimony</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; padding:1rem; font-size:1.08rem;">
+              <i class="fa-solid fa-user-plus"></i> Submit Parishioner Registration & View Member ID
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. CATHOLIC DIGITAL LIBRARY VIEW -->
+    <section class="view-section" id="view-library">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">CHURCH DOCUMENTS & LITURGICAL RESOURCES</span>
+          <h2 class="section-title">Catholic Digital Library</h2>
+          <p class="section-desc">Download Catechism summaries, Parish Constitution, Pastoral Plan, and Eucharistic Hymnals.</p>
+
+          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
+            <button class="btn btn-primary library-filter-btn" data-cat="All" onclick="appController.renderLibrary('All')">All Documents</button>
+            <button class="btn btn-outline library-filter-btn" data-cat="Catechism" onclick="appController.renderLibrary('Catechism')">Catechism</button>
+            <button class="btn btn-outline library-filter-btn" data-cat="Saints" onclick="appController.renderLibrary('Saints')">Saints & Spiritual</button>
+            <button class="btn btn-outline library-filter-btn" data-cat="Church Documents" onclick="appController.renderLibrary('Church Documents')">Parish Constitution</button>
+            <button class="btn btn-outline library-filter-btn" data-cat="Hymns" onclick="appController.renderLibrary('Hymns')">Hymnals</button>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="library-container"></div>
+      </div>
+    </section>
+
+    <!-- 17. CONTACT & LOCATION MAP VIEW -->
+    <section class="view-section" id="view-contact">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">GET IN TOUCH</span>
+          <h2 class="section-title">Parish Office & Location Directions</h2>
+          <p class="section-desc">We are located in Naiberi, Uasin Gishu County, Kenya within the Catholic Diocese of Eldoret.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; margin-bottom:4rem;">
+          <div class="info-card">
+            <h3 style="font-size:1.6rem; margin-bottom:1rem;">Parish Secretariat Office</h3>
+            <p style="color:var(--text-muted); margin-bottom:0.5rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Naiberi, Uasin Gishu County, Kenya</p>
+            <p style="color:var(--text-muted); margin-bottom:0.5rem;"><strong><i class="fa-solid fa-phone"></i> Office Phone:</strong> +254 720 123 456</p>
+            <p style="color:var(--text-muted); margin-bottom:0.5rem;"><strong><i class="fa-solid fa-phone-volume"></i> Priest Emergency Helpline:</strong> +254 733 987 654</p>
+            <p style="color:var(--text-muted); margin-bottom:1.5rem;"><strong><i class="fa-solid fa-clock"></i> Working Hours:</strong> Mon–Fri: 8:00 AM – 5:00 PM | Sat: 8:30 AM – 1:00 PM</p>
+            <div style="display:flex; gap:1rem;">
+              <a href="https://wa.me/254720123456" target="_blank" class="btn btn-green" style="background:#25D366; color:#fff; flex:1;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Secretariat</a>
+              <button class="btn btn-primary" style="flex:1;" onclick="sacramentalBooking.openBookingModal('Office Priest Consultation')"><i class="fa-solid fa-calendar-check"></i> Book Office Visit</button>
+            </div>
+          </div>
+
+          <!-- Interactive Map Card (Embedded representation) -->
+          <div class="info-card" style="padding:0; overflow:hidden;">
+            <div style="background:linear-gradient(135deg, var(--royal-blue-dark), var(--royal-blue)); height:100%; min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; padding:2rem; text-align:center;">
+              <span style="font-size:3rem; margin-bottom:0.5rem; color: var(--gold);"><i class="fa-solid fa-map-location-dot"></i></span>
+              <h3 style="color:#fff; font-size:1.5rem; margin-bottom:0.5rem;">St. Theresa's Naiberi Parish</h3>
+              <p style="color:var(--gold-light); margin-bottom:1.5rem;">Along Eldoret-Kaptagat Highway, Uasin Gishu County, Kenya</p>
+              <a href="https://maps.google.com/?q=Naiberi+Uasin+Gishu+Kenya" target="_blank" class="btn btn-gold"><i class="fa-solid fa-location-arrow"></i> Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="max-width:860px; margin:0 auto;">
+          <h3 style="text-align:center; font-size:1.8rem; margin-bottom:2rem;">Frequently Asked Questions (FAQs)</h3>
+          <div id="faqs-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18. MEMBER PORTAL DASHBOARD VIEW -->
+    <section class="view-section" id="view-member-portal">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">SECURE PARISHIONER LOGIN</span>
+          <h2 class="section-title">Parishioner Member Dashboard</h2>
+          <p class="section-desc">Manage your Small Christian Community (SCC) membership, view sacramental certificates, and download giving receipts.</p>
+        </div>
+
+        <div style="max-width:960px; margin:0 auto;">
+          <!-- Profile Card -->
+          <div class="info-card" style="margin-bottom:2.5rem;">
+            <div id="member-profile-info"></div>
+            <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border-color);">
+              <button class="btn btn-gold" onclick="memberPortal.showQRIDCard()"><i class="fa-solid fa-qrcode"></i> View Digital QR Parish ID Card</button>
+              <button class="btn btn-outline" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> View M-Pesa Giving History</button>
+            </div>
+          </div>
+
+          <!-- Sacramental Records -->
+          <div class="info-card">
+            <h3 style="font-size:1.4rem; margin-bottom:1rem;">My Parish Sacramental Registry</h3>
+            <ul style="list-style:none;" id="member-sacraments-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19. ADMINISTRATOR PORTAL DASHBOARD VIEW -->
+    <section class="view-section" id="view-admin-portal">
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="section-subtitle">GOVERNMENT-GRADE PARISH MANAGEMENT</span>
+          <h2 class="section-title">Parish Secretariat & Priest Admin Portal</h2>
+          <p class="section-desc">Manage parishioner registrations, approve sacramental bookings, and audit M-Pesa tithes.</p>
+        </div>
+
+        <div style="max-width:1100px; margin:0 auto;">
+          <!-- Admin Metrics -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem; margin-bottom:2.5rem;">
+            <div class="stat-card">
+              <div class="stat-number">1,420</div>
+              <div class="stat-label">Active Parishioners</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">14</div>
+              <div class="stat-label">SCC Jumuiyas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">24</div>
+              <div class="stat-label">Pending Bookings</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" style="font-size:1.8rem; color:var(--royal-blue);">KES 1.84M</div>
+              <div class="stat-label">2026 Total Tithes</div>
+            </div>
+          </div>
+
+          <!-- Pending Booking Queue -->
+          <div class="gov-table-wrapper" style="padding:1.5rem;">
+            <h3 style="margin:0 0 1rem 1rem;">Sacramental & Office Appointment Queue</h3>
+            <table class="gov-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Sacrament / Type</th>
+                  <th>Parishioner Name</th>
+                  <th>Date Request</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-booking-queue-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 20 & 21. PRIVACY POLICY & TERMS OF USE VIEWS -->
+    <section class="view-section" id="view-privacy">
+      <div class="section-wrapper" style="max-width:800px;">
+        <h2 class="section-title">Parish Data Protection & Privacy Policy</h2>
+        <p style="line-height:1.8; color:var(--text-muted); margin-bottom:1.5rem;">
+          St. Theresa of the Child Jesus Naiberi Parish is committed to protecting the privacy of our parishioners in compliance with the Kenya Data Protection Act. Sacramental records, M-Pesa contribution history, and contact details are stored securely in our encrypted parish registry and are never shared with third parties.
+        </p>
+        <button class="btn btn-primary" onclick="appController.navigateTo('home')"><i class="fa-solid fa-house"></i> Return Home</button>
+      </div>
+    </section>
+
+    <!-- 21. TERMS OF USE VIEW -->
+    <section class="view-section" id="view-terms">
+      <div class="section-wrapper" style="max-width:800px;">
+        <h2 class="section-title">Terms of Use</h2>
+        <p style="line-height:1.8; color:var(--text-muted); margin-bottom:1.5rem;">
+          This official website is operated by St. Theresa of the Child Jesus Naiberi Parish under the Catholic Diocese of Eldoret. All liturgical materials, homilies, and images of St. Thérèse are provided for pastoral edification and evangelization.
+        </p>
+        <button class="btn btn-primary" onclick="appController.navigateTo('home')"><i class="fa-solid fa-house"></i> Return Home</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FLOATING CATHOLIC AI ASSISTANT (WIDGET & MODAL)
+       ======================================================== -->
+  <button class="ai-assistant-btn" title="Ask St. Thérèse AI Assistant" onclick="catholicAI.toggleChat()">
+    <span style="font-size: 1.5rem;"><i class="fa-solid fa-dove"></i></span>
+  </button>
+
+  <div class="ai-chat-box" id="ai-chat-box">
+    <div class="ai-chat-header">
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <span style="font-size:1.3rem; color: var(--gold);"><i class="fa-solid fa-spa"></i></span>
+        <div>
+          <h4 style="margin:0; font-size:1rem; color:#fff;">St. Thérèse AI Assistant</h4>
+          <small style="color:var(--gold-light);">Naiberi Parish Catholic Assistant</small>
+        </div>
+      </div>
+      <button style="color:#fff; font-size:1.2rem; cursor:pointer;" onclick="catholicAI.toggleChat()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="ai-chat-messages" id="ai-chat-messages">
+      <div class="ai-msg bot">
+        Peace be with you! I am St. Thérèse AI, your digital parish assistant at Naiberi Parish. How can I help you today? You can ask about Mass times, Sacraments, M-Pesa giving, or our Patron Saint!
+      </div>
+    </div>
+    <div style="padding:0.6rem; background:var(--bg-secondary); border-top:1px solid var(--border-color); display:flex; flex-wrap:wrap; gap:0.4rem;">
+      <button class="btn btn-outline" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="catholicAI.sendQuickQuestion('When is Sunday Mass in Swahili?')"><i class="fa-solid fa-church"></i> Sunday Mass Times</button>
+      <button class="btn btn-outline" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="catholicAI.sendQuickQuestion('How do I donate via M-Pesa 522522?')"><i class="fa-solid fa-hand-holding-heart"></i> M-Pesa Paybill</button>
+      <button class="btn btn-outline" style="padding:0.25rem 0.6rem; font-size:0.72rem;" onclick="catholicAI.sendQuickQuestion('Who is St. Thérèse of Lisieux?')"><i class="fa-solid fa-spa"></i> Patron Saint</button>
+    </div>
+    <form class="ai-chat-input-area" onsubmit="catholicAI.handleInputSubmit(event)">
+      <input type="text" id="ai-chat-input" class="ai-chat-input" placeholder="Ask any parish or Mass question..." />
+      <button type="submit" class="btn btn-primary" style="padding:0.6rem 1rem; border-radius:18px;"><i class="fa-solid fa-paper-plane"></i> Send</button>
+    </form>
+  </div>
+
+  <!-- ========================================================
+       MODALS (M-PESA RECEIPT, CHURCH BELL, SACRAMENT BOOKING, QR ID)
+       ======================================================== -->
+
+  <!-- 1. M-Pesa Express & Printable Receipt Modal -->
+  <div class="modal-overlay" id="mpesa-receipt-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="mpesaPortal.closeReceiptModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <span style="font-size:2.8rem; color: #2E7D32;"><i class="fa-solid fa-circle-check"></i></span>
+        <h3 style="font-size:1.6rem; color:var(--royal-blue); margin:0.5rem 0;">M-Pesa Contribution Received!</h3>
+        <p style="color:var(--text-muted);">Thank you for your generous giving to St. Theresa's Naiberi Parish.</p>
+      </div>
+      <div style="background:var(--bg-secondary); padding:1.5rem; border-radius:16px; border:1px solid var(--border-color); margin-bottom:1.5rem; line-height:1.9;">
+        <div style="display:flex; justify-content:space-between;"><span>M-Pesa Reference:</span><strong id="receipt-tx-code">SK74H89B21</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span>Parishioner Name:</span><strong id="receipt-name">Mr. Paul</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span>Phone Number:</span><strong id="receipt-phone">0720 123 456</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span>Contribution Amount:</span><strong id="receipt-amount" style="color:var(--royal-blue); font-size:1.1rem;">KES 2,000</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span>Fund Category:</span><strong id="receipt-fund">Tithe & Thanksgiving</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span>Jumuiya SCC:</span><strong id="receipt-jumuiya">St. Joseph SCC</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span>Timestamp:</span><span id="receipt-date">Today</span></div>
+      </div>
+      <div style="display:flex; gap:1rem;">
+        <button class="btn btn-gold" style="flex:1; padding:0.9rem;" onclick="mpesaPortal.downloadPDFReceipt()"><i class="fa-solid fa-print"></i> Download Official PDF Receipt</button>
+        <button class="btn btn-outline" style="flex:1;" onclick="mpesaPortal.closeReceiptModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Church Bell Chime & Angelus Prayer Modal -->
+  <div class="modal-overlay" id="bell-chime-modal">
+    <div class="modal-content" style="text-align:center;">
+      <button class="modal-close" onclick="appController.closeBellModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div style="font-size:3.5rem; color: var(--gold); margin-bottom:1rem; animation: pulse 1s infinite;"><i class="fa-solid fa-bell"></i></div>
+      <h3 style="font-size:1.8rem; margin-bottom:0.5rem; color:var(--royal-blue);">The Parish Angelus Bell</h3>
+      <p style="color:var(--text-gold); font-weight:700; margin-bottom:1.5rem;">"The Angel of the Lord declared unto Mary..."</p>
+      <p style="line-height:1.8; color:var(--text-muted); font-size:0.98rem; margin-bottom:2rem; text-align:left;">
+        V. The Angel of the Lord declared unto Mary.<br>
+        R. And she conceived of the Holy Spirit.<br>
+        <em>Hail Mary, full of grace, the Lord is with thee...</em><br><br>
+        V. Behold the handmaid of the Lord.<br>
+        R. Be it done unto me according to thy word.<br>
+        <em>Hail Mary...</em><br><br>
+        V. And the Word was made flesh.<br>
+        R. And dwelt among us.
+      </p>
+      <button class="btn btn-primary" style="width:100%;" onclick="appController.closeBellModal()">Amen</button>
+    </div>
+  </div>
+
+  <!-- 3. Sacramental & Pastoral Booking Modal -->
+  <div class="modal-overlay" id="sacrament-booking-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="document.getElementById('sacrament-booking-modal').classList.remove('open')"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="booking-sacrament-title" style="font-size:1.5rem; color:var(--royal-blue); margin-bottom:1.5rem;">Sacramental Appointment Booking</h3>
+      <form onsubmit="sacramentalBooking.submitBooking(event)">
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Your Full Name</label>
+          <input type="text" id="book-name" required placeholder="e.g., Peter Tanui" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+        </div>
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Phone Number for Confirmation SMS</label>
+          <input type="tel" required placeholder="0720 000 000" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+        </div>
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Preferred Date</label>
+          <input type="date" required style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+        </div>
+        <div style="margin-bottom:2rem;">
+          <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Pastoral Notes / Specific Request</label>
+          <textarea rows="3" placeholder="Additional details..." style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%; padding:1rem;"><i class="fa-solid fa-paper-plane"></i> Submit Appointment Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Digital Parishioner QR ID Card Modal -->
+  <div class="modal-overlay" id="qr-id-modal">
+    <div class="modal-content" style="text-align:center; max-width:420px; border:3px solid var(--gold);">
+      <button class="modal-close" onclick="document.getElementById('qr-id-modal').classList.remove('open')"><i class="fa-solid fa-xmark"></i></button>
+      <span class="badge badge-gold" style="margin-bottom:0.8rem;"><i class="fa-solid fa-shield-halved"></i> CATHOLIC DIOCESE OF ELDORET</span>
+      <h3 style="font-size:1.4rem; color:var(--royal-blue); margin-bottom:0.3rem;">Naiberi Parishioner ID Card</h3>
+      <p id="qr-card-name" style="font-weight:700; font-size:1.15rem; margin-bottom:0.2rem;">Mr. John Kiprono</p>
+      <small id="qr-card-scc" style="color:var(--text-gold); font-weight:600;">St. Joseph SCC</small>
+
+      <!-- Simulated SVG QR Code -->
+      <div style="margin:1.5rem auto; width:180px; height:180px; background:#fff; padding:12px; border-radius:16px; border:2px solid var(--border-color); display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
+          <rect width="100" height="100" fill="#fff"/>
+          <path d="M10,10 h25 v25 h-25 z M15,15 v15 h15 v-15 z M65,10 h25 v25 h-25 z M70,15 v15 h15 v-15 z M10,65 h25 v25 h-25 z M15,70 v15 h15 v-15 z M45,45 h10 v10 h-10 z M65,65 h10 v10 h-10 z M80,80 h10 v10 h-10 z M45,10 h10 v10 h-10 z M10,45 h10 v10 h-10 z M80,45 h10 v15 h-10 z" fill="#0B3C6F"/>
+        </svg>
+      </div>
+      <p id="qr-card-id" style="font-weight:700; color:var(--royal-blue); margin-bottom:1.5rem;">ID: NP-2026-0482</p>
+      <button class="btn btn-primary" style="width:100%;" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Parishioner QR ID</button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       FOOTER (Solemn Vatican Philosophy)
+       ======================================================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>St. Theresa's Naiberi Parish</h3>
+        <p style="color:#CBD5E1; line-height:1.7; margin-bottom:1rem;">
+          A flagship digital church in Naiberi, Uasin Gishu County, Kenya—serving the Catholic Diocese of Eldoret with faith, love, and evangelization.
+        </p>
+        <p style="color:var(--gold-light); font-weight:600;"><i class="fa-solid fa-hand-holding-heart"></i> M-Pesa Paybill: <strong>522522</strong> | Account: <strong>NAIBERI PARISH</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="#home" onclick="appController.navigateTo('home')">Home Page</a></li>
+          <li><a href="#about" onclick="appController.navigateTo('about')">About Naiberi Parish</a></li>
+          <li><a href="#patron-saint" onclick="appController.navigateTo('patron-saint')">St. Thérèse of Lisieux</a></li>
+          <li><a href="#mass-schedule" onclick="appController.navigateTo('mass-schedule')">Sunday & Daily Mass Times</a></li>
+          <li><a href="#sacraments" onclick="appController.navigateTo('sacraments')">The Seven Sacraments</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Ministries & Giving</h3>
+        <ul class="footer-links">
+          <li><a href="#ministries" onclick="appController.navigateTo('ministries')">CWA, CMA & Youth Ministries</a></li>
+          <li><a href="#events" onclick="appController.navigateTo('events')">Parish Events & Harambee</a></li>
+          <li><a href="#donate" onclick="appController.navigateTo('donate')">Online M-Pesa Tithe Portal</a></li>
+          <li><a href="#library" onclick="appController.navigateTo('library')">Catholic Digital Library</a></li>
+          <li><a href="#member-portal" onclick="appController.navigateTo('member-portal')">Parishioner Member Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Parish Office & Contacts</h3>
+        <p style="color:#CBD5E1; line-height:1.8; margin-bottom:0.5rem;"><i class="fa-solid fa-location-dot" style="color:var(--gold-light); width:18px;"></i> Naiberi, Uasin Gishu County, Kenya</p>
+        <p style="color:#CBD5E1; line-height:1.8; margin-bottom:0.5rem;"><i class="fa-solid fa-phone" style="color:var(--gold-light); width:18px;"></i> Tel: +254 720 123 456</p>
+        <p style="color:#CBD5E1; line-height:1.8; margin-bottom:0.5rem;"><i class="fa-solid fa-phone-volume" style="color:var(--gold-light); width:18px;"></i> Priest Emergency: +254 733 987 654</p>
+        <p style="color:#CBD5E1; line-height:1.8;"><i class="fa-solid fa-envelope" style="color:var(--gold-light); width:18px;"></i> info@naiberiparish.or.ke</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        © 2026 St. Theresa of the Child Jesus Naiberi Parish. All rights reserved. • Catholic Diocese of Eldoret
+      </div>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="#privacy" onclick="appController.navigateTo('privacy')" style="color:#CBD5E1;">Privacy Policy</a>
+        <a href="#terms" onclick="appController.navigateTo('terms')" style="color:#CBD5E1;">Terms of Use</a>
+        <a href="#admin-portal" onclick="appController.navigateTo('admin-portal')" style="color:var(--gold-light);">Secretariat Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Modular Application Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/mpesa.js"></script>
+  <script src="js/therese.js"></script>
+  <script src="js/portals.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
