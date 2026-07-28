@@ -1318,106 +1318,133 @@ button {
   body {
     padding-bottom: 74px;
   }
-
   /* Adjust floating AI Assistant button above mobile bottom bar */
   .ai-assistant-btn {
-    bottom: 5.5rem;
-    right: 1.2rem;
-    width: 58px;
-    height: 58px;
+    bottom: 5.2rem;
+    right: 0.8rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   }
 
   .ai-chat-box {
-    bottom: 9rem;
+    bottom: 5.8rem;
     right: 1rem;
-    left: 1rem;
-    width: auto;
-    max-width: none;
+    width: calc(100vw - 2rem);
+    height: 460px;
   }
 
   .top-bar-content {
     flex-direction: column;
     text-align: center;
-    gap: 0.4rem;
+    gap: 0.2rem;
+    padding: 0.3rem 0.8rem;
   }
 
   .top-bar-badge {
-    font-size: 0.75rem;
-    line-height: 1.4;
+    font-size: 0.72rem;
+    line-height: 1.3;
     text-align: center;
   }
 
+  /* Keep mobile top bar to just 1 clean line */
   .top-bar-links {
-    max-width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem 1rem;
-    font-size: 0.78rem;
-  }
-
-  .top-bar-links span {
     display: none;
   }
 
+  /* Compact Apple-Style Mobile Hero (Everything visible above the fold!) */
   .hero-section {
-    min-height: 75vh;
-    padding: 3rem 1.2rem;
+    min-height: calc(100vh - 120px);
+    padding: 2.2rem 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-badge {
-    font-size: 0.78rem;
-    padding: 0.4rem 1.1rem;
+    font-size: 0.68rem;
+    padding: 0.35rem 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.18;
+    margin-bottom: 0.8rem;
   }
 
   .hero-subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 1.8rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  /* Hide duplicate daily scripture box in mobile hero so it breathes & buttons sit above the fold */
+  .hero-daily-scripture {
+    display: none;
   }
 
   .hero-cta {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    gap: 0.8rem;
+    max-width: 380px;
+    margin: 0 auto;
+    gap: 0.6rem;
   }
 
   .hero-cta .btn {
-    width: 100%;
-    padding: 0.95rem;
+    width: auto;
+    flex: 1 1 140px;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.92rem !important;
+    white-space: nowrap;
+  }
+
+  .hero-cta .btn.btn-outline {
+    display: none; /* Focus mobile hero on the 2 primary actions: Mass Schedule & Livestream */
+  }
+
+  .stats-section {
+    padding: 2rem 1rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.7rem;
   }
 
   .stat-card {
-    padding: 1.3rem 0.8rem;
+    padding: 1rem 0.6rem;
   }
 
   .stat-number {
-    font-size: 1.85rem;
+    font-size: 1.5rem;
   }
 
   .stat-label {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
   }
 
   .section-wrapper {
-    padding: 3.2rem 1.2rem;
+    padding: 2.2rem 1rem;
   }
 
   .section-title {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
   }
 
   .cards-grid,
   .cards-grid-4 {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .info-card {
-    padding: 1.6rem;
+    padding: 1.25rem;
   }
 
   /* Government Table Horizontal Scroll Optimization */
