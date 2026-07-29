@@ -667,38 +667,38 @@
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:3rem; margin-bottom:4rem;">
           <!-- Left: Giving Category Selector & M-Pesa Form -->
-          <div class="glass-card" style="padding:2.5rem;">
-            <span class="badge badge-gold" style="margin-bottom:1rem;"><i class="fa-solid fa-hand-holding-heart"></i> KENYA M-PESA GIVING</span>
-            <h3 style="font-size:1.6rem; margin-bottom:0.5rem;">Make a Contribution</h3>
+          <div style="padding:2.5rem 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+            <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; display:inline-block; margin-bottom:1rem;"><i class="fa-solid fa-hand-holding-heart"></i> KENYA M-PESA GIVING</span>
+            <h3 style="font-size:1.6rem; margin-bottom:0.5rem; font-family:'Cinzel', serif;">Make a Contribution</h3>
             <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;" id="selected-fund-label">Selected Category: Tithe & Weekly Thanksgiving</p>
 
             <!-- Category Pills -->
             <div class="scrollable-chips" style="margin-bottom:1.8rem;">
-              <button class="btn btn-primary fund-btn" onclick="mpesaPortal.selectFund('Tithe & Weekly Thanksgiving', this)">Tithe & Thanksgiving</button>
-              <button class="btn btn-outline fund-btn" onclick="mpesaPortal.selectFund('Church Building Fund', this)">Building Fund</button>
-              <button class="btn btn-outline fund-btn" onclick="mpesaPortal.selectFund('Caritas Needy Fund', this)">Caritas Charity</button>
-              <button class="btn btn-outline fund-btn" onclick="mpesaPortal.selectFund('Priest Support / Mass Intention', this)">Mass Intention</button>
+              <button class="btn btn-primary fund-btn" style="border-radius:0;" onclick="mpesaPortal.selectFund('Tithe & Weekly Thanksgiving', this)">Tithe & Thanksgiving</button>
+              <button class="btn btn-outline fund-btn" style="border-radius:0;" onclick="mpesaPortal.selectFund('Church Building Fund', this)">Building Fund</button>
+              <button class="btn btn-outline fund-btn" style="border-radius:0;" onclick="mpesaPortal.selectFund('Caritas Needy Fund', this)">Caritas Charity</button>
+              <button class="btn btn-outline fund-btn" style="border-radius:0;" onclick="mpesaPortal.selectFund('Priest Support / Mass Intention', this)">Mass Intention</button>
             </div>
 
             <!-- M-Pesa Input Form -->
             <form onsubmit="mpesaPortal.simulateMPesaDonation(event)">
               <div style="margin-bottom:1.2rem;">
-                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Your Full Name (or Family Name)</label>
-                <input type="text" id="mpesa-donor-name" required placeholder="e.g., Mr. & Mrs. Paul Kipkemboi" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.05em;">Your Full Name (or Family Name)</label>
+                <input type="text" id="mpesa-donor-name" required placeholder="e.g., Mr. & Mrs. Paul Kipkemboi" style="width:100%; padding:0.85rem 1rem; border-radius:0; border:1px solid var(--border-color); background:transparent; color:var(--text-main);" />
               </div>
               <div style="margin-bottom:1.2rem;">
-                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Small Christian Community (Jumuiya SCC)</label>
-                <input type="text" id="mpesa-jumuiya" required placeholder="e.g., St. Joseph SCC (Naiberi)" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.05em;">Small Christian Community (Jumuiya SCC)</label>
+                <input type="text" id="mpesa-jumuiya" required placeholder="e.g., St. Joseph SCC (Naiberi)" style="width:100%; padding:0.85rem 1rem; border-radius:0; border:1px solid var(--border-color); background:transparent; color:var(--text-main);" />
               </div>
               <div style="margin-bottom:1.2rem;">
-                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">M-Pesa Phone Number (Safaricom)</label>
-                <input type="tel" id="mpesa-phone" required placeholder="e.g., 0720 123 456" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.05em;">M-Pesa Phone Number (Safaricom)</label>
+                <input type="tel" id="mpesa-phone" required placeholder="e.g., 0720 123 456" style="width:100%; padding:0.85rem 1rem; border-radius:0; border:1px solid var(--border-color); background:transparent; color:var(--text-main);" />
               </div>
               <div style="margin-bottom:2rem;">
-                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem;">Contribution Amount (KES)</label>
-                <input type="number" id="mpesa-amount" required min="10" placeholder="e.g., 2000" style="width:100%; padding:0.85rem 1rem; border-radius:12px; border:1px solid var(--border-color); background:var(--bg-secondary); color:var(--text-main);" />
+                <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:0.4rem; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.05em;">Contribution Amount (KES)</label>
+                <input type="number" id="mpesa-amount" required min="10" placeholder="e.g., 2000" style="width:100%; padding:0.85rem 1rem; border-radius:0; border:1px solid var(--border-color); background:transparent; color:var(--text-main);" />
               </div>
-              <button type="submit" class="btn btn-gold" style="width:100%; padding:1rem; font-size:1.08rem;">
+              <button type="submit" class="btn btn-gold" style="width:100%; padding:1rem; font-size:1.08rem; border-radius:0;">
                 <i class="fa-solid fa-hand-holding-heart"></i> Send M-Pesa Contribution & Get PDF Receipt
               </button>
             </form>
@@ -706,12 +706,12 @@
 
           <!-- Right: Official Parish Bank & Paybill Information -->
           <div style="display:flex; flex-direction:column; justify-content:space-between; gap:2rem;">
-            <div class="info-card" style="background:var(--royal-blue-dark); color:#fff;">
-              <span class="badge" style="background:var(--gold); color:#000; margin-bottom:1rem;"><i class="fa-solid fa-shield-halved"></i> OFFICIAL M-PESA DETAILS</span>
-              <h3 style="color:#fff; font-size:1.8rem; margin-bottom:1rem;">Safaricom M-Pesa Paybill</h3>
-              <p style="font-size:1.4rem; color:var(--gold-light); margin-bottom:0.5rem;">Paybill Number: <strong>522522</strong></p>
-              <p style="font-size:1.2rem; margin-bottom:1.5rem;">Account Number: <strong>NAIBERI PARISH</strong></p>
-              <p style="font-size:0.92rem; color:#CBD5E1; line-height:1.7;">
+            <div style="padding:2.5rem 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); display:flex; flex-direction:column;">
+              <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; display:inline-block; margin-bottom:1rem;"><i class="fa-solid fa-shield-halved"></i> OFFICIAL M-PESA DETAILS</span>
+              <h3 style="font-size:1.8rem; margin-bottom:1rem; font-family:'Cinzel', serif;">Safaricom M-Pesa Paybill</h3>
+              <p style="font-size:1.4rem; color:var(--royal-blue); margin-bottom:0.5rem; font-family:'Cinzel', serif;">Paybill Number: <strong>522522</strong></p>
+              <p style="font-size:1.2rem; margin-bottom:1.5rem; color:var(--text-muted);">Account Number: <strong>NAIBERI PARISH</strong></p>
+              <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7;">
                 1. Go to M-Pesa on your mobile phone<br>
                 2. Select <strong>Lipa na M-Pesa -> Pay Bill</strong><br>
                 3. Enter Business No: <strong>522522</strong><br>
@@ -719,12 +719,12 @@
               </p>
             </div>
 
-            <div class="info-card">
-              <h3 style="font-size:1.4rem; margin-bottom:0.8rem;">Bank Account Transfer</h3>
+            <div style="padding:2.5rem 0; border-bottom:1px solid var(--border-color); display:flex; flex-direction:column;">
+              <h3 style="font-size:1.4rem; margin-bottom:0.8rem; font-family:'Cinzel', serif;">Bank Account Transfer</h3>
               <p style="color:var(--text-muted); margin-bottom:0.4rem;"><strong>Bank Name:</strong> Kenya Commercial Bank (KCB)</p>
               <p style="color:var(--text-muted); margin-bottom:0.4rem;"><strong>Account Name:</strong> St. Theresa of the Child Jesus Naiberi Parish</p>
               <p style="color:var(--text-muted); margin-bottom:1rem;"><strong>Account Number:</strong> 1122334455</p>
-              <button class="btn btn-outline" style="width:100%;" onclick="alert('Bank transfer details copied to clipboard!')"><i class="fa-solid fa-copy"></i> Copy Bank Details</button>
+              <button class="btn btn-outline" style="width:100%; border-radius:0;" onclick="alert('Bank transfer details copied to clipboard!')"><i class="fa-solid fa-copy"></i> Copy Bank Details</button>
             </div>
           </div>
         </div>
@@ -864,25 +864,26 @@
         </div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; margin-bottom:4rem;">
-          <div class="info-card">
-            <h3 style="font-size:1.6rem; margin-bottom:1rem;">Parish Secretariat Office</h3>
-            <p style="color:var(--text-muted); margin-bottom:0.5rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Naiberi, Uasin Gishu County, Kenya</p>
-            <p style="color:var(--text-muted); margin-bottom:0.5rem;"><strong><i class="fa-solid fa-phone"></i> Office Phone:</strong> +254 720 123 456</p>
-            <p style="color:var(--text-muted); margin-bottom:0.5rem;"><strong><i class="fa-solid fa-phone-volume"></i> Priest Emergency Helpline:</strong> +254 733 987 654</p>
-            <p style="color:var(--text-muted); margin-bottom:1.5rem;"><strong><i class="fa-solid fa-clock"></i> Working Hours:</strong> Mon–Fri: 8:00 AM – 5:00 PM | Sat: 8:30 AM – 1:00 PM</p>
-            <div style="display:flex; gap:1rem;">
-              <a href="https://wa.me/254720123456" target="_blank" class="btn btn-green" style="background:#25D366; color:#fff; flex:1;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Secretariat</a>
-              <button class="btn btn-primary" style="flex:1;" onclick="sacramentalBooking.openBookingModal('Office Priest Consultation')"><i class="fa-solid fa-calendar-check"></i> Book Office Visit</button>
+          <div style="padding:2.5rem 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); display:flex; flex-direction:column;">
+            <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; display:inline-block; margin-bottom:1rem;"><i class="fa-solid fa-building"></i> PARISH OFFICE</span>
+            <h3 style="font-size:1.6rem; margin-bottom:1rem; font-family:'Cinzel', serif;">Parish Secretariat</h3>
+            <p style="color:var(--text-muted); margin-bottom:0.5rem; font-size:0.95rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Naiberi, Uasin Gishu County, Kenya</p>
+            <p style="color:var(--text-muted); margin-bottom:0.5rem; font-size:0.95rem;"><strong><i class="fa-solid fa-phone"></i> Office Phone:</strong> +254 720 123 456</p>
+            <p style="color:var(--text-muted); margin-bottom:0.5rem; font-size:0.95rem;"><strong><i class="fa-solid fa-phone-volume"></i> Priest Emergency Helpline:</strong> +254 733 987 654</p>
+            <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size:0.95rem;"><strong><i class="fa-solid fa-clock"></i> Working Hours:</strong> Mon–Fri: 8:00 AM – 5:00 PM | Sat: 8:30 AM – 1:00 PM</p>
+            <div style="display:flex; gap:1rem; margin-top:auto;">
+              <a href="https://wa.me/254720123456" target="_blank" class="btn btn-green" style="background:#25D366; color:#000; flex:1; border-radius:0;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              <button class="btn btn-primary" style="flex:1; border-radius:0;" onclick="sacramentalBooking.openBookingModal('Office Priest Consultation')"><i class="fa-solid fa-calendar-check"></i> Book Visit</button>
             </div>
           </div>
 
           <!-- Interactive Map Card (Embedded representation) -->
-          <div class="info-card" style="padding:0; overflow:hidden;">
-            <div style="background:linear-gradient(135deg, var(--royal-blue-dark), var(--royal-blue)); height:100%; min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; padding:2rem; text-align:center;">
-              <span style="font-size:3rem; margin-bottom:0.5rem; color: var(--gold);"><i class="fa-solid fa-map-location-dot"></i></span>
-              <h3 style="color:#fff; font-size:1.5rem; margin-bottom:0.5rem;">St. Theresa's Naiberi Parish</h3>
-              <p style="color:var(--gold-light); margin-bottom:1.5rem;">Along Kaptagat Highway, Uasin Gishu County, Kenya</p>
-              <a href="https://maps.google.com/?q=Naiberi+Uasin+Gishu+Kenya" target="_blank" class="btn btn-gold"><i class="fa-solid fa-location-arrow"></i> Open in Google Maps</a>
+          <div style="padding:0; overflow:hidden;">
+            <div style="background:var(--bg-secondary); border:1px solid var(--border-color); height:100%; min-height:280px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2rem; text-align:center;">
+              <span style="font-size:3rem; margin-bottom:0.5rem; color: var(--royal-blue);"><i class="fa-solid fa-map-location-dot"></i></span>
+              <h3 style="font-size:1.5rem; margin-bottom:0.5rem; font-family:'Cinzel', serif;">St. Theresa's Naiberi Parish</h3>
+              <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size:0.95rem;">Along Kaptagat Highway, Uasin Gishu County, Kenya</p>
+              <a href="https://maps.google.com/?q=Naiberi+Uasin+Gishu+Kenya" target="_blank" class="btn btn-outline" style="border-radius:0;"><i class="fa-solid fa-location-arrow"></i> Open in Google Maps</a>
             </div>
           </div>
         </div>
@@ -905,17 +906,17 @@
 
         <div style="max-width:960px; margin:0 auto;">
           <!-- Profile Card -->
-          <div class="info-card" style="margin-bottom:2.5rem;">
+          <div style="padding:2.5rem 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); margin-bottom:2.5rem;">
             <div id="member-profile-info"></div>
             <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border-color);">
-              <button class="btn btn-gold" onclick="memberPortal.showQRIDCard()"><i class="fa-solid fa-qrcode"></i> View Digital QR Parish ID Card</button>
-              <button class="btn btn-outline" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> View M-Pesa Giving History</button>
+              <button class="btn btn-gold" style="border-radius:0;" onclick="memberPortal.showQRIDCard()"><i class="fa-solid fa-qrcode"></i> View Digital QR Parish ID Card</button>
+              <button class="btn btn-outline" style="border-radius:0;" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> View M-Pesa Giving History</button>
             </div>
           </div>
 
           <!-- Sacramental Records -->
-          <div class="info-card">
-            <h3 style="font-size:1.4rem; margin-bottom:1rem;">My Parish Sacramental Registry</h3>
+          <div style="padding:2.5rem 0; border-bottom:1px solid var(--border-color);">
+            <h3 style="font-size:1.4rem; margin-bottom:1rem; font-family:'Cinzel', serif;">My Parish Sacramental Registry</h3>
             <ul style="list-style:none;" id="member-sacraments-list"></ul>
           </div>
         </div>
