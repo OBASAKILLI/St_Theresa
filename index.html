@@ -60,7 +60,20 @@
         <li class="nav-item" data-view="about" onclick="appController.navigateTo('about')">About</li>
         <li class="nav-item" data-view="patron-saint" onclick="appController.navigateTo('patron-saint')">St. Thérèse</li>
         <li class="nav-item" data-view="mass-schedule" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);">Mass Times</li>
-        <li class="nav-item" data-view="sacraments" onclick="appController.navigateTo('sacraments')">Sacraments</li>
+        <li class="nav-item nav-dropdown">
+          <span style="display:flex; align-items:center; gap:0.4rem;">Sacraments <i class="fa-solid fa-chevron-down" style="font-size:0.75rem;"></i></span>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('baptism')">Baptism</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('reconciliation')">Reconciliation</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('eucharist')">First Communion</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('confirmation')">Confirmation</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('marriage')">Weddings</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('anointing')">Anointing of the Sick</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('funerals')">Funeral Services</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('holy-orders')">Holy Orders</a></li>
+            <li><a class="dropdown-item" onclick="appController.navigateToSacrament('ocia')">OCIA / RCIA</a></li>
+          </ul>
+        </li>
         <li class="nav-item" data-view="ministries" onclick="appController.navigateTo('ministries')">Ministries</li>
 
         <li class="nav-item" data-view="donate" onclick="appController.navigateTo('donate')">Give</li>
@@ -140,7 +153,23 @@
 
       <div class="drawer-section-title">SACRAMENTS & MINISTRIES</div>
       <ul class="drawer-links">
-        <li class="drawer-item" data-view="sacraments" onclick="appController.navigateTo('sacraments'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-dove" style="margin-right:0.6rem; color: var(--gold);"></i> The Seven Sacraments</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" onclick="const m = document.getElementById('mobile-sacraments-dropdown'); m.classList.toggle('expanded');">
+          <div style="display:flex; justify-content:space-between; width:100%;">
+            <span><i class="fa-solid fa-dove" style="margin-right:0.6rem; color: var(--gold);"></i> The Seven Sacraments</span>
+            <span><i class="fa-solid fa-chevron-down"></i></span>
+          </div>
+        </li>
+        <ul id="mobile-sacraments-dropdown" class="mobile-dropdown-menu">
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('baptism'); appController.closeMobileDrawer();">Baptism</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('reconciliation'); appController.closeMobileDrawer();">Reconciliation</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('eucharist'); appController.closeMobileDrawer();">First Communion</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('confirmation'); appController.closeMobileDrawer();">Confirmation</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('marriage'); appController.closeMobileDrawer();">Weddings</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('anointing'); appController.closeMobileDrawer();">Anointing of the Sick</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('funerals'); appController.closeMobileDrawer();">Funeral Services</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('holy-orders'); appController.closeMobileDrawer();">Holy Orders</a></li>
+          <li><a class="mobile-dropdown-item" onclick="appController.navigateToSacrament('ocia'); appController.closeMobileDrawer();">OCIA / RCIA</a></li>
+        </ul>
         <li class="drawer-item" data-view="ministries" onclick="appController.navigateTo('ministries'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-users" style="margin-right:0.6rem; color: var(--gold);"></i> Small Christian Communities & CWA</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="leadership" onclick="appController.navigateTo('leadership'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-user-tie" style="margin-right:0.6rem; color: var(--gold);"></i> Clergy & Parish Leadership</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
 
@@ -559,6 +588,11 @@
 
         <div class="cards-grid" id="sacraments-container"></div>
       </div>
+    </section>
+
+    <!-- SACRAMENT DETAIL VIEW -->
+    <section class="view-section" id="view-sacrament-detail">
+      <!-- Injected dynamically by JS -->
     </section>
 
     <!-- 7. MINISTRIES DIRECTORY VIEW -->

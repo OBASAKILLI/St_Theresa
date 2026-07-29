@@ -17,7 +17,10 @@ class AppController {
 
     window.addEventListener("hashchange", () => {
       const hash = window.location.hash.replace("#", "");
-      if (hash && document.getElementById(`view-${hash}`)) {
+      if (hash.startsWith("sacrament-")) {
+        const sacramentId = hash.replace("sacrament-", "");
+        this.navigateToSacrament(sacramentId);
+      } else if (hash && document.getElementById(`view-${hash}`)) {
         this.navigateTo(hash, false);
       }
     });
@@ -109,6 +112,79 @@ class AppController {
     if (mobileLinks) mobileLinks.classList.remove("mobile-open");
   }
 
+  navigateToSacrament(sacramentId) {
+    if (!sacramentId) return;
+
+    // Find sacrament data
+    const sacrament = PARISH_DATA.sacraments.find(s => s.id === sacramentId);
+    if (!sacrament) return;
+
+    // Generate HTML for detail view
+    const signsHtml = sacrament.signsAndSymbols && sacrament.signsAndSymbols.length > 0 
+      ? `<h3>Signs & Symbols</h3>
+         <ul>${sacrament.signsAndSymbols.map(s => `<li>${s}</li>`).join('')}</ul>`
+      : "";
+
+    const reqsHtml = Array.isArray(sacrament.requirements)
+      ? `<ul>${sacrament.requirements.map(r => `<li>${r}</li>`).join('')}</ul>`
+      : `<p>${sacrament.requirements}</p>`;
+
+    const html = `
+      <div class="sacrament-header-banner">
+        <span style="font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--gold-light);">The Sacrament of</span>
+        <h2>${sacrament.title.replace('Sacrament of ', '')}</h2>
+      </div>
+      <div class="section-wrapper" style="max-width:900px; padding:0 2rem 4rem 2rem;">
+        <div class="sacrament-detail-content">
+          <p style="font-size:1.15rem; font-style:italic; color:var(--text-main); margin-bottom:2rem;">${sacrament.subtitle}</p>
+          
+          <h3>The Church Teaches</h3>
+          <p>${sacrament.catechism}</p>
+          
+          ${signsHtml}
+          
+          <h3>Requirements & Preparation</h3>
+          ${reqsHtml}
+          
+          <div style="margin-top:3rem; padding:1.5rem; background:var(--bg-secondary); border-left:4px solid var(--gold);">
+            <h4 style="margin:0 0 0.5rem 0; font-family:'Cinzel', serif;">More Information</h4>
+            <p style="margin:0; font-size:0.95rem;">
+              <strong>Coordinator:</strong> ${sacrament.coordinator || 'Parish Office'}<br>
+              <strong>Email:</strong> ${sacrament.email || 'parishoffice@naiberiparish.or.ke'}<br>
+              <strong>Phone:</strong> ${sacrament.phone || '+254 700 000 000'}
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Inject into container
+    const container = document.getElementById("view-sacrament-detail");
+    if (container) {
+      container.innerHTML = html;
+    }
+
+    this.currentView = "sacrament-detail";
+    window.history.pushState(null, null, `#sacrament-${sacramentId}`);
+
+    // Hide all views, show sacrament detail
+    document.querySelectorAll(".view-section").forEach(sec => sec.classList.remove("active"));
+    if (container) {
+      container.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Update nav active states
+    document.querySelectorAll(".nav-item, .mobile-nav-item, .drawer-item").forEach(item => {
+      item.classList.remove("active");
+    });
+    // Add active to the parent Sacraments dropdown trigger if it exists
+    const dropdownTrigger = document.querySelector(".nav-dropdown");
+    if(dropdownTrigger) dropdownTrigger.classList.add("active");
+
+    this.closeMobileDrawer();
+  }
+
   toggleTheme() {
     this.theme = (this.theme === "light") ? "dark" : "light";
     localStorage.setItem("naiberi_theme", this.theme);
@@ -188,7 +264,10 @@ class AppController {
 
   handleInitialHash() {
     const hash = window.location.hash.replace("#", "");
-    if (hash && document.getElementById(`view-${hash}`)) {
+    if (hash.startsWith("sacrament-")) {
+      const sacramentId = hash.replace("sacrament-", "");
+      this.navigateToSacrament(sacramentId);
+    } else if (hash && document.getElementById(`view-${hash}`)) {
       this.navigateTo(hash, false);
     }
   }

@@ -240,6 +240,115 @@ button {
   font-weight: 700;
 }
 
+/* Dropdown Menu */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+  background: var(--royal-blue);
+  color: #fff;
+}
+
+/* Mobile Dropdown (Accordion) */
+.mobile-dropdown-menu {
+  display: none;
+  list-style: none;
+  padding: 0 0 0 2rem;
+  margin: 0;
+  background: rgba(0,0,0,0.02);
+}
+
+.mobile-dropdown-menu.expanded {
+  display: block;
+}
+
+.mobile-dropdown-item {
+  display: block;
+  padding: 1rem;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+/* Sacrament Detail Layout */
+.sacrament-header-banner {
+  background: var(--royal-blue);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.sacrament-header-banner h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.sacrament-detail-content {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.sacrament-detail-content h3 {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.sacrament-detail-content ul {
+  margin: 1rem 0 1.5rem 2rem;
+}
+
+.sacrament-detail-content li {
+  margin-bottom: 0.5rem;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;

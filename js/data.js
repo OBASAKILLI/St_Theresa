@@ -271,129 +271,149 @@ const PARISH_DATA = {
 
   sacraments: [
     {
-      id: "ocia",
-      title: "OCIA / Catechism (Order of Christian Initiation)",
-      subtitle: "Sacramental Initiation & Conversion for Adults and Children",
-      icon: "book-bible",
-      requirements: [
-        "Open to unbaptized adults and children seeking Catholic Baptism, Eucharist, and Confirmation",
-        "Open to Christians baptized in other denominations seeking full communion with the Catholic Church",
-        "Open to baptized Catholic adults seeking Confirmation or sacramental completion",
-        "Inspired by National Shrine Basilica of the Little Flower OCIA catechetical formation (shrinechurch.com/ocia)"
-      ],
-      schedule: "Annual liturgical reception during the solemn Easter Vigil & Parish Feast Day.",
-      preparation: "Weekly catechetical sessions every Sunday afternoon at Naiberi Main and Stroback Sub-Parish.",
-      coordinator: "Michal Anne Gillig & Catechist Team",
-      email: "ocia@naiberiparish.or.ke",
-      phone: "+254 721 777 888",
-      referenceUrl: "https://shrinechurch.com/ocia",
-      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1000"
-    },
-    {
       id: "baptism",
       title: "Sacrament of Baptism",
       subtitle: "The Gateway to Christian Life and the Church",
-      icon: "droplet",
+      catechism: "The fruit of Baptism, or baptismal grace, is a rich reality that includes forgiveness of original sin and all personal sins, birth into the new life by which man becomes an adoptive son of the Father, a member of Christ and a temple of the Holy Spirit. By this very fact the person baptized is incorporated into the Church, the Body of Christ, and made a sharer in the priesthood of Christ (CCC 1279).",
+      signsAndSymbols: [
+        "Water: The waters of baptism recall Jesus' own baptism by John the Baptist in the river Jordan. Water is a symbol of cleansing and renewal as we begin a new life in Christ.",
+        "Oil: At baptism we are first anointed with the oil of the Catechumens and then we are anointed into the life of Christ as \"priest, prophet and king\".",
+        "Light: The child's individual baptismal candle is lit from the Paschal or Easter candle that stands in the church as a sign of Christ's light in the world.",
+        "White garment: The white garment that is placed upon us at baptism is a symbol of Christ's victory over death and his glorious resurrection."
+      ],
       requirements: [
         "For Children Under Age 7: Parents must be registered parishioners and complete a mandatory Baptism Preparation Class.",
         "For Children Over Age 7 & Adults: Must enroll in Sunday Religious Education or the OCIA / RCIA discipleship journey.",
         "Godparents must be practicing Catholics who have received Confirmation.",
         "Attendance of Baptismal Preparation session by parents and godparents."
-      ],
-      schedule: "Baptisms are celebrated on the last Saturday of every month at 10:00 AM.",
-      preparation: "Classes hold every Saturday at 2:00 PM in St. Thérèse Hall.",
-      coordinator: "Parish Secretariat & Baptism Team",
-      email: "baptism@naiberiparish.or.ke",
-      phone: "+254 720 123 456",
-      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Masai_Children_Kenya_(21875710591).jpg?width=1000"
-    },
-    {
-      id: "eucharist",
-      title: "First Holy Communion & Reconciliation",
-      subtitle: "Source and Summit — Bundled 2nd Grade Sacramental Prep",
-      icon: "sun",
-      requirements: [
-        "Structured 2nd Grade preparation curriculum taught in conjunction with First Reconciliation (Confession).",
-        "Candidate must be validly baptized Catholic (provide Baptism Certificate).",
-        "Completion of Parish Sunday School Catechism or Catholic School Religious Education.",
-        "Regular Sunday Mass attendance and confession prior to ceremony."
-      ],
-      schedule: "Celebrated annually during Corpus Christi Sunday or the Parish Feast Day.",
-      preparation: "Weekly catechism classes every Sunday after 9:00 AM Mass.",
-      coordinator: "Catechetical Formation Office",
-      email: "eucharist@naiberiparish.or.ke",
-      phone: "+254 721 777 888",
-      image: "assets/images/sanctuary_altar_tabernacle.jpg"
+      ]
     },
     {
       id: "confirmation",
       title: "Sacrament of Confirmation",
-      subtitle: "Sealed with the Holy Spirit — 2-Year Discipleship Program",
-      icon: "flame",
+      subtitle: "Sealed with the Holy Spirit",
+      catechism: "Baptism, the Eucharist, and Confirmation together constitute the \"sacraments of Christian initiation,\" whose unity must be safeguarded. The reception of the sacrament of Confirmation is necessary for the completion of baptismal grace. For \"by the sacrament of Confirmation, [the baptized] are more perfectly bound to the Church and are enriched with a special strength of the Holy Spirit.\"",
+      signsAndSymbols: [
+        "The sacrament of Confirmation is administered by anointing with the holy oil of chrism and the imposition of hands on the confirmandi.",
+        "In this diocese, the Archbishop is the ordinary minister of Confirmation. This ministry can be delegated to a priest under special circumstances."
+      ],
       requirements: [
         "Structured 2-Year Formation & Discipleship Program (beginning in 7th/8th grade or High School).",
         "Baptism and First Holy Communion certificates required.",
         "Sponsor Continuity: Strongly recommended that the Baptismal Godparent serve as Sponsor.",
         "Active participation in Jumuiya SCC and Parish Youth Ministry."
-      ],
-      schedule: "Celebrated during the annual episcopal pastoral visit.",
-      preparation: "Intensive confirmation catechesis every Saturday afternoon.",
-      coordinator: "Parish Youth & Confirmation Coordinator",
-      email: "confirmation@naiberiparish.or.ke",
-      phone: "+254 724 999 000",
-      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Students_(12953830824).jpg?width=1000"
+      ]
     },
     {
-      id: "marriage",
-      title: "Holy Matrimony (Marriage)",
-      subtitle: "A Sacred Covenant of Christian Love & Ongoing Family Ministry",
-      icon: "heart",
-      requirements: [
-        "At least 6 months advance notice to the Parish Priest following Archdiocesan guidelines.",
-        "Baptism and Confirmation certificates of both bride and groom.",
-        "Completion of Parish Pre-Marital Counseling (Engaged Encounter).",
-        "Ongoing Marriage Enrichment: Includes access to our Community & Family Ministry 'Marriage Course'."
+      id: "eucharist",
+      title: "Sacrament of First Communion",
+      subtitle: "Source and Summit of the Christian life",
+      catechism: "\"At the Last Supper, on the night he was betrayed, our Savior instituted the Eucharistic sacrifice of his Body and Blood. This he did in order to perpetuate the sacrifice of the cross throughout the ages until he should come again.\" The Eucharist is \"the source and summit of the Christian life.\"",
+      signsAndSymbols: [
+        "A solid understanding of the Eucharist both as sacrifice and meal.",
+        "Reflection on the Eucharist from Scripture and Church teaching.",
+        "Instruction on the proper reception of Holy Communion."
       ],
-      schedule: "Weddings are scheduled on Fridays and Saturdays between 10:00 AM and 2:00 PM.",
-      preparation: "10-week Catholic Marriage Preparation counseling with parish clergy and catechists.",
-      coordinator: "Family Ministry & Marriage Coordinator",
-      email: "family@naiberiparish.or.ke",
-      phone: "+254 725 112 233",
-      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Women_in_Nairobi_01.jpg?width=1000"
+      requirements: [
+        "Structured 2nd Grade preparation curriculum taught in conjunction with First Reconciliation (Confession).",
+        "Candidate must be validly baptized Catholic (provide Baptism Certificate).",
+        "Completion of Parish Sunday School Catechism or Catholic School Religious Education.",
+        "Regular Sunday Mass attendance and confession prior to ceremony."
+      ]
+    },
+    {
+      id: "funerals",
+      title: "Funeral Services & Memorials",
+      subtitle: "Planning a Funeral or Memorial Service",
+      catechism: "\"At the death of a Christian, whose life of faith was begun in the waters of Baptism and strengthened at the Eucharistic table, the Church intercedes on behalf of the deceased because of its confident belief that death is not the end, nor does it break the bonds forged in life. The Church also ministers to the sorrowing and consoles them in the funeral rites with the comforting Word of God and the Sacrament of the Eucharist.\"",
+      signsAndSymbols: [
+        "Vigil Service (Wake): The Christian community keeps watch with the family in prayer to the God of mercy.",
+        "Funeral Liturgy: The central liturgical celebration of the Christian community for the deceased.",
+        "Rite of Committal (Burial or Interment): The conclusion of the funeral rite, caring for the body of its deceased member."
+      ],
+      requirements: [
+        "The Parish office is usually notified by the Funeral Home for the request of a funeral service.",
+        "Once the Funeral Home has contacted us, we will arrange a priest for the service.",
+        "Typically the family chooses any or all of these services: Visitation, Rosary, Funeral Mass, & Burial."
+      ]
     },
     {
       id: "reconciliation",
-      title: "Sacrament of Reconciliation (Confession)",
+      title: "Sacrament of Reconciliation",
       subtitle: "God's Infinite Mercy and Forgiveness",
-      icon: "shield",
+      catechism: "Those who approach the sacrament of Penance obtain pardon from God's mercy for the offense committed against him, and are, at the same time, reconciled with the Church which they have wounded by their sins and which by charity, by example, and by prayer labors for their conversion.",
+      signsAndSymbols: [
+        "Contrition: Sincere sorrow for having offended God.",
+        "Confession: The disclosure of sins to a priest.",
+        "Absolution: The priest grants forgiveness in the name of God and the Church."
+      ],
       requirements: [
         "Sincere examination of conscience and contrition.",
         "Open to all baptized Catholics.",
         "Confidentiality under the inviolable sacramental seal."
+      ]
+    },
+    {
+      id: "marriage",
+      title: "Sacrament of Holy Matrimony",
+      subtitle: "A Sacred Covenant of Christian Love",
+      catechism: "The matrimonial covenant, by which a man and a woman establish between themselves a partnership of the whole of life, is by its nature ordered toward the good of the spouses and the procreation and education of offspring; this covenant between baptized persons has been raised by Christ the Lord to the dignity of a sacrament.",
+      signsAndSymbols: [
+        "The Consent: The indispensable element that \"makes the marriage\".",
+        "The Rings: A symbol of love and fidelity.",
+        "The Nuptial Blessing: A special blessing bestowed upon the couple."
       ],
-      schedule: "Every Saturday 4:00 PM – 5:30 PM in the church confessionals, or anytime by appointment.",
-      preparation: "Examination of conscience booklets available at the church entrance.",
-      coordinator: "Rev. Fr. Eliud Jomo (Parish Priest)",
-      email: "priest@naiberiparish.or.ke",
-      phone: "+254 720 123 456",
-      image: "assets/images/sanctuary-altar.jpg"
+      requirements: [
+        "At least 6 months advance notice to the Parish Priest following Archdiocesan guidelines.",
+        "Baptism and Confirmation certificates of both bride and groom.",
+        "Completion of Parish Pre-Marital Counseling (Engaged Encounter)."
+      ]
+    },
+    {
+      id: "holy-orders",
+      title: "Sacrament of Holy Orders",
+      subtitle: "The Ministry of Apostolic Succession",
+      catechism: "Holy Orders is the sacrament through which the mission entrusted by Christ to his apostles continues to be exercised in the Church until the end of time: thus it is the sacrament of apostolic ministry. It includes three degrees: episcopate, presbyterate, and diaconate.",
+      signsAndSymbols: [
+        "Imposition of Hands: The essential rite of the sacrament.",
+        "Prayer of Consecration: Asking God for the outpouring of the Holy Spirit."
+      ],
+      requirements: [
+        "A calling (vocation) from God and the Church.",
+        "A baptized male who has been confirmed.",
+        "Adequate theological and pastoral formation in a seminary."
+      ]
     },
     {
       id: "anointing",
       title: "Anointing of the Sick",
       subtitle: "Spiritual Healing and Comfort in Illness",
-      icon: "cross",
+      catechism: "By the sacred anointing of the sick and the prayer of the priests the whole Church commends those who are ill to the suffering and glorified Lord, that he may raise them up and save them. And indeed she exhorts them to contribute to the good of the People of God by freely uniting themselves to the Passion and death of Christ.",
+      signsAndSymbols: [
+        "Oil of the Sick: Blessed by the bishop, signifying healing, strengthening, and the presence of the Holy Spirit.",
+        "Laying on of Hands: The priest lays his hands on the head of the sick person in silence."
+      ],
       requirements: [
         "Available for elderly, seriously ill, or hospitalized parishioners.",
         "Can be requested by family members or Jumuiya SCC leader at any time.",
         "Includes Holy Communion (Viaticum) and sacramental absolution."
+      ]
+    },
+    {
+      id: "ocia",
+      title: "OCIA / Catechism (Order of Christian Initiation)",
+      subtitle: "Sacramental Initiation & Conversion",
+      catechism: "The Rite of Christian Initiation of Adults is designed for adults who, after hearing the mystery of Christ proclaimed, consciously and freely seek the living God and enter the way of faith and conversion as the Holy Spirit opens their hearts.",
+      signsAndSymbols: [
+        "Rite of Acceptance: The first formal step into the catechumenate.",
+        "Rite of Election: Enrollment of names for those ready for the sacraments of initiation.",
+        "Scrutinies: Rites of self-searching and repentance."
       ],
-      schedule: "Available 24/7 for pastoral emergencies. Communal anointing on World Day of the Sick.",
-      preparation: "Contact the parish office or emergency priest helpline immediately.",
-      coordinator: "24/7 Clergy Pastoral Emergency Line",
-      email: "emergency@naiberiparish.or.ke",
-      phone: "+254 733 987 654",
-      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Consolata_Church_in_Nairobi_-_panoramio.jpg?width=1000"
+      requirements: [
+        "Open to unbaptized adults and children seeking Catholic Baptism, Eucharist, and Confirmation",
+        "Open to Christians baptized in other denominations seeking full communion with the Catholic Church",
+        "Open to baptized Catholic adults seeking Confirmation or sacramental completion"
+      ]
     }
   ],
 
