@@ -3,10 +3,10 @@
  * Official Website Stylesheet (Apple + Vatican + Government Portal Design System)
  * Primary: Royal Blue (#0B3C6F) | Gold (#C9A227) | White
  * Accent: Burgundy (#8B0000) | Forest Green (#1E5631)
- * Fonts: Cinzel (Headings), Inter (Body), Poppins (Buttons)
+ * Fonts: Outfit (Headings), Inter (Body), Poppins (Buttons)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
 :root {
   /* Colors */
@@ -85,7 +85,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--text-main);
@@ -191,7 +191,7 @@ button {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: 'Cinzel', serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 800;
   font-size: 1.4rem;
  
@@ -338,7 +338,7 @@ button {
   color: var(--text-main);
   font-size: 1.3rem;
   margin: 2rem 0 1rem 0;
-  font-family: 'Cinzel', serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .sacrament-detail-content ul {
@@ -590,7 +590,7 @@ button {
 }
 
 .flat-stat-number {
-  font-family: 'Cinzel', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 3.8rem;
   font-weight: 700;
   color: var(--gold);
@@ -748,7 +748,7 @@ button {
 .gov-table th {
   background: var(--royal-blue);
   color: #fff;
-  font-family: 'Cinzel', serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 600;
   font-size: 0.92rem;
   text-transform: uppercase;

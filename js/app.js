@@ -147,7 +147,7 @@ class AppController {
           ${reqsHtml}
           
           <div style="margin-top:3rem; padding:1.5rem; background:var(--bg-secondary); border-left:4px solid var(--gold);">
-            <h4 style="margin:0 0 0.5rem 0; font-family:'Cinzel', serif;">More Information</h4>
+            <h4 style="margin:0 0 0.5rem 0; font-family:'Outfit', sans-serif;">More Information</h4>
             <p style="margin:0; font-size:0.95rem;">
               <strong>Coordinator:</strong> ${sacrament.coordinator || 'Parish Office'}<br>
               <strong>Email:</strong> ${sacrament.email || 'parishoffice@naiberiparish.or.ke'}<br>
@@ -302,7 +302,7 @@ class AppController {
           ` : ''}
           <div>
             <span style="color:${st.status.includes('Sub-Parish') ? 'var(--gold)' : 'var(--royal-blue)'}; font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:inline-block;"><i class="fa-solid fa-church"></i> ${st.status}</span>
-            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height:1.25; font-family:'Cinzel', serif;">${st.name}</h3>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height:1.25; font-family:'Outfit', sans-serif;">${st.name}</h3>
             <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem; border-left:3px solid var(--gold); padding-left:0.8rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${st.patron}</p>
             <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; font-size:0.95rem;">${st.description}</p>
             <div style="background:var(--bg-secondary); padding:0.85rem 1rem; margin-bottom:1.5rem;">
@@ -369,7 +369,7 @@ class AppController {
           ` : ''}
           <div>
             <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:inline-block;"><i class="fa-solid fa-language"></i> ${m.language}</span>
-            <h3 style="font-size: 1.45rem; margin: 0.4rem 0 0.5rem; line-height:1.25; font-family:'Cinzel', serif;">${m.time}</h3>
+            <h3 style="font-size: 1.45rem; margin: 0.4rem 0 0.5rem; line-height:1.25; font-family:'Outfit', sans-serif;">${m.time}</h3>
             <h4 style="color: var(--royal-blue); margin-bottom: 0.8rem; font-size: 1.15rem;">${m.title || m.name}</h4>
             <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.6; font-size:0.95rem;">${m.description || ''}</p>
             <div style="background:var(--bg-secondary); padding:0.85rem 1rem; margin-bottom:1.5rem;">
@@ -491,7 +491,7 @@ class AppController {
           ` : ''}
           <div>
             <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:inline-block;"><i class="fa-solid fa-shield-halved"></i> Patron: ${m.patron}</span>
-            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height: 1.25; font-family:'Cinzel', serif;">${m.name}</h3>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height: 1.25; font-family:'Outfit', sans-serif;">${m.name}</h3>
             ${m.tagline ? `<p style="color:var(--text-gold); font-weight:600; font-size:0.95rem; margin-bottom:1rem; border-left:3px solid var(--gold); padding-left:0.8rem;">${m.tagline}</p>` : ''}
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; font-size: 0.95rem;">${m.description}</p>
             <div style="background:var(--bg-secondary); padding:0.85rem 1rem; margin-bottom:1.5rem;">
@@ -517,11 +517,11 @@ class AppController {
     const html = PARISH_DATA.events.map(e => `
       <div style="display:flex; flex-wrap:wrap; gap:1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-color); align-items:flex-start;">
         <div style="flex:0 0 100px; text-align:left;">
-          <span style="display:block; font-size:2.5rem; font-weight:700; color:var(--gold); line-height:1; font-family:'Cinzel', serif;">${e.date.split(' ')[1].replace(',', '')}</span>
+          <span style="display:block; font-size:2.5rem; font-weight:700; color:var(--gold); line-height:1; font-family:'Outfit', sans-serif;">${e.date.split(' ')[1].replace(',', '')}</span>
           <span style="display:block; font-size:1rem; font-weight:600; color:var(--text-muted); text-transform:uppercase;">${e.date.split(' ')[0]}</span>
         </div>
         <div style="flex:1; min-width:280px;">
-          <h3 style="font-size: 1.5rem; margin: 0 0 0.5rem 0; font-family:'Cinzel', serif;">${e.title}</h3>
+          <h3 style="font-size: 1.5rem; margin: 0 0 0.5rem 0; font-family:'Outfit', sans-serif;">${e.title}</h3>
           <p style="color: var(--royal-blue); font-weight: 600; margin-bottom: 0.8rem;"><i class="fa-solid fa-clock"></i> ${e.time} &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> ${e.location}</p>
           <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; font-size:0.95rem;">${e.description}</p>
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
@@ -552,7 +552,7 @@ class AppController {
             <span>•</span>
             <span>${n.date}</span>
           </div>
-          <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem; line-height: 1.35; font-family:'Cinzel', serif;">${n.title}</h3>
+          <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem; line-height: 1.35; font-family:'Outfit', sans-serif;">${n.title}</h3>
           <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem;">${n.summary}</p>
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
              <button class="btn btn-outline" style="border-radius:0; padding:0.6rem 1.2rem; font-size:0.9rem;" onclick="alert('Downloading Naiberi Parish Weekly Bulletin (PDF format) for ${n.date}...')"><i class="fa-solid fa-file-pdf"></i> Read Full Bulletin</button>
