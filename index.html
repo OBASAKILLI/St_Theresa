@@ -173,21 +173,54 @@
     <!-- 1. HOME VIEW (Flagship Apple + Vatican Experience) -->
     <section class="view-section active" id="view-home">
       <!-- Massive Hero Section -->
+      <!-- Massive Hero Section with Kenyan / African Parishioners Theme -->
       <div class="hero-section">
-        <div class="hero-content">
-          <div class="hero-badge"><i class="fa-solid fa-cross"></i> IN THE HEART OF THE CHURCH, I WILL BE LOVE</div>
-          <h1 class="hero-title">Welcome to St. Theresa of the Child Jesus Naiberi Parish</h1>
-          <p class="hero-subtitle">
-            A vibrant, Eucharistic digital church in Naiberi, Uasin Gishu County, Kenya—inspiring faith, connecting Small Christian Communities, and serving in love through The Little Way.
+        <div class="hero-content" style="max-width: 1100px;">
+          <div class="hero-badge"><i class="fa-solid fa-cross"></i> CATHOLIC DIOCESE OF ELDORET — UASIN GISHU COUNTY, KENYA</div>
+          <h1 class="hero-title" style="font-size:2.8rem; margin:1rem 0; line-height:1.2;">St. Theresa of the Child Jesus Naiberi Parish</h1>
+          <p class="hero-subtitle" style="font-size:1.2rem; max-width:850px; margin:0 auto 1.8rem auto;">
+            A living, Eucharistic Kenyan Catholic family across 7 outstations and 14 Small Christian Communities (Jumuiya Ndogo Ndogo za Kikristu)—walking together in faith, hope, and love through The Little Way.
           </p>
-          <div class="hero-daily-scripture">
-            <p>"My vocation is love! In the heart of the Church, my Mother, I will be Love."</p>
-            <span>— ST. THÉRÈSE OF LISIEUX (PATRONESS OF MISSIONS)</span>
-          </div>
-          <div class="hero-cta">
-            <button class="btn btn-gold" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> Mass Schedule</button>
-            <button class="btn btn-primary" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('livestream')"><i class="fa-solid fa-video"></i> Watch Live Stream</button>
+          <div class="hero-cta" style="margin-bottom: 3rem;">
+            <button class="btn btn-gold" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> Live Mass Timetable</button>
+            <button class="btn btn-primary" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('livestream')"><i class="fa-solid fa-video"></i> Watch Sunday Mass</button>
             <button class="btn btn-outline" style="padding: 1rem 2.2rem; font-size: 1.05rem; color: #fff; border-color: #fff;" onclick="appController.navigateTo('register')"><i class="fa-solid fa-dove"></i> Become a Parishioner</button>
+          </div>
+
+          <!-- Interactive Kenyan Parish Life Hero Cards -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem; margin-top:2rem; text-align:left;">
+            <div style="background:rgba(11,25,44,0.85); border:1px solid rgba(255,255,255,0.18); border-radius:12px; overflow:hidden; backdrop-filter:blur(10px); transition:transform 0.3s ease;">
+              <div style="height:140px; overflow:hidden; position:relative;">
+                <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80" alt="Kenyan Parishioners Worship" style="width:100%; height:100%; object-fit:cover;" />
+                <span style="position:absolute; bottom:8px; left:8px; background:var(--royal-blue); color:#fff; font-size:0.7rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:4px; text-transform:uppercase;">Every Sunday</span>
+              </div>
+              <div style="padding:1rem;">
+                <h4 style="color:#fff; font-size:1.05rem; margin:0 0 0.4rem 0;"><i class="fa-solid fa-hands-praying" style="color:var(--gold);"></i> Vibrant Sunday Mass</h4>
+                <p style="color:rgba(255,255,255,0.75); font-size:0.85rem; margin:0; line-height:1.5;">Swahili Mass at 7:00 AM, English High Mass at 9:00 AM, and Youth & PMC Mass at 11:30 AM.</p>
+              </div>
+            </div>
+
+            <div style="background:rgba(11,25,44,0.85); border:1px solid rgba(255,255,255,0.18); border-radius:12px; overflow:hidden; backdrop-filter:blur(10px); transition:transform 0.3s ease;">
+              <div style="height:140px; overflow:hidden; position:relative;">
+                <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80" alt="Kenyan Small Christian Community" style="width:100%; height:100%; object-fit:cover;" />
+                <span style="position:absolute; bottom:8px; left:8px; background:var(--gold); color:#0B192C; font-size:0.7rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:4px; text-transform:uppercase;">14 Jumuiyas</span>
+              </div>
+              <div style="padding:1rem;">
+                <h4 style="color:#fff; font-size:1.05rem; margin:0 0 0.4rem 0;"><i class="fa-solid fa-users" style="color:var(--gold);"></i> Small Christian Communities</h4>
+                <p style="color:rgba(255,255,255,0.75); font-size:0.85rem; margin:0; line-height:1.5;">Our 14 Jumuiya Ndogo Ndogo za Kikristu form the heartbeat of neighborhood fellowship and care.</p>
+              </div>
+            </div>
+
+            <div style="background:rgba(11,25,44,0.85); border:1px solid rgba(255,255,255,0.18); border-radius:12px; overflow:hidden; backdrop-filter:blur(10px); transition:transform 0.3s ease;">
+              <div style="height:140px; overflow:hidden; position:relative;">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Kenyan Youth and PMC Children" style="width:100%; height:100%; object-fit:cover;" />
+                <span style="position:absolute; bottom:8px; left:8px; background:#1E8E3E; color:#fff; font-size:0.7rem; font-weight:700; padding:0.25rem 0.6rem; border-radius:4px; text-transform:uppercase;">Canonical Groups</span>
+              </div>
+              <div style="padding:1rem;">
+                <h4 style="color:#fff; font-size:1.05rem; margin:0 0 0.4rem 0;"><i class="fa-solid fa-child-reaching" style="color:var(--gold);"></i> CMA, CWA, Youth & PMC</h4>
+                <p style="color:rgba(255,255,255,0.75); font-size:0.85rem; margin:0; line-height:1.5;">Empowering Catholic men, mothers, youth (18+), MYM teens (13-17), and PMC children (0-12).</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -218,20 +251,20 @@
         </div>
       </div>
 
-      <!-- Parish Priest Welcome Message -->
+      <!-- Parish Priest Welcome Message with Kenyan Community Photo -->
       <div class="section-wrapper">
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; align-items:center; background:var(--bg-card); padding:3.5rem; border-radius:28px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
           <div>
             <span class="section-subtitle">PASTORAL WELCOME MESSAGE</span>
-            <h2 class="section-title" style="margin:0.5rem 0 1rem;">"Come and Worship With Us in Simplicity and Joy"</h2>
+            <h2 class="section-title" style="margin:0.5rem 0 1rem;">"Karibuni Nyote! Come and Worship With Us in Simplicity and Joy"</h2>
             <p style="font-size:1.08rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">
-              On behalf of the Catholic Diocese of Eldoret and our parish pastoral team, I welcome you to St. Theresa of the Child Jesus Naiberi Parish. Whether you are a lifelong Catholic, a student in Uasin Gishu, or seeking peace in Christ, our church doors are always open to you.
+              On behalf of the Catholic Diocese of Eldoret and our parish pastoral team, I welcome you to St. Theresa of the Child Jesus Naiberi Parish. Whether you are a lifelong Catholic, a student in Uasin Gishu County, or seeking peace in Christ, our church doors are always open to you.
             </p>
             <p style="font-size:1.08rem; color:var(--text-muted); line-height:1.7; margin-bottom:2rem;">
-              Let us walk together in our Jumuiya Small Christian Communities and emulate St. Thérèse by offering our daily lives with immense love.
+              Let us walk together in our 14 Jumuiya Small Christian Communities and emulate St. Thérèse by offering our daily lives with immense love.
             </p>
             <div style="display:flex; align-items:center; gap:1.2rem;">
-              <img src="assets/images/st-therese.jpg" alt="Rev. Fr. Eliud Jomo" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--gold); object-fit:cover;" />
+              <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="Rev. Fr. Eliud Jomo" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--gold); object-fit:cover;" />
               <div>
                 <h4 style="font-size:1.15rem; margin:0;">Rev. Fr. Eliud Jomo</h4>
                 <p style="font-size:0.85rem; color:var(--text-gold); font-weight:600; margin:0;">Parish Priest (Father-in-Charge)</p>
@@ -239,10 +272,100 @@
             </div>
           </div>
           <div style="position:relative;">
-            <img src="assets/images/sanctuary-altar.jpg" alt="Naiberi Parish Sanctuary Altar" style="width:100%; border-radius:20px; box-shadow:var(--shadow-md); border:2px solid var(--border-gold);" />
-            <div style="position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(11,60,111,0.9); color:#fff; padding:0.8rem 1.4rem; border-radius:12px; backdrop-filter:blur(10px);">
-              <small style="text-transform:uppercase; font-weight:600; color:var(--gold-light);">Main Sanctuary</small>
-              <p style="margin:0; font-weight:700;">Eucharistic Altar & Tabernacle</p>
+            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=1000&q=80" alt="Kenyan Catholic Congregation Worship" style="width:100%; border-radius:20px; box-shadow:var(--shadow-md); border:2px solid var(--border-gold); object-fit:cover;" />
+            <div style="position:absolute; bottom:1.5rem; left:1.5rem; background:rgba(11,60,111,0.92); color:#fff; padding:0.8rem 1.4rem; border-radius:12px; backdrop-filter:blur(10px);">
+              <small style="text-transform:uppercase; font-weight:600; color:var(--gold-light);">Naiberi Main Church</small>
+              <p style="margin:0; font-weight:700;">Our Kenyan Parishioners Worshipping in Fellowship</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Homepage Canonical Parish Groups African Photo Grid -->
+      <div class="section-wrapper" style="padding: 4.5rem 1.5rem;">
+        <div class="section-header">
+          <span class="section-subtitle">OUR KENYAN CATHOLIC PARISH FAMILY</span>
+          <h2 class="section-title">The Canonical Groups of Naiberi Parish</h2>
+          <p class="section-desc">From our young PMC children to our elders in CMA and CWA, there is an active spiritual home for every parishioner.</p>
+        </div>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <!-- CMA Card -->
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+            <div>
+              <div style="position:relative; height:200px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80" alt="Catholic Men Association" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.9); color:#fff; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
+                  <i class="fa-solid fa-user-shield"></i> St. Joseph Patron
+                </div>
+              </div>
+              <div style="padding:1.6rem;">
+                <span class="badge badge-gold" style="margin-bottom:0.5rem;"><i class="fa-solid fa-users"></i> Canonical Group</span>
+                <h3 style="font-size:1.45rem; margin:0.4rem 0 0.5rem;">CMA (Catholic Men Association)</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1rem;">Fathers and men of Naiberi Parish leading their families in Christian faith, charity, and church development.</p>
+              </div>
+            </div>
+            <div style="padding: 0 1.6rem 1.6rem 1.6rem;">
+              <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="appController.navigateTo('ministries')"><i class="fa-solid fa-arrow-right"></i> Explore CMA Ministry</button>
+            </div>
+          </div>
+
+          <!-- CWA Card -->
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+            <div>
+              <div style="position:relative; height:200px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80" alt="Catholic Women Association" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:12px; left:12px; background:rgba(30,142,62,0.9); color:#fff; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
+                  <i class="fa-solid fa-heart"></i> St. Monica Patron
+                </div>
+              </div>
+              <div style="padding:1.6rem;">
+                <span class="badge badge-green" style="margin-bottom:0.5rem;"><i class="fa-solid fa-dove"></i> Canonical Group</span>
+                <h3 style="font-size:1.45rem; margin:0.4rem 0 0.5rem;">CWA (Catholic Women Association)</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1rem;">Mothers and women of faith supporting parish evangelization, altar decoration, and caring for the needy.</p>
+              </div>
+            </div>
+            <div style="padding: 0 1.6rem 1.6rem 1.6rem;">
+              <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="appController.navigateTo('ministries')"><i class="fa-solid fa-arrow-right"></i> Explore CWA Ministry</button>
+            </div>
+          </div>
+
+          <!-- Youths Card -->
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+            <div>
+              <div style="position:relative; height:200px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" alt="Parish Youth" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.9); color:#fff; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
+                  <i class="fa-solid fa-fire"></i> 18+ Years
+                </div>
+              </div>
+              <div style="padding:1.6rem;">
+                <span class="badge badge-blue" style="margin-bottom:0.5rem;"><i class="fa-solid fa-music"></i> Canonical Group</span>
+                <h3 style="font-size:1.45rem; margin:0.4rem 0 0.5rem;">Youth Ministry (Young Adults)</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1rem;">Vibrant Catholic young adults (18+ years) engaging in praise & worship, retreats, and social outreach.</p>
+              </div>
+            </div>
+            <div style="padding: 0 1.6rem 1.6rem 1.6rem;">
+              <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="appController.navigateTo('ministries')"><i class="fa-solid fa-arrow-right"></i> Explore Youth Ministry</button>
+            </div>
+          </div>
+
+          <!-- MYM & PMC Card -->
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+            <div>
+              <div style="position:relative; height:200px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="PMC & MYM Children" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:12px; left:12px; background:rgba(201,162,39,0.95); color:#0B192C; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:700; text-transform:uppercase;">
+                  <i class="fa-solid fa-child-reaching"></i> 0–17 Years
+                </div>
+              </div>
+              <div style="padding:1.6rem;">
+                <span class="badge badge-gold" style="margin-bottom:0.5rem;"><i class="fa-solid fa-children"></i> Canonical Groups</span>
+                <h3 style="font-size:1.45rem; margin:0.4rem 0 0.5rem;">MYM (13–17) & PMC (0–12)</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1rem;">Missionary Youth Movement (teens) and Pontifical Missionary Childhood nurturing children in St. Thérèse's Little Way.</p>
+              </div>
+            </div>
+            <div style="padding: 0 1.6rem 1.6rem 1.6rem;">
+              <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="appController.navigateTo('ministries')"><i class="fa-solid fa-arrow-right"></i> Explore Children Ministry</button>
             </div>
           </div>
         </div>
@@ -290,7 +413,7 @@
           <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
             <div>
               <div style="position:relative; height:180px; overflow:hidden; border-bottom:1px solid var(--border-color);">
-                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Holy Eucharist" style="width:100%; height:100%; object-fit:cover;" />
+                <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80" alt="Holy Eucharist" style="width:100%; height:100%; object-fit:cover;" />
                 <div style="position:absolute; bottom:10px; left:10px; background:rgba(11,60,111,0.88); color:#fff; padding:0.3rem 0.7rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
                   <i class="fa-solid fa-clock"></i> Live Every Sunday
                 </div>
@@ -309,7 +432,7 @@
           <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
             <div>
               <div style="position:relative; height:180px; overflow:hidden; border-bottom:1px solid var(--border-color);">
-                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Jumuiya SCC" style="width:100%; height:100%; object-fit:cover;" />
+                <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80" alt="Jumuiya SCC" style="width:100%; height:100%; object-fit:cover;" />
                 <div style="position:absolute; bottom:10px; left:10px; background:rgba(11,60,111,0.88); color:#fff; padding:0.3rem 0.7rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
                   <i class="fa-solid fa-users"></i> 14 Jumuiya Communities
                 </div>
@@ -328,7 +451,7 @@
           <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
             <div>
               <div style="position:relative; height:180px; overflow:hidden; border-bottom:1px solid var(--border-color);">
-                <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="Tithe Giving" style="width:100%; height:100%; object-fit:cover;" />
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80" alt="Tithe Giving" style="width:100%; height:100%; object-fit:cover;" />
                 <div style="position:absolute; bottom:10px; left:10px; background:rgba(30,142,62,0.88); color:#fff; padding:0.3rem 0.7rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
                   <i class="fa-solid fa-mobile-screen"></i> Paybill 522522
                 </div>

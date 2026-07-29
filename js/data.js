@@ -50,7 +50,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 7:00 AM (Kiswahili), 9:00 AM (English High Mass), 11:30 AM (Youth & PMC)",
       status: "Sub-Parish 1",
       description: "The mother church and administrative seat of Naiberi Parish, hosting daily Masses, Parish Secretariat, and sacramental registries.",
-      image: "assets/images/hero-church.jpg"
+      image: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "stroback",
@@ -61,7 +61,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 8:00 AM (Kiswahili/English), 10:30 AM (High Mass)",
       status: "Sub-Parish 2",
       description: "Our second official Sub-Parish center with a vibrant Catholic community, active Jumuiyas, and dedicated Sunday School.",
-      image: "https://images.unsplash.com/photo-1548625361-16800b328a75?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "kapsirwo",
@@ -72,7 +72,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 9:00 AM (Kiswahili / English)",
       status: "Outstation",
       description: "A faithful rural outstation serving families and farmers in the Kapsirwo agricultural community.",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "uhuru",
@@ -83,7 +83,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 8:30 AM (Kiswahili)",
       status: "Outstation",
       description: "An active outstation in Uhuru known for vibrant youth choirs and Small Christian Community Jumuiya gatherings.",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "sigot",
@@ -94,7 +94,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 10:30 AM (English / Kiswahili)",
       status: "Outstation",
       description: "Serving Catholic families across Sigot with regular catechetical instruction and Eucharistic celebrations.",
-      image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "berur",
@@ -105,7 +105,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 9:30 AM (Kiswahili)",
       status: "Outstation",
       description: "A growing Eucharistic community in Berur with strong Catholic Men and Women Associations.",
-      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "holy-trinity",
@@ -116,7 +116,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 11:00 AM (English / Kiswahili)",
       status: "New Outstation",
       description: "Our newest 7th parish station established to bring the Holy Sacrifice of the Mass and catechism closer to growing settlements.",
-      image: "assets/images/hero_church_exterior.jpg"
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
