@@ -195,25 +195,25 @@
       <!-- Parish Statistics Counters -->
       <div class="stats-section">
         <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fa-solid fa-users" style="color: var(--gold);"></i></div>
-            <div class="stat-number">1,420+</div>
-            <div class="stat-label">Registered Parishioners</div>
+          <div class="stat-card" onclick="appController.navigateTo('about')" style="cursor:pointer;">
+            <div class="stat-icon"><i class="fa-solid fa-church" style="color: var(--gold);"></i></div>
+            <div class="stat-number">7</div>
+            <div class="stat-label">Parish Churches & Stations<br><small style="color:var(--text-gold); font-weight:600;">Naiberi, Stroback, Kapsirwo, Uhuru, Sigot, Berur, Holy Trinity</small></div>
           </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fa-solid fa-house-chimney-window" style="color: var(--gold);"></i></div>
+          <div class="stat-card" onclick="appController.navigateTo('about')" style="cursor:pointer;">
+            <div class="stat-icon"><i class="fa-solid fa-house-flag" style="color: var(--gold);"></i></div>
+            <div class="stat-number">2</div>
+            <div class="stat-label">Official Sub-Parishes<br><small style="color:var(--text-gold); font-weight:600;">Naiberi Main & Stroback Sub-Parish</small></div>
+          </div>
+          <div class="stat-card" onclick="appController.navigateTo('ministries')" style="cursor:pointer;">
+            <div class="stat-icon"><i class="fa-solid fa-users-viewfinder" style="color: var(--gold);"></i></div>
+            <div class="stat-number">5</div>
+            <div class="stat-label">Canonical Parish Groups<br><small style="color:var(--text-gold); font-weight:600;">CMA, CWA, Youths (18+), MYM (13-17), PMC (0-12)</small></div>
+          </div>
+          <div class="stat-card" onclick="appController.navigateTo('about')" style="cursor:pointer;">
+            <div class="stat-icon"><i class="fa-solid fa-people-roof" style="color: var(--gold);"></i></div>
             <div class="stat-number">14</div>
-            <div class="stat-label">Small Christian Communities (SCCs)</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fa-solid fa-dove" style="color: var(--gold);"></i></div>
-            <div class="stat-number">185+</div>
-            <div class="stat-label">Baptisms & Confirmations (2026)</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon"><i class="fa-solid fa-spa" style="color: var(--gold);"></i></div>
-            <div class="stat-number">5,000+</div>
-            <div class="stat-label">Spiritual Roses Offered</div>
+            <div class="stat-label">Small Christian Communities<br><small style="color:var(--text-gold); font-weight:600;">Jumuiya Ndogo Ndogo za Kikristu</small></div>
           </div>
         </div>
       </div>
@@ -311,14 +311,24 @@
           </div>
         </div>
 
-        <div style="background:var(--bg-card); padding:3rem; border-radius:24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm);">
-          <h3 style="font-size:1.8rem; margin-bottom:1rem; color:var(--royal-blue);">Parish Boundaries & Outstations</h3>
-          <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.8; margin-bottom:1.5rem;">
-            St. Theresa of the Child Jesus Naiberi Parish is situated in Naiberi, along the Eldoret-Kaptagat highway in Uasin Gishu County, Kenya. Our parish boundaries extend across Naiberi center, Kaptagat border communities, and neighboring rural centers, organized into 14 active Small Christian Communities (Jumuiya Ndogo Ndogo za Kikristu).
+        <div class="section-header" style="margin-top:4rem;">
+          <span class="section-subtitle">OUR 7 CHURCHES & 2 SUB-PARISHES</span>
+          <h2 class="section-title">One Parish Family Across 7 Liturgical Stations</h2>
+          <p class="section-desc">
+            St. Theresa of the Child Jesus Naiberi Parish unites 7 Catholic Churches across Uasin Gishu County: <strong>Naiberi Main</strong> (Parish HQ & Sub-Parish 1), <strong>Stroback</strong> (Sub-Parish 2), <strong>Kapsirwo</strong>, <strong>Uhuru</strong>, <strong>Sigot</strong>, <strong>Berur</strong>, and our newest 7th station <strong>Holy Trinity Church</strong>.
           </p>
+        </div>
+        <div class="cards-grid" id="stations-container">
+          <!-- 7 Parish Stations Dynamically Rendered via JS -->
+        </div>
+        <div style="background:var(--bg-card); padding:2rem 2.5rem; border-radius:24px; border:1px solid var(--border-color); margin-top:3rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+          <div>
+            <h4 style="font-size:1.3rem; margin:0 0 0.4rem; color:var(--royal-blue);"><i class="fa-solid fa-book-bible"></i> Parish Pastoral Strategy & Directory</h4>
+            <p style="margin:0; color:var(--text-muted);">Download our pastoral guidelines for CMA, CWA, Youths (18+), MYM (13-17 yrs), and PMC (0-12 yrs).</p>
+          </div>
           <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <button class="btn btn-primary" onclick="alert('Downloading Naiberi Parish Constitution & Pastoral Strategic Plan (PDF)...')"><i class="fa-solid fa-file-pdf"></i> Download Parish Constitution</button>
-            <button class="btn btn-outline" onclick="appController.navigateTo('contact')"><i class="fa-solid fa-map-location-dot"></i> View Interactive Maps</button>
+            <button class="btn btn-primary" onclick="alert('Downloading Naiberi Parish 7-Station Directory & Strategic Plan (PDF)...')"><i class="fa-solid fa-file-pdf"></i> Download Parish Directory</button>
+            <button class="btn btn-outline" onclick="appController.navigateTo('contact')"><i class="fa-solid fa-map-location-dot"></i> View Stations on Google Maps</button>
           </div>
         </div>
       </div>
@@ -352,6 +362,10 @@
                 "Miss no single opportunity of making some small sacrifice, here by a smiling look, there by a kindly word; always doing the smallest right and doing it all for love."
               </p>
               <small style="font-weight:700; color:var(--gold-dark);">— ST. THÉRÈSE OF LISIEUX</small>
+            </div>
+            <div style="margin-top: 1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="https://www.littleflower.org/st-therese/" target="_blank" class="btn btn-gold" style="padding: 0.8rem 1.4rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official Society of the Little Flower</a>
+              <button class="btn btn-outline" onclick="thereseShrine.offerRose()"><i class="fa-solid fa-spa"></i> Offer a Spiritual Rose</button>
             </div>
           </div>
         </div>

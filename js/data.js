@@ -31,9 +31,87 @@ const PARISH_DATA = {
       title: "Doctor of the Church & Patroness of Missions",
       feastDate: "October 1",
       bio: "Born in France in 1873, Thérèse Martin entered the Carmelite convent of Lisieux at age 15. Known for her 'Little Way' of spiritual childhood, she taught that God is pleased not by grand deeds but by small sacrifices offered with immense love.",
-      quote: "I will spend my heaven doing good upon earth. I will let fall a shower of roses."
-    }
+      quote: "I will spend my heaven doing good upon earth. I will let fall a shower of roses.",
+      referenceUrl: "https://www.littleflower.org/st-therese/"
+    },
+    stationsCount: 7,
+    subParishesCount: 2,
+    stationsList: "Naiberi Main, Stroback, Kapsirwo, Uhuru, Sigot, Berur, Holy Trinity (New)",
+    subParishesList: "Naiberi Main & Stroback"
   },
+
+  stations: [
+    {
+      id: "naiberi-main",
+      name: "Naiberi Main Church",
+      type: "Sub-Parish / Main Headquarters",
+      location: "Naiberi Town Center, Uasin Gishu",
+      patron: "St. Theresa of the Child Jesus",
+      massTime: "Sunday: 7:00 AM (Kiswahili), 9:00 AM (English High Mass), 11:30 AM (Youth & PMC)",
+      status: "Sub-Parish 1",
+      description: "The mother church and administrative seat of Naiberi Parish, hosting daily Masses, Parish Secretariat, and sacramental registries."
+    },
+    {
+      id: "stroback",
+      name: "Stroback Church",
+      type: "Sub-Parish",
+      location: "Stroback Area, Uasin Gishu",
+      patron: "St. Joseph the Worker",
+      massTime: "Sunday: 8:00 AM (Kiswahili/English), 10:30 AM (High Mass)",
+      status: "Sub-Parish 2",
+      description: "Our second official Sub-Parish center with a vibrant Catholic community, active Jumuiyas, and dedicated Sunday School."
+    },
+    {
+      id: "kapsirwo",
+      name: "Kapsirwo Church",
+      type: "Parish Station",
+      location: "Kapsirwo Outstation",
+      patron: "St. Peter & Paul",
+      massTime: "Sunday: 9:00 AM (Kiswahili / English)",
+      status: "Outstation",
+      description: "A faithful rural outstation serving families and farmers in the Kapsirwo agricultural community."
+    },
+    {
+      id: "uhuru",
+      name: "Uhuru Church",
+      type: "Parish Station",
+      location: "Uhuru Center",
+      patron: "St. Michael the Archangel",
+      massTime: "Sunday: 8:30 AM (Kiswahili)",
+      status: "Outstation",
+      description: "An active outstation in Uhuru known for vibrant youth choirs and Small Christian Community Jumuiya gatherings."
+    },
+    {
+      id: "sigot",
+      name: "Sigot Church",
+      type: "Parish Station",
+      location: "Sigot Area",
+      patron: "St. Anne & St. Joachim",
+      massTime: "Sunday: 10:30 AM (English / Kiswahili)",
+      status: "Outstation",
+      description: "Serving Catholic families across Sigot with regular catechetical instruction and Eucharistic celebrations."
+    },
+    {
+      id: "berur",
+      name: "Berur Church",
+      type: "Parish Station",
+      location: "Berur Outstation",
+      patron: "Holy Family",
+      massTime: "Sunday: 9:30 AM (Kiswahili)",
+      status: "Outstation",
+      description: "A growing Eucharistic community in Berur with strong Catholic Men and Women Associations."
+    },
+    {
+      id: "holy-trinity",
+      name: "Holy Trinity Church (New Station)",
+      type: "New Parish Station",
+      location: "Holy Trinity Outstation",
+      patron: "Most Holy Trinity",
+      massTime: "Sunday: 11:00 AM (English / Kiswahili)",
+      status: "New Outstation",
+      description: "Our newest 7th parish station established to bring the Holy Sacrifice of the Mass and catechism closer to growing settlements."
+    }
+  ],
 
   massSchedule: [
     {
@@ -179,6 +257,21 @@ const PARISH_DATA = {
 
   sacraments: [
     {
+      id: "ocia",
+      title: "OCIA / Catechism (Order of Christian Initiation)",
+      subtitle: "Sacramental Initiation & Conversion for Adults and Children",
+      icon: "book-bible",
+      requirements: [
+        "Open to unbaptized adults and children seeking Catholic Baptism, Eucharist, and Confirmation",
+        "Open to Christians baptized in other denominations seeking full communion with the Catholic Church",
+        "Open to baptized Catholic adults seeking Confirmation or sacramental completion",
+        "Inspired by National Shrine Basilica of the Little Flower OCIA catechetical formation (shrinechurch.com/ocia)"
+      ],
+      schedule: "Annual liturgical reception during the solemn Easter Vigil & Parish Feast Day.",
+      preparation: "Weekly catechetical sessions every Sunday afternoon at Naiberi Main and Stroback Sub-Parish.",
+      referenceUrl: "https://shrinechurch.com/ocia"
+    },
+    {
       id: "baptism",
       title: "Sacrament of Baptism",
       subtitle: "The Gateway to Christian Life and the Church",
@@ -264,6 +357,15 @@ const PARISH_DATA = {
 
   ministries: [
     {
+      id: "cma",
+      name: "Catholic Men Association (CMA)",
+      tagline: "Good Shepherd — Leadership in Faith and Family",
+      patron: "St. Joseph the Worker",
+      membersCount: 240,
+      meetingTime: "Every 3rd Sunday after 9:00 AM Mass",
+      description: "CMA empowers Catholic men, fathers, and husbands to lead their families in faith, support parish infrastructure development across all 7 stations, and mentor young men."
+    },
+    {
       id: "cwa",
       name: "Catholic Women Association (CWA)",
       tagline: "Strong in Faith, Love, and Christian Motherhood",
@@ -273,22 +375,31 @@ const PARISH_DATA = {
       description: "CWA is the cornerstone of family apostolate in Naiberi Parish, engaging in charity, church welfare, retreat formation, and caring for orphans and the elderly."
     },
     {
-      id: "cma",
-      name: "Catholic Men Association (CMA)",
-      tagline: "Good Shepherd — Leadership in Faith and Family",
-      patron: "St. Joseph the Worker",
-      membersCount: 240,
-      meetingTime: "Every 3rd Sunday after 9:00 AM Mass",
-      description: "CMA empowers Catholic men to lead their families in faith, support parish infrastructure development, and mentor male youth in Uasin Gishu."
-    },
-    {
       id: "youth",
-      name: "Parish Youth Ministry (MYM & YCS)",
+      name: "Catholic Youths (18+ Years)",
       tagline: "Salt of the Earth and Light of the World",
       patron: "St. John Bosco & St. Thérèse of Lisieux",
-      membersCount: 410,
+      membersCount: 310,
       meetingTime: "Every Sunday at 2:00 PM",
-      description: "A vibrant community of young professionals and students dedicated to gospel music, evangelization, talent development, and charity outreach."
+      description: "Our active young adults (18+ years) dedicated to parish evangelization, choir animation, Jumuiya leadership, career mentorship, and charity outreach."
+    },
+    {
+      id: "mym",
+      name: "Missionary Youth Movement (MYM — 13 to 17 Years)",
+      tagline: "Faithful Teens & High School Discipleship",
+      patron: "St. Carlo Acutis & St. Thérèse",
+      membersCount: 280,
+      meetingTime: "Every Saturday at 10:00 AM & Sunday 11:30 AM",
+      description: "Dedicated to youth aged 13 to 17 years (high school & early teens), fostering discipleship, Catholic moral formation, leadership, and missionary spirit."
+    },
+    {
+      id: "pmc",
+      name: "Pontifical Missionary Childhood (PMC — 0 to 12 Years)",
+      tagline: "Children Helping Children for Christ",
+      patron: "Holy Innocents & St. Thérèse of the Child Jesus",
+      membersCount: 520,
+      meetingTime: "Every Sunday 10:30 AM during Sunday School",
+      description: "Nurturing children aged 0 to 12 years in the Catholic faith, Bible storytelling, early Catechism, missionary charity, and serving as altar servers."
     },
     {
       id: "choir",
@@ -297,16 +408,7 @@ const PARISH_DATA = {
       patron: "St. Cecilia",
       membersCount: 85,
       meetingTime: "Thursdays 5:30 PM & Saturdays 3:00 PM",
-      description: "Our award-winning parish choir animates Sunday liturgies with solemn English hymns, traditional Swahili melodies, and Gregorian chants."
-    },
-    {
-      id: "pmc",
-      name: "Pontifical Missionary Childhood (PMC)",
-      tagline: "Children Helping Children for Christ",
-      patron: "Holy Innocents & St. Thérèse",
-      membersCount: 500,
-      meetingTime: "Every Sunday 10:30 AM during Sunday School",
-      description: "Nurturing young children in the Catholic faith, missionary charity, and liturgical participation as altar servers and readers."
+      description: "Our award-winning parish choir animates Sunday liturgies across our stations with solemn English hymns, traditional Swahili melodies, and Gregorian chants."
     },
     {
       id: "caritas",

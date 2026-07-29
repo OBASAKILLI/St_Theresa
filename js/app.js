@@ -163,6 +163,7 @@ class AppController {
   }
 
   renderAllViews() {
+    this.renderStations();
     this.renderMassSchedule("All");
     this.renderLeadership();
     this.renderSacraments();
@@ -172,6 +173,25 @@ class AppController {
     this.renderHomilies();
     this.renderLibrary("All");
     this.renderFAQs();
+  }
+
+  renderStations() {
+    const container = document.getElementById("stations-container");
+    if (!container || !PARISH_DATA.stations) return;
+
+    container.innerHTML = PARISH_DATA.stations.map(st => `
+      <div class="info-card" style="border-top: 4px solid ${st.status.includes('Sub-Parish') ? 'var(--gold)' : 'var(--royal-blue)'};">
+        <div>
+          <span class="badge ${st.status.includes('Sub-Parish') ? 'badge-gold' : 'badge-blue'}"><i class="fa-solid fa-church"></i> ${st.type}</span>
+          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${st.name}</h3>
+          <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${st.patron}</p>
+          <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">${st.description}</p>
+          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${st.location}</p>
+          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-clock"></i> Sunday Mass:</strong> ${st.massTime}</p>
+        </div>
+        <button class="btn btn-outline" style="width: 100%;" onclick="alert('Viewing directions & liturgical schedule for ${st.name}...')"><i class="fa-solid fa-map-location-dot"></i> Station Details & Map</button>
+      </div>
+    `).join("");
   }
 
   renderMassSchedule(filter = "All") {
@@ -191,19 +211,19 @@ class AppController {
 
     const items = (filter === "All")
       ? PARISH_DATA.massSchedule
-      : PARISH_DATA.massSchedule.filter(m => m.category === filter);
+      : PARISH_DATA.massSchedule.filter(m => (m.category || m.type) === filter);
 
     container.innerHTML = items.map(m => `
       <div class="info-card">
         <div>
           <span class="badge badge-gold"><i class="fa-solid fa-clock"></i> ${m.day}</span>
           <h3 style="font-size: 1.4rem; margin: 0.8rem 0 0.4rem;">${m.time}</h3>
-          <h4 style="color: var(--royal-blue); margin-bottom: 1rem; font-size: 1.1rem;">${m.title}</h4>
-          <p style="color: var(--text-muted); margin-bottom: 0.5rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${m.location}</p>
-          <p style="color: var(--text-muted); margin-bottom: 0.5rem;"><strong><i class="fa-solid fa-language"></i> Language:</strong> ${m.language}</p>
-          <p style="color: var(--text-muted); margin-bottom: 1rem;"><strong><i class="fa-solid fa-music"></i> Choir:</strong> ${m.choir}</p>
+          <h4 style="color: var(--royal-blue); margin-bottom: 0.8rem; font-size: 1.15rem;">${m.title || m.name}</h4>
+          <p style="color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6;">${m.description || ''}</p>
+          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${m.location}</p>
+          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-language"></i> Language:</strong> ${m.language}</p>
         </div>
-        <button class="btn btn-outline" onclick="sacramentalBooking.openBookingModal('Mass Intention: ${m.title}')"><i class="fa-solid fa-calendar-plus"></i> Book Mass Intention</button>
+        <button class="btn btn-outline" style="width:100%;" onclick="sacramentalBooking.openBookingModal('Mass Intention: ${m.title || m.name}')"><i class="fa-solid fa-calendar-plus"></i> Book Mass Intention</button>
       </div>
     `).join("");
   }
@@ -217,7 +237,7 @@ class AppController {
         <div>
           <span class="badge badge-gold"><i class="fa-solid fa-cross"></i> ${l.role}</span>
           <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${l.name}</h3>
-          <p style="color: var(--text-gold); font-weight: 600; margin-bottom: 0.8rem;">${l.title}</p>
+          <p style="color: var(--text-gold); font-weight: 600; margin-bottom: 0.8rem;">${l.category}</p>
           <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">${l.bio}</p>
           <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-phone"></i> Direct:</strong> ${l.phone}</p>
           <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-envelope"></i> Email:</strong> ${l.email}</p>
@@ -231,19 +251,33 @@ class AppController {
     const container = document.getElementById("sacraments-container");
     if (!container) return;
 
-    container.innerHTML = PARISH_DATA.sacraments.map(s => `
-      <div class="info-card">
-        <div>
-          <span class="badge badge-gold"><i class="fa-solid fa-dove"></i> Sacrament</span>
-          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.5rem;">${s.name}</h3>
-          <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">${s.description}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.5rem;"><strong><i class="fa-solid fa-clipboard-check"></i> Requirements:</strong> ${s.requirements}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.5rem;"><strong><i class="fa-solid fa-calendar-days"></i> Sessions:</strong> ${s.schedule}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-user-check"></i> Coordinator:</strong> ${s.contact}</p>
+    container.innerHTML = PARISH_DATA.sacraments.map(s => {
+      const reqList = Array.isArray(s.requirements)
+        ? `<ul style="margin: 0.4rem 0 1rem 1.2rem; padding:0; color:var(--text-muted); line-height:1.6;">` +
+          s.requirements.map(r => `<li>${r}</li>`).join("") +
+          `</ul>`
+        : `<p style="color:var(--text-muted); margin-bottom:1rem;">${s.requirements}</p>`;
+
+      return `
+        <div class="info-card">
+          <div>
+            <span class="badge badge-gold"><i class="fa-solid fa-dove"></i> Sacrament & Catechesis</span>
+            <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${s.title || s.name}</h3>
+            <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem;">${s.subtitle || s.description || ''}</p>
+            <div style="margin-bottom: 1rem;">
+              <strong style="color:var(--text-main); font-size: 0.92rem;"><i class="fa-solid fa-clipboard-check"></i> Sacramental Requirements:</strong>
+              ${reqList}
+            </div>
+            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.5rem;"><strong><i class="fa-solid fa-calendar-days"></i> Schedule:</strong> ${s.schedule}</p>
+            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-user-check"></i> Preparation:</strong> ${s.preparation}</p>
+          </div>
+          <div>
+            <button class="btn btn-gold" style="width: 100%; margin-bottom: 0.5rem;" onclick="sacramentalBooking.openBookingModal('${s.title || s.name}')"><i class="fa-solid fa-calendar-check"></i> Book Sacramental Enrollment</button>
+            ${s.referenceUrl ? `<a href="${s.referenceUrl}" target="_blank" class="btn btn-outline" style="width: 100%; display:inline-block; text-align:center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official Shrine OCIA Reference</a>` : ''}
+          </div>
         </div>
-        <button class="btn btn-gold" style="width: 100%;" onclick="sacramentalBooking.openBookingModal('${s.name}')"><i class="fa-solid fa-calendar-check"></i> Book Sacramental Appointment</button>
-      </div>
-    `).join("");
+      `;
+    }).join("");
   }
 
   renderMinistries() {
@@ -253,14 +287,14 @@ class AppController {
     container.innerHTML = PARISH_DATA.ministries.map(m => `
       <div class="info-card">
         <div>
-          <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Apostolate</span>
-          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.5rem;">${m.name} (${m.acronym})</h3>
-          <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">${m.description}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-clock"></i> Meeting Time:</strong> ${m.meeting}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-location-dot"></i> Venue:</strong> ${m.venue}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-user"></i> Leader:</strong> ${m.leader}</p>
+          <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Parish Group / Apostolate</span>
+          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${m.name}</h3>
+          ${m.tagline ? `<small style="color:var(--text-gold); font-weight:600; display:block; margin-bottom:0.8rem;">${m.tagline}</small>` : ''}
+          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.6rem;"><strong><i class="fa-solid fa-shield-halved"></i> Patron:</strong> ${m.patron} • <strong>${m.membersCount} Active Members</strong></p>
+          <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7;">${m.description}</p>
+          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-clock"></i> Meeting Time:</strong> ${m.meetingTime || m.meeting || 'See Sunday bulletin'}</p>
         </div>
-        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you! Your interest in joining ${m.name} has been forwarded to ${m.leader}. You will be contacted via SMS.')"><i class="fa-solid fa-user-plus"></i> Join This Ministry</button>
+        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you! Your interest in joining ${m.name} has been received by the Parish Secretariat. You will receive an SMS confirmation.')"><i class="fa-solid fa-user-plus"></i> Join This Catholic Group</button>
       </div>
     `).join("");
   }
