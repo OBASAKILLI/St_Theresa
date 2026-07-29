@@ -41,16 +41,16 @@
   </div>
 
   <!-- ========================================================
-       STICKY GLASSMORPHIC NAVIGATION BAR
+       FLAT NAVIGATION BAR
        ======================================================== -->
   <header class="navbar">
     <div class="navbar-container">
       <!-- Logo & Title -->
       <div class="brand" onclick="appController.navigateTo('home')">
-        <div class="brand-logo"><i class="fa-solid fa-cross"></i></div>
+        <div style="font-size:1.8rem; color:var(--royal-blue);"><i class="fa-solid fa-cross"></i></div>
         <div class="brand-text">
-          <h1>ST. THERESA'S NAIBERI</h1>
-          <span>Catholic Parish • Diocese of Eldoret</span>
+          <h1 style="font-family:'Cinzel', serif; font-size:1.4rem;">ST. THERESA'S NAIBERI</h1>
+          <span>Catholic Parish</span>
         </div>
       </div>
 
@@ -69,7 +69,7 @@
 
       <!-- Action Buttons & Theme Toggle -->
       <div class="nav-actions">
-        <button class="btn btn-gold" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online</button>
+        <button class="btn btn-outline" style="padding:0.4rem 1rem; border-radius:0;" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online</button>
         <button class="icon-btn" title="Ring Solemn Angelus Bell" onclick="appController.showBellModal()"><i class="fa-solid fa-bell"></i></button>
         <button class="icon-btn" id="theme-toggle-icon" title="Toggle Dark/Light Mode" onclick="appController.toggleTheme()"><i class="fa-solid fa-moon"></i></button>
         <button class="mobile-toggle" onclick="appController.openMobileDrawer()"><i class="fa-solid fa-bars"></i></button>

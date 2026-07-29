@@ -161,9 +161,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--bg-main);
   border-bottom: 1px solid var(--border-color);
   transition: var(--transition);
 }
@@ -237,15 +235,9 @@ button {
   color: var(--gold);
 }
 
-.nav-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
+.nav-item.active {
+  color: var(--royal-blue);
+  font-weight: 700;
 }
 
 /* Buttons */
@@ -311,21 +303,19 @@ button {
 .icon-btn {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-main);
   transition: var(--transition);
+  font-size: 1.1rem;
 }
 
 .icon-btn:hover {
-  background: var(--gold);
-  color: #072545;
-  transform: scale(1.08);
-  border-color: var(--gold);
+  color: var(--royal-blue);
+  transform: translateY(-2px);
 }
 
 /* Mobile Toggle */
