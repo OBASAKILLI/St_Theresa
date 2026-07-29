@@ -33,7 +33,7 @@
       <div class="top-bar-links">
         <a href="#donate" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart" style="color: var(--gold-light);"></i> M-Pesa Paybill: <strong>522522</strong> (NAIBERI)</a>
         <span>|</span>
-        <a href="#news" onclick="appController.navigateTo('news')"><i class="fa-solid fa-file-pdf" style="color: var(--gold-light);"></i> Weekly Bulletin (PDF)</a>
+        <a href="#home-events-section" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-events-section').scrollIntoView({behavior:'smooth'}), 100);"><i class="fa-solid fa-file-pdf" style="color: var(--gold-light);"></i> Weekly Bulletin (PDF)</a>
         <span>|</span>
         <a href="#member-portal" onclick="appController.navigateTo('member-portal')"><i class="fa-solid fa-user" style="color: var(--gold-light);"></i> Parishioner Portal</a>
       </div>
@@ -59,11 +59,10 @@
         <li class="nav-item active" data-view="home" onclick="appController.navigateTo('home')">Home</li>
         <li class="nav-item" data-view="about" onclick="appController.navigateTo('about')">About</li>
         <li class="nav-item" data-view="patron-saint" onclick="appController.navigateTo('patron-saint')">St. Thérèse</li>
-        <li class="nav-item" data-view="mass-schedule" onclick="appController.navigateTo('mass-schedule')">Mass Times</li>
+        <li class="nav-item" data-view="mass-schedule" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);">Mass Times</li>
         <li class="nav-item" data-view="sacraments" onclick="appController.navigateTo('sacraments')">Sacraments</li>
         <li class="nav-item" data-view="ministries" onclick="appController.navigateTo('ministries')">Ministries</li>
-        <li class="nav-item" data-view="events" onclick="appController.navigateTo('events')">Events</li>
-        <li class="nav-item" data-view="news" onclick="appController.navigateTo('news')">News</li>
+
         <li class="nav-item" data-view="donate" onclick="appController.navigateTo('donate')">Give</li>
         <li class="nav-item" data-view="contact" onclick="appController.navigateTo('contact')">Contact</li>
       </ul>
@@ -87,7 +86,7 @@
         <span class="icon"><i class="fa-solid fa-house"></i></span>
         <span class="text">Home</span>
       </div>
-      <div class="mobile-nav-item" data-view="mass-schedule" onclick="appController.navigateTo('mass-schedule')">
+      <div class="mobile-nav-item" data-view="mass-schedule" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);">
         <span class="icon"><i class="fa-solid fa-church"></i></span>
         <span class="text">Masses</span>
       </div>
@@ -133,7 +132,7 @@
       <div class="drawer-section-title">LITURGICAL & WORSHIP</div>
       <ul class="drawer-links">
         <li class="drawer-item" data-view="home" onclick="appController.navigateTo('home'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-house" style="margin-right:0.6rem; color: var(--gold);"></i> Home Page</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
-        <li class="drawer-item" data-view="mass-schedule" onclick="appController.navigateTo('mass-schedule'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-church" style="margin-right:0.6rem; color: var(--gold);"></i> Mass & Confession Schedule</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="mass-schedule" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);; appController.closeMobileDrawer();"><span><i class="fa-solid fa-church" style="margin-right:0.6rem; color: var(--gold);"></i> Mass & Confession Schedule</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="patron-saint" onclick="appController.navigateTo('patron-saint'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-spa" style="margin-right:0.6rem; color: var(--gold);"></i> St. Thérèse Little Way Novena</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="homilies" onclick="appController.navigateTo('homilies'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-headphones" style="margin-right:0.6rem; color: var(--gold);"></i> Homilies & Audio Sermons</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="livestream" onclick="appController.navigateTo('livestream'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-video" style="margin-right:0.6rem; color: var(--gold);"></i> Live Sanctuary Stream</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
@@ -144,7 +143,7 @@
         <li class="drawer-item" data-view="sacraments" onclick="appController.navigateTo('sacraments'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-dove" style="margin-right:0.6rem; color: var(--gold);"></i> The Seven Sacraments</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="ministries" onclick="appController.navigateTo('ministries'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-users" style="margin-right:0.6rem; color: var(--gold);"></i> Small Christian Communities & CWA</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="leadership" onclick="appController.navigateTo('leadership'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-user-tie" style="margin-right:0.6rem; color: var(--gold);"></i> Clergy & Parish Leadership</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
-        <li class="drawer-item" data-view="events" onclick="appController.navigateTo('events'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-calendar-days" style="margin-right:0.6rem; color: var(--gold);"></i> Events & Harambee Calendar</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+
       </ul>
 
       <div class="drawer-section-title">GIVING & PORTALS</div>
@@ -182,7 +181,7 @@
             A living, Eucharistic Kenyan Catholic family across 7 outstations and 14 Small Christian Communities (Jumuiya Ndogo Ndogo za Kikristu)—walking together in faith, hope, and love through The Little Way.
           </p>
           <div class="hero-cta" style="margin-bottom: 3rem;">
-            <button class="btn btn-gold" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> Live Mass Timetable</button>
+            <button class="btn btn-gold" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);"><i class="fa-solid fa-church"></i> Live Mass Timetable</button>
             <button class="btn btn-primary" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('livestream')"><i class="fa-solid fa-video"></i> Watch Sunday Mass</button>
             <button class="btn btn-outline" style="padding: 1rem 2.2rem; font-size: 1.05rem; color: #fff; border-color: #fff;" onclick="appController.navigateTo('register')"><i class="fa-solid fa-dove"></i> Become a Parishioner</button>
           </div>
@@ -437,7 +436,7 @@
               <p style="color:var(--text-muted); margin-bottom:1.5rem; line-height:1.7;">Join us every Sunday for Swahili Mass (7:00 AM), English High Mass (9:00 AM), and Youth Mass (11:30 AM).</p>
             </div>
             <div style="margin-top:auto;">
-              <button class="btn btn-primary" style="width:100%; justify-content:center; border-radius:0;" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> View Live Mass Schedule</button>
+              <button class="btn btn-primary" style="width:100%; justify-content:center; border-radius:0;" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);"><i class="fa-solid fa-church"></i> View Live Mass Schedule</button>
             </div>
           </div>
 
@@ -641,32 +640,6 @@
         </div>
 
         <div class="cards-grid" id="ministries-container"></div>
-      </div>
-    </section>
-
-    <!-- 8. EVENTS & HARAMBEE CALENDAR VIEW -->
-    <section class="view-section" id="view-events">
-      <div class="section-wrapper">
-        <div class="section-header">
-          <span class="section-subtitle">COMMUNITY LIFE & RETREATS</span>
-          <h2 class="section-title">Parish Events & Harambee Calendar</h2>
-          <p class="section-desc">Register for upcoming feast days, youth congresses, and family life retreats with instant QR tickets.</p>
-        </div>
-
-        <div id="events-container" style="display:flex; flex-direction:column; gap:0;"></div>
-      </div>
-    </section>
-
-    <!-- 9. NEWS PORTAL & WEEKLY BULLETIN VIEW -->
-    <section class="view-section" id="view-news">
-      <div class="section-wrapper">
-        <div class="section-header">
-          <span class="section-subtitle">PARISH BULLETIN & ANNOUNCEMENTS</span>
-          <h2 class="section-title">News & Weekly Liturgical Bulletin</h2>
-          <p class="section-desc">Stay informed about confirmations, Caritas development projects, and Sunday liturgical rosters.</p>
-        </div>
-
-        <div id="news-container" style="display:flex; flex-direction:column; gap:2rem;"></div>
       </div>
     </section>
 
@@ -1234,7 +1207,7 @@
           <li><a href="#home" onclick="appController.navigateTo('home')">Home Page</a></li>
           <li><a href="#about" onclick="appController.navigateTo('about')">About Naiberi Parish</a></li>
           <li><a href="#patron-saint" onclick="appController.navigateTo('patron-saint')">St. Thérèse of Lisieux</a></li>
-          <li><a href="#mass-schedule" onclick="appController.navigateTo('mass-schedule')">Sunday & Daily Mass Times</a></li>
+          <li><a href="#mass-schedule" onclick="appController.navigateTo('home'); setTimeout(() => document.getElementById('home-mass-schedule-section').scrollIntoView({behavior:'smooth'}), 100);">Sunday & Daily Mass Times</a></li>
           <li><a href="#sacraments" onclick="appController.navigateTo('sacraments')">The Seven Sacraments</a></li>
         </ul>
       </div>
@@ -1243,7 +1216,7 @@
         <h3>Ministries & Giving</h3>
         <ul class="footer-links">
           <li><a href="#ministries" onclick="appController.navigateTo('ministries')">CWA, CMA & Youth Ministries</a></li>
-          <li><a href="#events" onclick="appController.navigateTo('events')">Parish Events & Harambee</a></li>
+
           <li><a href="#donate" onclick="appController.navigateTo('donate')">Online M-Pesa Tithe Portal</a></li>
           <li><a href="#library" onclick="appController.navigateTo('library')">Catholic Digital Library</a></li>
           <li><a href="#member-portal" onclick="appController.navigateTo('member-portal')">Parishioner Member Portal</a></li>
