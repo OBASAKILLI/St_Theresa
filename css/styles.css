@@ -1127,29 +1127,17 @@ button {
   transform: scale(1.15);
 }
 
-/* Center Highlight Golden CTA button in mobile bar */
+/* Center Highlight Golden CTA button in mobile bar - Integrated flat style */
 .mobile-nav-item.give-cta {
-  position: relative;
-  top: -16px;
-  background: linear-gradient(135deg, var(--gold), #9A7B1C);
-  color: #072545;
-  width: 58px;
-  height: 58px;
-  border-radius: 0;
-
-  border: 3px solid var(--bg-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
+  color: var(--gold);
 }
 
 .mobile-nav-item.give-cta span.icon {
-  font-size: 1.5rem;
+  font-size: 1.35rem; /* Match other icons */
 }
 
 .mobile-nav-item.give-cta span.text {
-  display: none;
+  display: block; /* Show text like others */
 }
 
 /* 2. Apple-Style Full-Screen Glassmorphic Mobile Drawer */
