@@ -460,8 +460,8 @@ button {
 .hero-section {
   position: relative;
   min-height: 85vh;
-  background: linear-gradient(135deg, rgba(8, 20, 38, 0.82) 0%, rgba(13, 31, 56, 0.88) 50%, rgba(4, 10, 18, 0.95) 100%),
-              url('https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1600') center/cover no-repeat fixed;
+  background: linear-gradient(135deg, rgba(8, 20, 38, 0.45) 0%, rgba(13, 31, 56, 0.60) 50%, rgba(4, 10, 18, 0.75) 100%),
+              url('../assets/images/hero_church_exterior.jpg') center/cover no-repeat fixed;
   display: flex;
   align-items: center;
   border-bottom: 4px solid var(--gold);
