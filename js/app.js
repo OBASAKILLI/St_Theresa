@@ -211,28 +211,28 @@ class AppController {
     if (!container || !PARISH_DATA.stations) return;
 
     container.innerHTML = PARISH_DATA.stations.map(st => `
-      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+      <div style="display:flex; flex-direction:column; padding:0; background:transparent;">
         <div>
           ${st.image ? `
-          <div style="position:relative; height:210px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+          <div style="position:relative; height:210px; overflow:hidden; margin-bottom:1.5rem;">
             <img src="${st.image}" alt="${st.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
-            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.85rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+            <div style="position:absolute; bottom:12px; left:12px; background:var(--royal-blue); color:#fff; padding:0.35rem 0.85rem; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
               <i class="fa-solid fa-location-dot"></i> ${st.type}
             </div>
           </div>
           ` : ''}
-          <div style="padding: 1.8rem;">
-            <span class="badge ${st.status.includes('Sub-Parish') ? 'badge-gold' : 'badge-blue'}" style="margin-bottom:0.6rem;"><i class="fa-solid fa-church"></i> ${st.status}</span>
-            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height:1.25;">${st.name}</h3>
+          <div>
+            <span style="color:${st.status.includes('Sub-Parish') ? 'var(--gold)' : 'var(--royal-blue)'}; font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:inline-block;"><i class="fa-solid fa-church"></i> ${st.status}</span>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height:1.25; font-family:'Cinzel', serif;">${st.name}</h3>
             <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem; border-left:3px solid var(--gold); padding-left:0.8rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${st.patron}</p>
             <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; font-size:0.95rem;">${st.description}</p>
-            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; border:1px solid var(--border-color);">
+            <div style="background:var(--bg-secondary); padding:0.85rem 1rem; margin-bottom:1.5rem;">
               <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${st.location}</p>
               <p style="margin:0.4rem 0 0 0; font-size:0.88rem; color:var(--royal-blue);"><strong><i class="fa-solid fa-clock"></i> Sunday Mass:</strong> ${st.massTime}</p>
             </div>
           </div>
         </div>
-        <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+        <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:auto;">
           <a href="https://maps.google.com/?q=${encodeURIComponent(st.name + ' ' + st.location)}" target="_blank" class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-solid fa-map-location-dot"></i> Google Maps</a>
           <a href="https://wa.me/254720123456?text=${encodeURIComponent('Hello Fr. Eliud Jomo, I am inquiring about ' + st.name)}" target="_blank" class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Priest</a>
         </div>
