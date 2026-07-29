@@ -50,7 +50,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 7:00 AM (Kiswahili), 9:00 AM (English High Mass), 11:30 AM (Youth & PMC)",
       status: "Sub-Parish 1",
       description: "The mother church and administrative seat of Naiberi Parish, hosting daily Masses, Parish Secretariat, and sacramental registries.",
-      image: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1000"
     },
     {
       id: "stroback",
@@ -61,7 +61,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 8:00 AM (Kiswahili/English), 10:30 AM (High Mass)",
       status: "Sub-Parish 2",
       description: "Our second official Sub-Parish center with a vibrant Catholic community, active Jumuiyas, and dedicated Sunday School.",
-      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Consolata_Church_in_Nairobi_-_panoramio.jpg?width=1000"
     },
     {
       id: "kapsirwo",
@@ -72,7 +72,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 9:00 AM (Kiswahili / English)",
       status: "Outstation",
       description: "A faithful rural outstation serving families and farmers in the Kapsirwo agricultural community.",
-      image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Catholic_church_in_Nairobi_(3200378679).jpg?width=1000"
     },
     {
       id: "uhuru",
@@ -83,7 +83,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 8:30 AM (Kiswahili)",
       status: "Outstation",
       description: "An active outstation in Uhuru known for vibrant youth choirs and Small Christian Community Jumuiya gatherings.",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Catholic_church_1_(2110365720).jpg?width=1000"
     },
     {
       id: "sigot",
@@ -94,7 +94,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 10:30 AM (English / Kiswahili)",
       status: "Outstation",
       description: "Serving Catholic families across Sigot with regular catechetical instruction and Eucharistic celebrations.",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Ghost_Roman_Catholic_church_in_Mombasa.JPG?width=1000"
     },
     {
       id: "berur",
@@ -105,7 +105,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 9:30 AM (Kiswahili)",
       status: "Outstation",
       description: "A growing Eucharistic community in Berur with strong Catholic Men and Women Associations.",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mugoiri_Catholic_church.jpg?width=1000"
     },
     {
       id: "holy-trinity",
@@ -116,7 +116,7 @@ const PARISH_DATA = {
       massTime: "Sunday: 11:00 AM (English / Kiswahili)",
       status: "New Outstation",
       description: "Our newest 7th parish station established to bring the Holy Sacrifice of the Mass and catechism closer to growing settlements.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Muyeye_Catholic_Church,_Malindi,_Kilifi,_Kenya_-_panoramio_(3).jpg?width=1000"
     }
   ],
 
@@ -130,7 +130,7 @@ const PARISH_DATA = {
       location: "Main Sanctuary",
       type: "Weekend",
       description: "Vibrant community Eucharistic celebration with Swahili liturgical hymns and SCC Jumuiya thanksgiving.",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1000"
     },
     {
       id: 2,
@@ -152,7 +152,7 @@ const PARISH_DATA = {
       location: "Main Sanctuary",
       type: "Weekend",
       description: "Dynamic Eucharistic celebration animated by the Parish Youth Ministry (MYM/YCS) and Pontifical Missionary Childhood.",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Students_(12953830824).jpg?width=1000"
     },
     {
       id: 4,
@@ -163,7 +163,7 @@ const PARISH_DATA = {
       location: "St. Thérèse Adoration Chapel",
       type: "Daily",
       description: "Early morning holy sacrifice of the Mass for parishioners heading to work, school, and farms.",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Catholic_church_1_(2110365720).jpg?width=1000"
     },
     {
       id: 5,
@@ -174,7 +174,7 @@ const PARISH_DATA = {
       location: "Main Sanctuary",
       type: "Daily",
       description: "Evening Eucharistic liturgy with community intercessory prayers.",
-      image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Catholic_church_in_Nairobi_(3200378679).jpg?width=1000"
     },
     {
       id: 6,
@@ -196,7 +196,7 @@ const PARISH_DATA = {
       location: "Parish Confessionals",
       type: "Confession",
       description: "Individual sacramental confession and spiritual direction with parish priests.",
-      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Consolata_Church_in_Nairobi_-_panoramio.jpg?width=1000"
     }
   ],
 
@@ -206,7 +206,7 @@ const PARISH_DATA = {
       name: "Rev. Fr. Eliud Jomo",
       role: "Parish Priest (Father-in-Charge)",
       category: "Clergy",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Faces_of_Kenya_-_Man_1.jpg?width=1000",
       phone: "+254 720 111 222",
       email: "fr.jomo@naiberiparish.or.ke",
       bio: "Ordained for the Catholic Diocese of Eldoret. Passionate about pastoral evangelization, Small Christian Communities (SCCs), and youth empowerment in Uasin Gishu County.",
@@ -217,7 +217,7 @@ const PARISH_DATA = {
       name: "Rev. Fr. Josephat Kipkorir",
       role: "Assistant Parish Priest",
       category: "Clergy",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Faces_of_Kenya_-_Man_3.jpg?width=1000",
       phone: "+254 722 333 444",
       email: "fr.josephat@naiberiparish.or.ke",
       bio: "Specializes in sacramental catechism, PMC children ministry, and liturgy. Dedicated to visiting outstations and elderly parishioners.",
@@ -228,7 +228,7 @@ const PARISH_DATA = {
       name: "Sr. Mary Clare Wanjiku, CPS",
       role: "Parish Sister & Social Coordinator",
       category: "Religious",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Woman_in_Nairobi.jpg?width=1000",
       phone: "+254 733 555 666",
       email: "sr.maryclare@naiberiparish.or.ke",
       bio: "Member of the Missionary Sisters of the Precious Blood. Coordinates Caritas Naiberi, community health outreach, and women's formation.",
@@ -239,7 +239,7 @@ const PARISH_DATA = {
       name: "Mwalimu Peter Tanui",
       role: "Head Parish Catechist",
       category: "Catechists",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Faces_of_Kenya_-_Man_Model.jpg?width=1000",
       phone: "+254 721 777 888",
       email: "catechist@naiberiparish.or.ke",
       bio: "Over 18 years of faithful catechetical instruction in Naiberi Parish. Leads RCIA, Confirmation preparation, and marriage instruction classes.",
@@ -250,7 +250,7 @@ const PARISH_DATA = {
       name: "Mr. Francis Kiprono",
       role: "Parish Pastoral Council Chairman",
       category: "Council",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Faces_of_Kenya_-_Man_1.jpg?width=1000",
       phone: "+254 724 999 000",
       email: "ppc@naiberiparish.or.ke",
       bio: "Experienced community leader coordinating the 14 Small Christian Communities (Jumuiya Ndogo Ndogo za Kikristu) in Naiberi Parish.",
@@ -261,7 +261,7 @@ const PARISH_DATA = {
       name: "Mrs. Anne Chebet",
       role: "Catholic Women Association (CWA) Chairperson",
       category: "Ministries",
-      image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Women_in_Nairobi_01.jpg?width=1000",
       phone: "+254 725 112 233",
       email: "cwa@naiberiparish.or.ke",
       bio: "Leads the vibrant Catholic Women Association, promoting Christian family values, charity to the needy, and devotion to our Lady.",
@@ -287,7 +287,7 @@ const PARISH_DATA = {
       email: "ocia@naiberiparish.or.ke",
       phone: "+254 721 777 888",
       referenceUrl: "https://shrinechurch.com/ocia",
-      image: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1000"
     },
     {
       id: "baptism",
@@ -305,7 +305,7 @@ const PARISH_DATA = {
       coordinator: "Parish Secretariat & Baptism Team",
       email: "baptism@naiberiparish.or.ke",
       phone: "+254 720 123 456",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Masai_Children_Kenya_(21875710591).jpg?width=1000"
     },
     {
       id: "eucharist",
@@ -341,7 +341,7 @@ const PARISH_DATA = {
       coordinator: "Parish Youth & Confirmation Coordinator",
       email: "confirmation@naiberiparish.or.ke",
       phone: "+254 724 999 000",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Students_(12953830824).jpg?width=1000"
     },
     {
       id: "marriage",
@@ -359,7 +359,7 @@ const PARISH_DATA = {
       coordinator: "Family Ministry & Marriage Coordinator",
       email: "family@naiberiparish.or.ke",
       phone: "+254 725 112 233",
-      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Women_in_Nairobi_01.jpg?width=1000"
     },
     {
       id: "reconciliation",
@@ -393,7 +393,7 @@ const PARISH_DATA = {
       coordinator: "24/7 Clergy Pastoral Emergency Line",
       email: "emergency@naiberiparish.or.ke",
       phone: "+254 733 987 654",
-      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Consolata_Church_in_Nairobi_-_panoramio.jpg?width=1000"
     }
   ],
 
@@ -406,7 +406,7 @@ const PARISH_DATA = {
       membersCount: 240,
       meetingTime: "Every 3rd Sunday after 9:00 AM Mass",
       description: "CMA empowers Catholic men, fathers, and husbands to lead their families in faith, support parish infrastructure development across all 7 stations, and mentor young men.",
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Faces_of_Kenya_-_Man_1.jpg?width=1000",
       leader: "Mr. Joseph Kiplagat (CMA Chair)",
       whatsapp: "254720111001"
     },
@@ -418,7 +418,7 @@ const PARISH_DATA = {
       membersCount: 320,
       meetingTime: "Every 2nd Sunday after 9:00 AM Mass",
       description: "CWA is the cornerstone of family apostolate in Naiberi Parish, engaging in charity, church welfare, retreat formation, and caring for orphans and the elderly.",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Women_in_Nairobi_01.jpg?width=1000",
       leader: "Mrs. Monica Tarus (CWA Chairperson)",
       whatsapp: "254722222002"
     },
@@ -430,7 +430,7 @@ const PARISH_DATA = {
       membersCount: 310,
       meetingTime: "Every Sunday at 2:00 PM",
       description: "Our active young adults (18+ years) dedicated to parish evangelization, choir animation, Jumuiya leadership, career mentorship, and charity outreach.",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Students_(12953830824).jpg?width=1000",
       leader: "Brian Kiprop (Youth Chair)",
       whatsapp: "254723333003"
     },
@@ -442,7 +442,7 @@ const PARISH_DATA = {
       membersCount: 280,
       meetingTime: "Every Saturday at 10:00 AM & Sunday 11:30 AM",
       description: "Dedicated to youth aged 13 to 17 years (high school & early teens), fostering discipleship, Catholic moral formation, leadership, and missionary spirit.",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Students_(12953830824).jpg?width=1000",
       leader: "Sr. Mary Clare (Youth Animator)",
       whatsapp: "254724444004"
     },
@@ -454,7 +454,7 @@ const PARISH_DATA = {
       membersCount: 520,
       meetingTime: "Every Sunday 10:30 AM during Sunday School",
       description: "Nurturing children aged 0 to 12 years in the Catholic faith, Bible storytelling, early Catechism, missionary charity, and serving as altar servers.",
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Masai_Children_Kenya_(21875710591).jpg?width=1000",
       leader: "Michael Kiptoo (Head Catechist)",
       whatsapp: "254725555005"
     },
@@ -466,7 +466,7 @@ const PARISH_DATA = {
       membersCount: 85,
       meetingTime: "Thursdays 5:30 PM & Saturdays 3:00 PM",
       description: "Our award-winning parish choir animates Sunday liturgies across our stations with solemn English hymns, traditional Swahili melodies, and Gregorian chants.",
-      image: "assets/images/parish_worship_choir.jpg",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenya_children_drinking_milk_(8360059361).jpg?width=1000",
       leader: "Vincent Cheruiyot (Choir Master)",
       whatsapp: "254726666006"
     },
@@ -478,7 +478,7 @@ const PARISH_DATA = {
       membersCount: 65,
       meetingTime: "Every 1st Saturday at 10:00 AM",
       description: "Providing food aid, medical missions, scholarship support, and agricultural empowerment to needy families in Naiberi and surrounding areas.",
-      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Women_in_Nairobi_01.jpg?width=1000",
       leader: "Mrs. Anne Wambui (Caritas Coordinator)",
       whatsapp: "254727777007"
     }
@@ -493,7 +493,7 @@ const PARISH_DATA = {
       location: "Naiberi Parish Grounds & Main Church",
       category: "Feast Day",
       description: "Our grand parish feast day celebration presided over by the Lord Bishop of Eldoret, followed by community lunch, choir presentations, and church building thanksgiving.",
-      image: "https://images.unsplash.com/photo-1548625361-16800b328a75?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1000",
       registrationOpen: true
     },
     {
@@ -504,7 +504,7 @@ const PARISH_DATA = {
       location: "St. Thérèse Naiberi Parish Sanctuary",
       category: "Youth",
       description: "Over 800 Catholic youth gathering for Eucharistic adoration, praise & worship, workshops on Christian vocation, and Holy Mass.",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Students_(12953830824).jpg?width=1000",
       registrationOpen: true
     },
     {
@@ -515,7 +515,7 @@ const PARISH_DATA = {
       location: "Parish Retreat Hall",
       category: "Retreat",
       description: "A transformative one-day retreat for Catholic couples and parents focusing on Christian family resilience, prayer in the home, and parenting.",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kenyan_Women_in_Nairobi_01.jpg?width=1000",
       registrationOpen: true
     }
   ],
@@ -529,7 +529,7 @@ const PARISH_DATA = {
       category: "Sacraments",
       summary: "Joy filled St. Theresa of the Child Jesus Naiberi Parish as 150 candidates from our 14 Small Christian Communities received the Sacrament of Confirmation.",
       content: "During a solemn pastoral visit, the Bishop commended Naiberi Parish for its exemplary catechetical preparation and vibrant youth ministry. He urged the newly confirmed to be courageous witnesses of the Gospel in Uasin Gishu County.",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Catholic_church_in_Nairobi_(3200378679).jpg?width=1000"
     },
     {
       id: "news-2",
@@ -539,7 +539,7 @@ const PARISH_DATA = {
       category: "Outreach",
       summary: "In alignment with Catholic social teaching, our parish has broken ground on a community borehole project to serve over 400 households in Naiberi.",
       content: "Supported by generous parishioner tithes and donor partners, the clean water kiosk will provide free, potable water to schools and elderly residents in Naiberi.",
-      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Masai_Children_Kenya_(21875710591).jpg?width=1000"
     },
     {
       id: "news-3",
@@ -549,7 +549,7 @@ const PARISH_DATA = {
       category: "Bulletin",
       summary: "Download this week's full parish bulletin including Jumuiya cleaning schedules, upcoming marriage banns, tithe report, and Mass intentions.",
       content: "Special gratitude to St. Joseph Jumuiya for animators of last Sunday's liturgy. Next Sunday will be animated by St. Francis of Assisi SCC.",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+      image: "https://commons.wikimedia.org/wiki/Special:FilePath/Consolata_Church_in_Nairobi_-_panoramio.jpg?width=1000"
     }
   ],
 
