@@ -269,6 +269,9 @@ const PARISH_DATA = {
       ],
       schedule: "Annual liturgical reception during the solemn Easter Vigil & Parish Feast Day.",
       preparation: "Weekly catechetical sessions every Sunday afternoon at Naiberi Main and Stroback Sub-Parish.",
+      coordinator: "Michal Anne Gillig & Catechist Team",
+      email: "ocia@naiberiparish.or.ke",
+      phone: "+254 721 777 888",
       referenceUrl: "https://shrinechurch.com/ocia"
     },
     {
@@ -277,68 +280,83 @@ const PARISH_DATA = {
       subtitle: "The Gateway to Christian Life and the Church",
       icon: "droplet",
       requirements: [
-        "Birth Certificate of the child or candidate",
-        "Parents must be registered members of an SCC (Jumuiya) in Naiberi Parish",
-        "Godparents must be practicing Catholics who have received Confirmation",
-        "Attendance of 3 Baptismal Preparation sessions by parents and godparents"
+        "For Children Under Age 7: Parents must be registered parishioners and complete a mandatory Baptism Preparation Class.",
+        "For Children Over Age 7 & Adults: Must enroll in Sunday Religious Education or the OCIA / RCIA discipleship journey.",
+        "Godparents must be practicing Catholics who have received Confirmation.",
+        "Attendance of Baptismal Preparation session by parents and godparents."
       ],
       schedule: "Baptisms are celebrated on the last Saturday of every month at 10:00 AM.",
-      preparation: "Classes hold every Saturday at 2:00 PM in St. Thérèse Hall."
+      preparation: "Classes hold every Saturday at 2:00 PM in St. Thérèse Hall.",
+      coordinator: "Parish Secretariat & Baptism Team",
+      email: "baptism@naiberiparish.or.ke",
+      phone: "+254 720 123 456"
     },
     {
       id: "eucharist",
-      title: "First Holy Communion (Eucharist)",
-      subtitle: "Source and Summit of the Christian Life",
+      title: "First Holy Communion & Reconciliation",
+      subtitle: "Source and Summit — Bundled 2nd Grade Sacramental Prep",
       icon: "sun",
       requirements: [
-        "Candidate must be baptized Catholic (provide Baptism Certificate)",
-        "Minimum age of 9 years or Standard/Grade 3 and above",
-        "Completion of at least 2 years of Parish Sunday School Catechism",
-        "Regular Sunday Mass attendance and confession prior to ceremony"
+        "Structured 2nd Grade preparation curriculum taught in conjunction with First Reconciliation (Confession).",
+        "Candidate must be validly baptized Catholic (provide Baptism Certificate).",
+        "Completion of Parish Sunday School Catechism or Catholic School Religious Education.",
+        "Regular Sunday Mass attendance and confession prior to ceremony."
       ],
       schedule: "Celebrated annually during Corpus Christi Sunday or the Parish Feast Day.",
-      preparation: "Weekly catechism classes every Sunday after 9:00 AM Mass."
+      preparation: "Weekly catechism classes every Sunday after 9:00 AM Mass.",
+      coordinator: "Catechetical Formation Office",
+      email: "eucharist@naiberiparish.or.ke",
+      phone: "+254 721 777 888"
     },
     {
       id: "confirmation",
       title: "Sacrament of Confirmation",
-      subtitle: "Sealed with the Gift of the Holy Spirit",
+      subtitle: "Sealed with the Holy Spirit — 2-Year Discipleship Program",
       icon: "flame",
       requirements: [
-        "Baptism and First Holy Communion certificates",
-        "Minimum age of 13 years / Secondary school level",
-        "Sponsor must be a confirmed, practicing Catholic",
-        "Active participation in Parish Youth Ministry or PMC"
+        "Structured 2-Year Formation & Discipleship Program (beginning in 7th/8th grade or High School).",
+        "Baptism and First Holy Communion certificates required.",
+        "Sponsor Continuity: Strongly recommended that the Baptismal Godparent serve as Sponsor.",
+        "Active participation in Jumuiya SCC and Parish Youth Ministry."
       ],
       schedule: "Celebrated during the annual pastoral visit of the Bishop of Eldoret.",
-      preparation: "6-month intensive confirmation catechesis every Saturday afternoon."
+      preparation: "Intensive confirmation catechesis every Saturday afternoon.",
+      coordinator: "Parish Youth & Confirmation Coordinator",
+      email: "confirmation@naiberiparish.or.ke",
+      phone: "+254 724 999 000"
     },
     {
       id: "marriage",
       title: "Holy Matrimony (Marriage)",
-      subtitle: "A Sacred Covenant of Christian Love and Family",
+      subtitle: "A Sacred Covenant of Christian Love & Ongoing Family Ministry",
       icon: "heart",
       requirements: [
-        "At least 6 months advance notice to the Parish Priest",
-        "Baptism and Confirmation certificates of both bride and groom",
-        "Letter of freedom from respective parishes if outside Naiberi",
-        "Completion of Parish Pre-Marital Counseling (Engaged Encounter)"
+        "At least 6 months advance notice to the Parish Priest following Archdiocesan guidelines.",
+        "Baptism and Confirmation certificates of both bride and groom.",
+        "Completion of Parish Pre-Marital Counseling (Engaged Encounter).",
+        "Ongoing Marriage Enrichment: Includes access to our Community & Family Ministry 'Marriage Course'."
       ],
       schedule: "Weddings are scheduled on Fridays and Saturdays between 10:00 AM and 2:00 PM.",
-      preparation: "10-week Catholic Marriage Preparation counseling with parish clergy and catechists."
+      preparation: "10-week Catholic Marriage Preparation counseling with parish clergy and catechists.",
+      coordinator: "Family Ministry & Marriage Coordinator",
+      email: "family@naiberiparish.or.ke",
+      phone: "+254 725 112 233"
     },
     {
       id: "reconciliation",
-      title: "Sacrament of Reconciliation",
+      title: "Sacrament of Reconciliation (Confession)",
       subtitle: "God's Infinite Mercy and Forgiveness",
       icon: "shield",
       requirements: [
-        "Sincere examination of conscience and contrition",
-        "Open to all baptized Catholics",
-        "Confidentiality under the inviolable sacramental seal"
+        "Sincere examination of conscience and contrition.",
+        "Open to all baptized Catholics.",
+        "Confidentiality under the inviolable sacramental seal."
       ],
       schedule: "Every Saturday 4:00 PM – 5:30 PM in the church confessionals, or anytime by appointment.",
-      preparation: "Examination of conscience booklets available at the church entrance."
+      preparation: "Examination of conscience booklets available at the church entrance.",
+      coordinator: "Rev. Fr. Michael Omondi (Parish Priest)",
+      email: "priest@naiberiparish.or.ke",
+      phone: "+254 720 123 456"
     },
     {
       id: "anointing",
@@ -346,12 +364,15 @@ const PARISH_DATA = {
       subtitle: "Spiritual Healing and Comfort in Illness",
       icon: "cross",
       requirements: [
-        "Available for elderly, seriously ill, or hospitalized parishioners",
-        "Can be requested by family members or Jumuiya SCC leader at any time",
-        "Includes Holy Communion (Viaticum) and sacramental absolution"
+        "Available for elderly, seriously ill, or hospitalized parishioners.",
+        "Can be requested by family members or Jumuiya SCC leader at any time.",
+        "Includes Holy Communion (Viaticum) and sacramental absolution."
       ],
       schedule: "Available 24/7 for pastoral emergencies. Communal anointing on World Day of the Sick.",
-      preparation: "Contact the parish office or emergency priest helpline immediately."
+      preparation: "Contact the parish office or emergency priest helpline immediately.",
+      coordinator: "24/7 Clergy Pastoral Emergency Line",
+      email: "emergency@naiberiparish.or.ke",
+      phone: "+254 733 987 654"
     }
   ],
 

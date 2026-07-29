@@ -248,6 +248,26 @@
         </div>
       </div>
 
+      <!-- Homepage Liturgical & Mass Schedule Section -->
+      <div id="home-mass-schedule-section" class="section-wrapper" style="background:var(--bg-secondary); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding: 4rem 1.5rem;">
+        <div class="section-header">
+          <span class="section-subtitle">HOLY EUCHARIST, ADORATION & CONFESSION</span>
+          <h2 class="section-title">Liturgical & Mass Timetable</h2>
+          <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
+
+          <!-- Filter Pills -->
+          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
+            <button class="btn btn-primary mass-filter-btn" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="mass-schedule-container"></div>
+      </div>
+
       <!-- Quick Sacraments & Ministries Showcases -->
       <div class="section-wrapper" style="background:var(--bg-secondary); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
         <div class="section-header">
@@ -411,28 +431,6 @@
         </div>
 
         <div class="cards-grid" id="leadership-container"></div>
-      </div>
-    </section>
-
-    <!-- 5. MASS & CONFESSION SCHEDULE VIEW -->
-    <section class="view-section" id="view-mass-schedule">
-      <div class="section-wrapper">
-        <div class="section-header">
-          <span class="section-subtitle">HOLY EUCHARIST, ADORATION & CONFESSION</span>
-          <h2 class="section-title">Liturgical & Mass Timetable</h2>
-          <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
-
-          <!-- Filter Pills -->
-          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
-            <button class="btn btn-primary mass-filter-btn" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
-          </div>
-        </div>
-
-        <div class="cards-grid" id="mass-schedule-container"></div>
       </div>
     </section>
 

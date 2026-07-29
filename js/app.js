@@ -44,6 +44,37 @@ class AppController {
 
   navigateTo(viewId, updateHash = true) {
     if (!viewId) return;
+
+    if (viewId === "mass-schedule") {
+      this.currentView = "home";
+      if (updateHash) {
+        window.history.pushState(null, null, "#mass-schedule");
+      }
+      document.querySelectorAll(".view-section").forEach(sec => {
+        sec.classList.remove("active");
+      });
+      const homeSection = document.getElementById("view-home");
+      if (homeSection) homeSection.classList.add("active");
+
+      setTimeout(() => {
+        const massSec = document.getElementById("home-mass-schedule-section");
+        if (massSec) {
+          massSec.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+
+      document.querySelectorAll(".nav-item, .mobile-nav-item, .drawer-item").forEach(item => {
+        item.classList.remove("active");
+        if (item.getAttribute("data-view") === "mass-schedule" || item.getAttribute("data-view") === "home") {
+          item.classList.add("active");
+        }
+      });
+      this.closeMobileDrawer();
+      const mobileLinks = document.getElementById("nav-links");
+      if (mobileLinks) mobileLinks.classList.remove("mobile-open");
+      return;
+    }
+
     this.currentView = viewId;
 
     if (updateHash) {
@@ -268,8 +299,11 @@ class AppController {
               <strong style="color:var(--text-main); font-size: 0.92rem;"><i class="fa-solid fa-clipboard-check"></i> Sacramental Requirements:</strong>
               ${reqList}
             </div>
-            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.5rem;"><strong><i class="fa-solid fa-calendar-days"></i> Schedule:</strong> ${s.schedule}</p>
-            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-user-check"></i> Preparation:</strong> ${s.preparation}</p>
+            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-calendar-days"></i> Schedule:</strong> ${s.schedule}</p>
+            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-user-check"></i> Preparation:</strong> ${s.preparation}</p>
+            ${s.coordinator ? `<p style="color: var(--royal-blue); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-user-tie"></i> Coordinator:</strong> ${s.coordinator}</p>` : ''}
+            ${s.phone ? `<p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.3rem;"><strong><i class="fa-solid fa-phone"></i> Direct Line:</strong> <a href="tel:${s.phone}" style="color:var(--royal-blue); font-weight:600;">${s.phone}</a></p>` : ''}
+            ${s.email ? `<p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.2rem;"><strong><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:${s.email}" style="color:var(--royal-blue);">${s.email}</a></p>` : ''}
           </div>
           <div>
             <button class="btn btn-gold" style="width: 100%; margin-bottom: 0.5rem;" onclick="sacramentalBooking.openBookingModal('${s.title || s.name}')"><i class="fa-solid fa-calendar-check"></i> Book Sacramental Enrollment</button>
