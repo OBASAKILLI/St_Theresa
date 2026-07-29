@@ -436,16 +436,19 @@ class AppController {
     ];
 
     const html = PARISH_DATA.events.map(e => `
-      <div class="info-card">
-        <div>
-          <span class="badge badge-gold"><i class="fa-solid fa-calendar-days"></i> ${e.date}</span>
-          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${e.title}</h3>
-          <p style="color: var(--royal-blue); font-weight: 600; margin-bottom: 0.8rem;">${e.time} • ${e.location}</p>
-          <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7;">${e.description}</p>
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-color); align-items:flex-start;">
+        <div style="flex:0 0 100px; text-align:left;">
+          <span style="display:block; font-size:2.5rem; font-weight:700; color:var(--gold); line-height:1; font-family:'Cinzel', serif;">${e.date.split(' ')[1].replace(',', '')}</span>
+          <span style="display:block; font-size:1rem; font-weight:600; color:var(--text-muted); text-transform:uppercase;">${e.date.split(' ')[0]}</span>
         </div>
-        <div style="display:flex; justify-content:space-between; align-items:center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-          <span style="font-weight:700; color:var(--text-gold);"><i class="fa-solid fa-user-check"></i> ${e.organizer}</span>
-          <button class="btn btn-gold" onclick="alert('Instant QR Ticket generated for: ${e.title}. We look forward to seeing you!')"><i class="fa-solid fa-ticket"></i> Register & Get QR Ticket</button>
+        <div style="flex:1; min-width:280px;">
+          <h3 style="font-size: 1.5rem; margin: 0 0 0.5rem 0; font-family:'Cinzel', serif;">${e.title}</h3>
+          <p style="color: var(--royal-blue); font-weight: 600; margin-bottom: 0.8rem;"><i class="fa-solid fa-clock"></i> ${e.time} &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> ${e.location}</p>
+          <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; font-size:0.95rem;">${e.description}</p>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <span style="font-weight:700; color:var(--text-gold); font-size:0.9rem;"><i class="fa-solid fa-user-check"></i> ${e.organizer}</span>
+            <button class="btn btn-gold" style="border-radius:0; padding:0.6rem 1.2rem; font-size:0.9rem;" onclick="alert('Instant QR Ticket generated for: ${e.title}. We look forward to seeing you!')"><i class="fa-solid fa-ticket"></i> Get Ticket</button>
+          </div>
         </div>
       </div>
     `).join("");
@@ -462,19 +465,20 @@ class AppController {
     ];
 
     const html = PARISH_DATA.news.map(n => `
-      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding: 1.5rem;">
-        <div>
-          ${n.image ? `<img src="${n.image}" alt="${n.title}" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);" />` : ''}
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem;">
-            <span class="badge badge-blue"><i class="fa-solid fa-newspaper"></i> ${n.category}</span>
-            <small style="color:var(--text-muted); font-weight:600;"><i class="fa-solid fa-calendar-days"></i> ${n.date}</small>
+      <div style="display:flex; flex-wrap:wrap; gap:2rem; padding: 2rem 0; border-bottom: 1px solid var(--border-color); align-items:flex-start;">
+        ${n.image ? `<img src="${n.image}" alt="${n.title}" style="flex:0 0 280px; width:280px; height:180px; object-fit:cover; border-radius:0; border:1px solid var(--border-color);" />` : ''}
+        <div style="flex:1; min-width:300px;">
+          <div style="display:flex; gap:1rem; align-items:center; margin-bottom:0.8rem; font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted);">
+            <span style="color:var(--royal-blue);">${n.category}</span>
+            <span>•</span>
+            <span>${n.date}</span>
           </div>
-          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; line-height: 1.35;">${n.title}</h3>
+          <h3 style="font-size: 1.6rem; margin-bottom: 0.8rem; line-height: 1.35; font-family:'Cinzel', serif;">${n.title}</h3>
           <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem;">${n.summary}</p>
-        </div>
-        <div>
-          <button class="btn btn-outline" style="width: 100%; margin-bottom: 0.5rem;" onclick="alert('Downloading Naiberi Parish Weekly Bulletin (PDF format) for ${n.date}...')"><i class="fa-solid fa-file-pdf"></i> Read Full Bulletin / Article</button>
-          <small style="display:block; text-align:center; color:var(--text-muted); font-size:0.8rem;">Published by: ${n.author}</small>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+             <button class="btn btn-outline" style="border-radius:0; padding:0.6rem 1.2rem; font-size:0.9rem;" onclick="alert('Downloading Naiberi Parish Weekly Bulletin (PDF format) for ${n.date}...')"><i class="fa-solid fa-file-pdf"></i> Read Full Bulletin</button>
+             <small style="color:var(--text-muted); font-size:0.85rem;">By ${n.author}</small>
+          </div>
         </div>
       </div>
     `).join("");
