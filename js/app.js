@@ -400,30 +400,30 @@ class AppController {
     if (!container) return;
 
     container.innerHTML = PARISH_DATA.ministries.map(m => `
-      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+      <div style="display:flex; flex-direction:column; padding:0; background:transparent;">
         <div>
           ${m.image ? `
-          <div style="position:relative; height:220px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+          <div style="position:relative; height:220px; overflow:hidden; margin-bottom:1.5rem;">
             <img src="${m.image}" alt="${m.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
-            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+            <div style="position:absolute; bottom:12px; left:12px; background:var(--royal-blue); color:#fff; padding:0.35rem 0.8rem; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
               <i class="fa-solid fa-users"></i> ${m.membersCount} Active Members
             </div>
           </div>
           ` : ''}
-          <div style="padding: 1.8rem;">
-            <span class="badge badge-gold" style="margin-bottom:0.6rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${m.patron}</span>
-            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height: 1.25;">${m.name}</h3>
+          <div>
+            <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:inline-block;"><i class="fa-solid fa-shield-halved"></i> Patron: ${m.patron}</span>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height: 1.25; font-family:'Cinzel', serif;">${m.name}</h3>
             ${m.tagline ? `<p style="color:var(--text-gold); font-weight:600; font-size:0.95rem; margin-bottom:1rem; border-left:3px solid var(--gold); padding-left:0.8rem;">${m.tagline}</p>` : ''}
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; font-size: 0.95rem;">${m.description}</p>
-            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; margin-bottom:0.5rem; border:1px solid var(--border-color);">
+            <div style="background:var(--bg-secondary); padding:0.85rem 1rem; margin-bottom:1.5rem;">
               <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-clock"></i> Schedule:</strong> ${m.meetingTime}</p>
               ${m.leader ? `<p style="margin:0.3rem 0 0 0; font-size:0.88rem; color:var(--royal-blue);"><strong><i class="fa-solid fa-user-tie"></i> Leader:</strong> ${m.leader}</p>` : ''}
             </div>
           </div>
         </div>
-        <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
-          <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center;" onclick="alert('Thank you! Your interest in joining ${m.name} has been received by the Parish Secretariat. You will receive an SMS confirmation.')"><i class="fa-solid fa-user-plus"></i> Join Ministry</button>
-          ${m.whatsapp ? `<a href="https://wa.me/${m.whatsapp}?text=${encodeURIComponent('Hello ' + (m.leader || m.name) + ', I would like to inquire about joining ' + m.name)}" target="_blank" class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Chair</a>` : ''}
+        <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:auto;">
+          <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center; border-radius:0;" onclick="alert('Thank you! Your interest in joining ${m.name} has been received by the Parish Secretariat. You will receive an SMS confirmation.')"><i class="fa-solid fa-user-plus"></i> Join Ministry</button>
+          ${m.whatsapp ? `<a href="https://wa.me/${m.whatsapp}?text=${encodeURIComponent('Hello ' + (m.leader || m.name) + ', I would like to inquire about joining ' + m.name)}" target="_blank" class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; border-radius:0; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Chair</a>` : ''}
         </div>
       </div>
     `).join("");
