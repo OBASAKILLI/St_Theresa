@@ -211,16 +211,31 @@ class AppController {
     if (!container || !PARISH_DATA.stations) return;
 
     container.innerHTML = PARISH_DATA.stations.map(st => `
-      <div class="info-card" style="border-top: 4px solid ${st.status.includes('Sub-Parish') ? 'var(--gold)' : 'var(--royal-blue)'};">
+      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
         <div>
-          <span class="badge ${st.status.includes('Sub-Parish') ? 'badge-gold' : 'badge-blue'}"><i class="fa-solid fa-church"></i> ${st.type}</span>
-          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${st.name}</h3>
-          <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${st.patron}</p>
-          <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">${st.description}</p>
-          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${st.location}</p>
-          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-clock"></i> Sunday Mass:</strong> ${st.massTime}</p>
+          ${st.image ? `
+          <div style="position:relative; height:210px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+            <img src="${st.image}" alt="${st.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
+            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.85rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+              <i class="fa-solid fa-location-dot"></i> ${st.type}
+            </div>
+          </div>
+          ` : ''}
+          <div style="padding: 1.8rem;">
+            <span class="badge ${st.status.includes('Sub-Parish') ? 'badge-gold' : 'badge-blue'}" style="margin-bottom:0.6rem;"><i class="fa-solid fa-church"></i> ${st.status}</span>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height:1.25;">${st.name}</h3>
+            <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem; border-left:3px solid var(--gold); padding-left:0.8rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${st.patron}</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; font-size:0.95rem;">${st.description}</p>
+            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; border:1px solid var(--border-color);">
+              <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${st.location}</p>
+              <p style="margin:0.4rem 0 0 0; font-size:0.88rem; color:var(--royal-blue);"><strong><i class="fa-solid fa-clock"></i> Sunday Mass:</strong> ${st.massTime}</p>
+            </div>
+          </div>
         </div>
-        <button class="btn btn-outline" style="width: 100%;" onclick="alert('Viewing directions & liturgical schedule for ${st.name}...')"><i class="fa-solid fa-map-location-dot"></i> Station Details & Map</button>
+        <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+          <a href="https://maps.google.com/?q=${encodeURIComponent(st.name + ' ' + st.location)}" target="_blank" class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-solid fa-map-location-dot"></i> Google Maps</a>
+          <a href="https://wa.me/254720123456?text=${encodeURIComponent('Hello Fr. Eliud Jomo, I am inquiring about ' + st.name)}" target="_blank" class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Priest</a>
+        </div>
       </div>
     `).join("");
   }
@@ -244,19 +259,54 @@ class AppController {
       ? PARISH_DATA.massSchedule
       : PARISH_DATA.massSchedule.filter(m => (m.category || m.type) === filter);
 
-    container.innerHTML = items.map(m => `
-      <div class="info-card">
-        <div>
-          <span class="badge badge-gold"><i class="fa-solid fa-clock"></i> ${m.day}</span>
-          <h3 style="font-size: 1.4rem; margin: 0.8rem 0 0.4rem;">${m.time}</h3>
-          <h4 style="color: var(--royal-blue); margin-bottom: 0.8rem; font-size: 1.15rem;">${m.title || m.name}</h4>
-          <p style="color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.6;">${m.description || ''}</p>
-          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${m.location}</p>
-          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-language"></i> Language:</strong> ${m.language}</p>
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const todayName = daysOfWeek[new Date().getDay()];
+
+    const liveBanner = `
+      <div style="grid-column: 1 / -1; background:var(--bg-card); border:1px solid var(--border-color); border-left:4px solid #1E8E3E; border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <span style="display:inline-block; width:12px; height:12px; background:#1E8E3E; border-radius:50%; box-shadow:0 0 8px #1E8E3E;"></span>
+          <div>
+            <strong style="color:var(--text-main); font-size:1.05rem;">LITURGICAL STATUS TODAY (${todayName.toUpperCase()}): Ordinary Time — Liturgical Year C</strong>
+            <p style="margin:0.2rem 0 0 0; font-size:0.88rem; color:var(--text-muted);">
+              ${todayName === 'Sunday' ? 'Today is the Lord\'s Day! Masses at 7:00 AM (Kiswahili), 9:00 AM (English High Mass), and 11:30 AM (Youth & PMC).' : 'Daily Mass today at 6:30 AM in St. Thérèse Adoration Chapel & 5:30 PM in Main Sanctuary. Confessions available by request.'}
+            </p>
+          </div>
         </div>
-        <button class="btn btn-outline" style="width:100%;" onclick="sacramentalBooking.openBookingModal('Mass Intention: ${m.title || m.name}')"><i class="fa-solid fa-calendar-plus"></i> Book Mass Intention</button>
+        <button class="btn btn-outline" style="font-size:0.85rem;" onclick="alert('Parish Adoration Chapel is open daily from 6:00 AM to 7:00 PM for private Eucharistic adoration.')"><i class="fa-solid fa-clock"></i> Chapel Hours</button>
+      </div>
+    `;
+
+    const cardsHtml = items.map(m => `
+      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+        <div>
+          ${m.image ? `
+          <div style="position:relative; height:200px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+            <img src="${m.image}" alt="${m.title || m.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
+            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.85rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+              <i class="fa-solid fa-clock"></i> ${m.day} • ${m.type}
+            </div>
+          </div>
+          ` : ''}
+          <div style="padding: 1.8rem;">
+            <span class="badge badge-gold" style="margin-bottom:0.6rem;"><i class="fa-solid fa-language"></i> ${m.language}</span>
+            <h3 style="font-size: 1.45rem; margin: 0.4rem 0 0.5rem; line-height:1.25;">${m.time}</h3>
+            <h4 style="color: var(--royal-blue); margin-bottom: 0.8rem; font-size: 1.15rem;">${m.title || m.name}</h4>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.6; font-size:0.95rem;">${m.description || ''}</p>
+            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; border:1px solid var(--border-color);">
+              <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${m.location}</p>
+              <p style="margin:0.3rem 0 0 0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-language"></i> Liturgical Language:</strong> ${m.language}</p>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+          <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center;" onclick="sacramentalBooking.openBookingModal('Mass Intention: ${m.title || m.name}')"><i class="fa-solid fa-calendar-plus"></i> Book Mass Intention</button>
+          <button class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center;" onclick="alert('Added ${m.title || m.name} (${m.time}) to your calendar reminder.')"><i class="fa-solid fa-bell"></i> Remind Me</button>
+        </div>
       </div>
     `).join("");
+
+    container.innerHTML = liveBanner + cardsHtml;
   }
 
   renderLeadership() {
@@ -264,16 +314,29 @@ class AppController {
     if (!container) return;
 
     container.innerHTML = PARISH_DATA.leadership.map(l => `
-      <div class="info-card">
+      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
         <div>
-          <span class="badge badge-gold"><i class="fa-solid fa-cross"></i> ${l.role}</span>
-          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${l.name}</h3>
-          <p style="color: var(--text-gold); font-weight: 600; margin-bottom: 0.8rem;">${l.category}</p>
-          <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.7;">${l.bio}</p>
-          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-phone"></i> Direct:</strong> ${l.phone}</p>
-          <p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-envelope"></i> Email:</strong> ${l.email}</p>
+          ${l.image ? `
+          <div style="position:relative; height:240px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+            <img src="${l.image}" alt="${l.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
+            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.85rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+              <i class="fa-solid fa-user-tie"></i> ${l.category}
+            </div>
+          </div>
+          ` : ''}
+          <div style="padding: 1.8rem;">
+            <span class="badge badge-gold" style="margin-bottom:0.6rem;"><i class="fa-solid fa-cross"></i> ${l.role}</span>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height:1.25;">${l.name}</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7; font-size:0.95rem;">${l.bio}</p>
+            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; border:1px solid var(--border-color);">
+              <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-phone"></i> Direct:</strong> ${l.phone}</p>
+              <p style="margin:0.3rem 0 0 0; font-size:0.88rem; color:var(--royal-blue);"><strong><i class="fa-solid fa-envelope"></i> Email:</strong> ${l.email}</p>
+            </div>
+          </div>
         </div>
-        <a href="https://wa.me/${l.phone.replace(/[^0-9]/g, '')}" target="_blank" class="btn btn-primary" style="background: #25D366; color: #fff; width: 100%;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Message</a>
+        <div style="padding: 0 1.8rem 1.8rem 1.8rem;">
+          <a href="https://wa.me/${l.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello ' + l.name + ', I would like to make an inquiry at Naiberi Parish.')}" target="_blank" class="btn btn-outline" style="width: 100%; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Message</a>
+        </div>
       </div>
     `).join("");
   }
@@ -282,32 +345,50 @@ class AppController {
     const container = document.getElementById("sacraments-container");
     if (!container) return;
 
-    container.innerHTML = PARISH_DATA.sacraments.map(s => {
+    container.innerHTML = PARISH_DATA.sacraments.map((s, idx) => {
       const reqList = Array.isArray(s.requirements)
-        ? `<ul style="margin: 0.4rem 0 1rem 1.2rem; padding:0; color:var(--text-muted); line-height:1.6;">` +
-          s.requirements.map(r => `<li>${r}</li>`).join("") +
-          `</ul>`
+        ? `<div style="margin: 0.8rem 0 1.2rem 0; display:flex; flex-direction:column; gap:0.5rem;">` +
+          s.requirements.map((r, ri) => `
+            <div class="interactive-req" onclick="this.classList.toggle('req-checked')" style="display:flex; align-items:flex-start; gap:0.6rem; padding:0.6rem 0.8rem; background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:6px; cursor:pointer; transition:var(--transition-fast);">
+              <i class="fa-regular fa-square-check" style="color:var(--royal-blue); margin-top:3px; font-size:1.1rem;"></i>
+              <span style="font-size:0.88rem; line-height:1.5; color:var(--text-main);">${r}</span>
+            </div>
+          `).join("") +
+          `</div>`
         : `<p style="color:var(--text-muted); margin-bottom:1rem;">${s.requirements}</p>`;
 
       return `
-        <div class="info-card">
+        <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
           <div>
-            <span class="badge badge-gold"><i class="fa-solid fa-dove"></i> Sacrament & Catechesis</span>
-            <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${s.title || s.name}</h3>
-            <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.8rem;">${s.subtitle || s.description || ''}</p>
-            <div style="margin-bottom: 1rem;">
-              <strong style="color:var(--text-main); font-size: 0.92rem;"><i class="fa-solid fa-clipboard-check"></i> Sacramental Requirements:</strong>
-              ${reqList}
+            ${s.image ? `
+            <div style="position:relative; height:230px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+              <img src="${s.image}" alt="${s.title || s.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
+              <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.85rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+                <i class="fa-solid fa-church"></i> Canonical Parish Sacrament
+              </div>
             </div>
-            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-calendar-days"></i> Schedule:</strong> ${s.schedule}</p>
-            <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-user-check"></i> Preparation:</strong> ${s.preparation}</p>
-            ${s.coordinator ? `<p style="color: var(--royal-blue); font-size: 0.92rem; margin-bottom: 0.4rem;"><strong><i class="fa-solid fa-user-tie"></i> Coordinator:</strong> ${s.coordinator}</p>` : ''}
-            ${s.phone ? `<p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.3rem;"><strong><i class="fa-solid fa-phone"></i> Direct Line:</strong> <a href="tel:${s.phone}" style="color:var(--royal-blue); font-weight:600;">${s.phone}</a></p>` : ''}
-            ${s.email ? `<p style="color: var(--text-main); font-size: 0.9rem; margin-bottom: 1.2rem;"><strong><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:${s.email}" style="color:var(--royal-blue);">${s.email}</a></p>` : ''}
+            ` : ''}
+            <div style="padding: 1.8rem;">
+              <span class="badge badge-gold" style="margin-bottom:0.6rem;"><i class="fa-solid fa-dove"></i> Holy Mystery & Catechesis</span>
+              <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.4rem; line-height:1.25;">${s.title || s.name}</h3>
+              <p style="color: var(--text-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; border-left:3px solid var(--gold); padding-left:0.8rem;">${s.subtitle || s.description || ''}</p>
+              
+              <div style="margin-bottom: 1rem;">
+                <strong style="color:var(--text-main); font-size: 0.92rem;"><i class="fa-solid fa-clipboard-check" style="color:var(--gold);"></i> Interactive Requirements Checklist (Click to Check Off):</strong>
+                ${reqList}
+              </div>
+
+              <div style="background:var(--bg-secondary); border-radius:6px; padding:0.9rem 1rem; margin-bottom:1rem; border:1px solid var(--border-color);">
+                <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong style="color:var(--royal-blue);"><i class="fa-solid fa-calendar-days"></i> Schedule:</strong> ${s.schedule}</p>
+                <p style="margin:0.4rem 0 0 0; font-size:0.88rem; color:var(--text-main);"><strong style="color:var(--royal-blue);"><i class="fa-solid fa-user-check"></i> Preparation:</strong> ${s.preparation}</p>
+                ${s.coordinator ? `<p style="margin:0.4rem 0 0 0; font-size:0.88rem; color:var(--royal-blue);"><strong><i class="fa-solid fa-user-tie"></i> Coordinator:</strong> ${s.coordinator}</p>` : ''}
+              </div>
+            </div>
           </div>
-          <div>
-            <button class="btn btn-gold" style="width: 100%; margin-bottom: 0.5rem;" onclick="sacramentalBooking.openBookingModal('${s.title || s.name}')"><i class="fa-solid fa-calendar-check"></i> Book Sacramental Enrollment</button>
-            ${s.referenceUrl ? `<a href="${s.referenceUrl}" target="_blank" class="btn btn-outline" style="width: 100%; display:inline-block; text-align:center;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official Shrine OCIA Reference</a>` : ''}
+          <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center;" onclick="sacramentalBooking.openBookingModal('${s.title || s.name}')"><i class="fa-solid fa-calendar-check"></i> Book Sacrament Online</button>
+            ${s.phone ? `<a href="https://wa.me/${s.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello ' + (s.coordinator || 'Parish Coordinator') + ', I am inquiring about sacramental preparation for ' + (s.title || s.name))}" target="_blank" class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Coordinator</a>` : ''}
+            ${s.referenceUrl ? `<a href="${s.referenceUrl}" target="_blank" class="btn btn-outline" style="width:100%; display:inline-flex; justify-content:center; align-items:center; text-decoration:none;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official Shrine OCIA Reference</a>` : ''}
           </div>
         </div>
       `;

@@ -287,29 +287,61 @@
           <p class="section-desc">Explore Sacramental preparation guidelines and join our active pastoral ministries.</p>
         </div>
         <div class="cards-grid">
-          <div class="info-card">
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
             <div>
-              <span class="badge badge-gold"><i class="fa-solid fa-dove"></i> Sacrament</span>
-              <h3 style="font-size:1.4rem; margin:1rem 0 0.5rem;">Holy Eucharist & Sunday Mass</h3>
-              <p style="color:var(--text-muted); margin-bottom:1.5rem;">Join us every Sunday for Swahili Mass (7:00 AM), English High Mass (9:00 AM), and Youth Mass (11:30 AM).</p>
+              <div style="position:relative; height:180px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Holy Eucharist" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:10px; left:10px; background:rgba(11,60,111,0.88); color:#fff; padding:0.3rem 0.7rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
+                  <i class="fa-solid fa-clock"></i> Live Every Sunday
+                </div>
+              </div>
+              <div style="padding:1.5rem;">
+                <span class="badge badge-gold"><i class="fa-solid fa-dove"></i> Sacrament</span>
+                <h3 style="font-size:1.4rem; margin:0.8rem 0 0.5rem;">Holy Eucharist & Sunday Mass</h3>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem;">Join us every Sunday for Swahili Mass (7:00 AM), English High Mass (9:00 AM), and Youth Mass (11:30 AM).</p>
+              </div>
             </div>
-            <button class="btn btn-primary" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> View Mass Schedule</button>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+              <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="appController.navigateTo('mass-schedule')"><i class="fa-solid fa-church"></i> View Live Mass Schedule</button>
+            </div>
           </div>
-          <div class="info-card">
+
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
             <div>
-              <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Ministry</span>
-              <h3 style="font-size:1.4rem; margin:1rem 0 0.5rem;">Small Christian Communities (SCCs)</h3>
-              <p style="color:var(--text-muted); margin-bottom:1.5rem;">Our 14 Jumuiya Ndogo Ndogo za Kikristu form the heartbeat of neighborhood fellowship and prayer in Naiberi.</p>
+              <div style="position:relative; height:180px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Jumuiya SCC" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:10px; left:10px; background:rgba(11,60,111,0.88); color:#fff; padding:0.3rem 0.7rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
+                  <i class="fa-solid fa-users"></i> 14 Jumuiya Communities
+                </div>
+              </div>
+              <div style="padding:1.5rem;">
+                <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Ministry</span>
+                <h3 style="font-size:1.4rem; margin:0.8rem 0 0.5rem;">Small Christian Communities (SCCs)</h3>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem;">Our 14 Jumuiya Ndogo Ndogo za Kikristu form the heartbeat of neighborhood fellowship and prayer in Naiberi.</p>
+              </div>
             </div>
-            <button class="btn btn-outline" onclick="appController.navigateTo('about')"><i class="fa-solid fa-location-dot"></i> Find My Jumuiya SCC</button>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+              <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="appController.navigateTo('about')"><i class="fa-solid fa-location-dot"></i> Find My Jumuiya SCC</button>
+            </div>
           </div>
-          <div class="info-card">
+
+          <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
             <div>
-              <span class="badge badge-green"><i class="fa-solid fa-hand-holding-heart"></i> Giving</span>
-              <h3 style="font-size:1.4rem; margin:1rem 0 0.5rem;">M-Pesa Giving & Tithe Portal</h3>
-              <p style="color:var(--text-muted); margin-bottom:1.5rem;">Support parish evangelization and community borehole projects via M-Pesa Paybill 522522 with instant PDF receipts.</p>
+              <div style="position:relative; height:180px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+                <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80" alt="Tithe Giving" style="width:100%; height:100%; object-fit:cover;" />
+                <div style="position:absolute; bottom:10px; left:10px; background:rgba(30,142,62,0.88); color:#fff; padding:0.3rem 0.7rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase;">
+                  <i class="fa-solid fa-mobile-screen"></i> Paybill 522522
+                </div>
+              </div>
+              <div style="padding:1.5rem;">
+                <span class="badge badge-green"><i class="fa-solid fa-hand-holding-heart"></i> Giving</span>
+                <h3 style="font-size:1.4rem; margin:0.8rem 0 0.5rem;">M-Pesa Giving & Tithe Portal</h3>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem;">Support parish evangelization and community borehole projects via M-Pesa Paybill 522522 with instant PDF receipts.</p>
+              </div>
             </div>
-            <button class="btn btn-gold" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online Now</button>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+              <button class="btn btn-gold" style="width:100%; justify-content:center;" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online Now</button>
+            </div>
           </div>
         </div>
       </div>

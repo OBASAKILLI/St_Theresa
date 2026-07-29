@@ -42,14 +42,15 @@ const PARISH_DATA = {
 
   stations: [
     {
-      id: "naiberi-main",
-      name: "Naiberi Main Church",
-      type: "Sub-Parish / Main Headquarters",
-      location: "Naiberi Town Center, Uasin Gishu",
-      patron: "St. Theresa of the Child Jesus",
+      id: "naiberi",
+      name: "Naiberi Main Church (Parish Headquarters)",
+      type: "Main Station",
+      location: "Naiberi Center, Eldoret East, Uasin Gishu County",
+      patron: "St. Theresa of the Child Jesus (St. Thérèse of Lisieux)",
       massTime: "Sunday: 7:00 AM (Kiswahili), 9:00 AM (English High Mass), 11:30 AM (Youth & PMC)",
       status: "Sub-Parish 1",
-      description: "The mother church and administrative seat of Naiberi Parish, hosting daily Masses, Parish Secretariat, and sacramental registries."
+      description: "The mother church and administrative seat of Naiberi Parish, hosting daily Masses, Parish Secretariat, and sacramental registries.",
+      image: "assets/images/hero-church.jpg"
     },
     {
       id: "stroback",
@@ -59,7 +60,8 @@ const PARISH_DATA = {
       patron: "St. Joseph the Worker",
       massTime: "Sunday: 8:00 AM (Kiswahili/English), 10:30 AM (High Mass)",
       status: "Sub-Parish 2",
-      description: "Our second official Sub-Parish center with a vibrant Catholic community, active Jumuiyas, and dedicated Sunday School."
+      description: "Our second official Sub-Parish center with a vibrant Catholic community, active Jumuiyas, and dedicated Sunday School.",
+      image: "https://images.unsplash.com/photo-1548625361-16800b328a75?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "kapsirwo",
@@ -69,7 +71,8 @@ const PARISH_DATA = {
       patron: "St. Peter & Paul",
       massTime: "Sunday: 9:00 AM (Kiswahili / English)",
       status: "Outstation",
-      description: "A faithful rural outstation serving families and farmers in the Kapsirwo agricultural community."
+      description: "A faithful rural outstation serving families and farmers in the Kapsirwo agricultural community.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "uhuru",
@@ -79,7 +82,8 @@ const PARISH_DATA = {
       patron: "St. Michael the Archangel",
       massTime: "Sunday: 8:30 AM (Kiswahili)",
       status: "Outstation",
-      description: "An active outstation in Uhuru known for vibrant youth choirs and Small Christian Community Jumuiya gatherings."
+      description: "An active outstation in Uhuru known for vibrant youth choirs and Small Christian Community Jumuiya gatherings.",
+      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "sigot",
@@ -89,7 +93,8 @@ const PARISH_DATA = {
       patron: "St. Anne & St. Joachim",
       massTime: "Sunday: 10:30 AM (English / Kiswahili)",
       status: "Outstation",
-      description: "Serving Catholic families across Sigot with regular catechetical instruction and Eucharistic celebrations."
+      description: "Serving Catholic families across Sigot with regular catechetical instruction and Eucharistic celebrations.",
+      image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "berur",
@@ -99,7 +104,8 @@ const PARISH_DATA = {
       patron: "Holy Family",
       massTime: "Sunday: 9:30 AM (Kiswahili)",
       status: "Outstation",
-      description: "A growing Eucharistic community in Berur with strong Catholic Men and Women Associations."
+      description: "A growing Eucharistic community in Berur with strong Catholic Men and Women Associations.",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "holy-trinity",
@@ -109,7 +115,8 @@ const PARISH_DATA = {
       patron: "Most Holy Trinity",
       massTime: "Sunday: 11:00 AM (English / Kiswahili)",
       status: "New Outstation",
-      description: "Our newest 7th parish station established to bring the Holy Sacrifice of the Mass and catechism closer to growing settlements."
+      description: "Our newest 7th parish station established to bring the Holy Sacrifice of the Mass and catechism closer to growing settlements.",
+      image: "assets/images/hero_church_exterior.jpg"
     }
   ],
 
@@ -122,7 +129,8 @@ const PARISH_DATA = {
       language: "Kiswahili",
       location: "Main Sanctuary",
       type: "Weekend",
-      description: "Vibrant community Eucharistic celebration with Swahili liturgical hymns and SCC Jumuiya thanksgiving."
+      description: "Vibrant community Eucharistic celebration with Swahili liturgical hymns and SCC Jumuiya thanksgiving.",
+      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 2,
@@ -132,7 +140,8 @@ const PARISH_DATA = {
       language: "English",
       location: "Main Sanctuary",
       type: "Weekend",
-      description: "Solemn Parish High Mass with Parish Choir, organ, incense, and full liturgical procession."
+      description: "Solemn Parish High Mass with Parish Choir, organ, incense, and full liturgical procession.",
+      image: "assets/images/sanctuary_altar_tabernacle.jpg"
     },
     {
       id: 3,
@@ -142,7 +151,8 @@ const PARISH_DATA = {
       language: "English & Kiswahili",
       location: "Main Sanctuary",
       type: "Weekend",
-      description: "Dynamic Eucharistic celebration animated by the Parish Youth Ministry (MYM/YCS) and Pontifical Missionary Childhood."
+      description: "Dynamic Eucharistic celebration animated by the Parish Youth Ministry (MYM/YCS) and Pontifical Missionary Childhood.",
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
@@ -152,7 +162,8 @@ const PARISH_DATA = {
       language: "English / Kiswahili",
       location: "St. Thérèse Adoration Chapel",
       type: "Daily",
-      description: "Early morning holy sacrifice of the Mass for parishioners heading to work, school, and farms."
+      description: "Early morning holy sacrifice of the Mass for parishioners heading to work, school, and farms.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 5,
@@ -162,7 +173,8 @@ const PARISH_DATA = {
       language: "English",
       location: "Main Sanctuary",
       type: "Daily",
-      description: "Evening Eucharistic liturgy with community intercessory prayers."
+      description: "Evening Eucharistic liturgy with community intercessory prayers.",
+      image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 6,
@@ -172,7 +184,8 @@ const PARISH_DATA = {
       language: "English & Kiswahili",
       location: "St. Thérèse Adoration Chapel",
       type: "Adoration",
-      description: "Silent Eucharistic adoration, Divine Mercy Chaplet, Rosary, and solemn priestly Benediction."
+      description: "Silent Eucharistic adoration, Divine Mercy Chaplet, Rosary, and solemn priestly Benediction.",
+      image: "assets/images/sanctuary-altar.jpg"
     },
     {
       id: 7,
@@ -182,7 +195,8 @@ const PARISH_DATA = {
       language: "English / Kiswahili",
       location: "Parish Confessionals",
       type: "Confession",
-      description: "Individual sacramental confession and spiritual direction with parish priests."
+      description: "Individual sacramental confession and spiritual direction with parish priests.",
+      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
@@ -192,7 +206,7 @@ const PARISH_DATA = {
       name: "Rev. Fr. Eliud Jomo",
       role: "Parish Priest (Father-in-Charge)",
       category: "Clergy",
-      image: "assets/images/st-therese.jpg",
+      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
       phone: "+254 720 111 222",
       email: "fr.jomo@naiberiparish.or.ke",
       bio: "Ordained for the Catholic Diocese of Eldoret. Passionate about pastoral evangelization, Small Christian Communities (SCCs), and youth empowerment in Uasin Gishu County.",
@@ -203,7 +217,7 @@ const PARISH_DATA = {
       name: "Rev. Fr. Josephat Kipkorir",
       role: "Assistant Parish Priest",
       category: "Clergy",
-      image: "assets/images/hero-church.jpg",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
       phone: "+254 722 333 444",
       email: "fr.josephat@naiberiparish.or.ke",
       bio: "Specializes in sacramental catechism, PMC children ministry, and liturgy. Dedicated to visiting outstations and elderly parishioners.",
@@ -214,7 +228,7 @@ const PARISH_DATA = {
       name: "Sr. Mary Clare Wanjiku, CPS",
       role: "Parish Sister & Social Coordinator",
       category: "Religious",
-      image: "assets/images/st-therese.jpg",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
       phone: "+254 733 555 666",
       email: "sr.maryclare@naiberiparish.or.ke",
       bio: "Member of the Missionary Sisters of the Precious Blood. Coordinates Caritas Naiberi, community health outreach, and women's formation.",
@@ -225,7 +239,7 @@ const PARISH_DATA = {
       name: "Mwalimu Peter Tanui",
       role: "Head Parish Catechist",
       category: "Catechists",
-      image: "assets/images/sanctuary-altar.jpg",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
       phone: "+254 721 777 888",
       email: "catechist@naiberiparish.or.ke",
       bio: "Over 18 years of faithful catechetical instruction in Naiberi Parish. Leads RCIA, Confirmation preparation, and marriage instruction classes.",
@@ -236,7 +250,7 @@ const PARISH_DATA = {
       name: "Mr. Francis Kiprono",
       role: "Parish Pastoral Council Chairman",
       category: "Council",
-      image: "assets/images/hero-church.jpg",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
       phone: "+254 724 999 000",
       email: "ppc@naiberiparish.or.ke",
       bio: "Experienced community leader coordinating the 14 Small Christian Communities (Jumuiya Ndogo Ndogo za Kikristu) in Naiberi Parish.",
@@ -247,7 +261,7 @@ const PARISH_DATA = {
       name: "Mrs. Anne Chebet",
       role: "Catholic Women Association (CWA) Chairperson",
       category: "Ministries",
-      image: "assets/images/st-therese.jpg",
+      image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80",
       phone: "+254 725 112 233",
       email: "cwa@naiberiparish.or.ke",
       bio: "Leads the vibrant Catholic Women Association, promoting Christian family values, charity to the needy, and devotion to our Lady.",
@@ -272,7 +286,8 @@ const PARISH_DATA = {
       coordinator: "Michal Anne Gillig & Catechist Team",
       email: "ocia@naiberiparish.or.ke",
       phone: "+254 721 777 888",
-      referenceUrl: "https://shrinechurch.com/ocia"
+      referenceUrl: "https://shrinechurch.com/ocia",
+      image: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "baptism",
@@ -289,7 +304,8 @@ const PARISH_DATA = {
       preparation: "Classes hold every Saturday at 2:00 PM in St. Thérèse Hall.",
       coordinator: "Parish Secretariat & Baptism Team",
       email: "baptism@naiberiparish.or.ke",
-      phone: "+254 720 123 456"
+      phone: "+254 720 123 456",
+      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "eucharist",
@@ -306,7 +322,8 @@ const PARISH_DATA = {
       preparation: "Weekly catechism classes every Sunday after 9:00 AM Mass.",
       coordinator: "Catechetical Formation Office",
       email: "eucharist@naiberiparish.or.ke",
-      phone: "+254 721 777 888"
+      phone: "+254 721 777 888",
+      image: "assets/images/sanctuary_altar_tabernacle.jpg"
     },
     {
       id: "confirmation",
@@ -323,7 +340,8 @@ const PARISH_DATA = {
       preparation: "Intensive confirmation catechesis every Saturday afternoon.",
       coordinator: "Parish Youth & Confirmation Coordinator",
       email: "confirmation@naiberiparish.or.ke",
-      phone: "+254 724 999 000"
+      phone: "+254 724 999 000",
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "marriage",
@@ -340,7 +358,8 @@ const PARISH_DATA = {
       preparation: "10-week Catholic Marriage Preparation counseling with parish clergy and catechists.",
       coordinator: "Family Ministry & Marriage Coordinator",
       email: "family@naiberiparish.or.ke",
-      phone: "+254 725 112 233"
+      phone: "+254 725 112 233",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "reconciliation",
@@ -356,7 +375,8 @@ const PARISH_DATA = {
       preparation: "Examination of conscience booklets available at the church entrance.",
       coordinator: "Rev. Fr. Eliud Jomo (Parish Priest)",
       email: "priest@naiberiparish.or.ke",
-      phone: "+254 720 123 456"
+      phone: "+254 720 123 456",
+      image: "assets/images/sanctuary-altar.jpg"
     },
     {
       id: "anointing",
@@ -372,7 +392,8 @@ const PARISH_DATA = {
       preparation: "Contact the parish office or emergency priest helpline immediately.",
       coordinator: "24/7 Clergy Pastoral Emergency Line",
       email: "emergency@naiberiparish.or.ke",
-      phone: "+254 733 987 654"
+      phone: "+254 733 987 654",
+      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
@@ -472,7 +493,7 @@ const PARISH_DATA = {
       location: "Naiberi Parish Grounds & Main Church",
       category: "Feast Day",
       description: "Our grand parish feast day celebration presided over by the Lord Bishop of Eldoret, followed by community lunch, choir presentations, and church building thanksgiving.",
-      image: "assets/images/hero-church.jpg",
+      image: "https://images.unsplash.com/photo-1548625361-16800b328a75?auto=format&fit=crop&w=800&q=80",
       registrationOpen: true
     },
     {
@@ -483,7 +504,7 @@ const PARISH_DATA = {
       location: "St. Thérèse Naiberi Parish Sanctuary",
       category: "Youth",
       description: "Over 800 Catholic youth gathering for Eucharistic adoration, praise & worship, workshops on Christian vocation, and Holy Mass.",
-      image: "assets/images/sanctuary-altar.jpg",
+      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80",
       registrationOpen: true
     },
     {
@@ -494,7 +515,7 @@ const PARISH_DATA = {
       location: "Parish Retreat Hall",
       category: "Retreat",
       description: "A transformative one-day retreat for Catholic couples and parents focusing on Christian family resilience, prayer in the home, and parenting.",
-      image: "assets/images/st-therese.jpg",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
       registrationOpen: true
     }
   ],
@@ -508,7 +529,7 @@ const PARISH_DATA = {
       category: "Sacraments",
       summary: "Joy filled St. Theresa of the Child Jesus Naiberi Parish as 150 candidates from our 14 Small Christian Communities received the Sacrament of Confirmation.",
       content: "During a solemn pastoral visit, the Bishop commended Naiberi Parish for its exemplary catechetical preparation and vibrant youth ministry. He urged the newly confirmed to be courageous witnesses of the Gospel in Uasin Gishu County.",
-      image: "assets/images/sanctuary-altar.jpg"
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "news-2",
@@ -518,7 +539,7 @@ const PARISH_DATA = {
       category: "Outreach",
       summary: "In alignment with Catholic social teaching, our parish has broken ground on a community borehole project to serve over 400 households in Naiberi.",
       content: "Supported by generous parishioner tithes and donor partners, the clean water kiosk will provide free, potable water to schools and elderly residents in Naiberi.",
-      image: "assets/images/hero-church.jpg"
+      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: "news-3",
@@ -528,7 +549,7 @@ const PARISH_DATA = {
       category: "Bulletin",
       summary: "Download this week's full parish bulletin including Jumuiya cleaning schedules, upcoming marriage banns, tithe report, and Mass intentions.",
       content: "Special gratitude to St. Joseph Jumuiya for animators of last Sunday's liturgy. Next Sunday will be animated by St. Francis of Assisi SCC.",
-      image: "assets/images/st-therese.jpg"
+      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
     }
   ],
 

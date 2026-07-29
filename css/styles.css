@@ -1497,3 +1497,45 @@ button {
   }
 }
 
+/* 3. Interactive Sacramental Checklists & Live Status Indicators */
+.interactive-req {
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.interactive-req:hover {
+  border-color: var(--gold) !important;
+  background: var(--bg-card) !important;
+}
+
+.interactive-req.req-checked {
+  background: rgba(30, 142, 62, 0.1) !important;
+  border-color: #1E8E3E !important;
+}
+
+.interactive-req.req-checked i {
+  color: #1E8E3E !important;
+}
+
+.interactive-req.req-checked span {
+  color: #1E8E3E !important;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(30, 142, 62, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(30, 142, 62, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(30, 142, 62, 0); }
+}
+
+.live-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1E8E3E;
+  animation: pulseLive 2s infinite;
+}
+
+
