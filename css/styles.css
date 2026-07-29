@@ -1412,7 +1412,7 @@ button {
 
   /* Compact Apple-Style Mobile Hero (Everything visible above the fold!) */
   .hero-section {
-    min-height: calc(100vh - 120px);
+    min-height: 50vh;
     padding: 2.2rem 1.2rem 2rem;
     display: flex;
     align-items: center;
