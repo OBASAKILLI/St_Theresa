@@ -194,7 +194,7 @@ class MPesaGivingPortal {
       </head>
       <body>
         <div class="header">
-          <span class="badge">CATHOLIC DIOCESE OF ELDORET</span>
+          <span class="badge">UASIN GISHU COUNTY, KENYA</span>
           <h1>St. Theresa of the Child Jesus Naiberi Parish</h1>
           <h2>Official Parish Tithe & Contribution Receipt</h2>
           <p>Naiberi, Uasin Gishu County, Kenya | M-Pesa Paybill: 522522 (NAIBERI)</p>

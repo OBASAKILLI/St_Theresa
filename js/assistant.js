@@ -93,7 +93,7 @@ class CatholicAIAssistant {
               "Known as 'The Little Flower', she taught the 'Little Way' of spiritual childhood—doing small daily acts with immense love for God. Her Feast Day is October 1.";
     } else if (q.includes("where") || q.includes("location") || q.includes("direction") || q.includes("address") || q.includes("eldoret") || q.includes("uasin")) {
       reply = '<i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <strong>Parish Location:</strong><br>' +
-              "We are located in <strong>Naiberi, Uasin Gishu County, Kenya</strong> within the <strong>Catholic Diocese of Eldoret</strong>. You can view our interactive Google Maps directions on the Contact page.";
+              "We are located in <strong>Naiberi, Uasin Gishu County, Kenya</strong> along Kaptagat Highway. You can view our interactive Google Maps directions on the Contact page.";
     } else if (q.includes("priest") || q.includes("father") || q.includes("eliud") || q.includes("jomo") || q.includes("josephat")) {
       reply = '<i class="fa-solid fa-user-tie" style="color:var(--gold);"></i> <strong>Parish Clergy:</strong><br>' +
               "• <strong>Rev. Fr. Eliud Jomo:</strong> Parish Priest (Father-in-Charge)<br>" +

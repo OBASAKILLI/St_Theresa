@@ -1,7 +1,7 @@
 /**
  * ST. THERESA OF THE CHILD JESUS NAIBERI PARISH
  * Central Catholic Liturgical & Parish Data Store
- * Location: Naiberi, Uasin Gishu County, Kenya (Catholic Diocese of Eldoret)
+ * Location: Naiberi, Uasin Gishu County, Kenya
  */
 
 const PARISH_DATA = {
@@ -9,8 +9,8 @@ const PARISH_DATA = {
     name: "St. Theresa of the Child Jesus Naiberi Parish",
     shortName: "St. Theresa's Naiberi",
     location: "Naiberi, Uasin Gishu County, Kenya",
-    diocese: "Catholic Diocese of Eldoret",
-    deanery: "Eldoret East / Uasin Gishu Deanery",
+    diocese: "Catholic Parish",
+    deanery: "Uasin Gishu County, Kenya",
     patronSaint: "St. Thérèse of Lisieux (St. Thérèse of the Child Jesus)",
     motto: "In the heart of the Church, I will be Love",
     phone: "+254 720 123 456 / +254 733 987 654",
@@ -19,7 +19,7 @@ const PARISH_DATA = {
     mpesaPaybill: "522522",
     mpesaAccount: "NAIBERI PARISH",
     mpesaTill: "8899001",
-    bankName: "Kenya Commercial Bank (KCB), Eldoret Branch",
+    bankName: "Kenya Commercial Bank (KCB)",
     bankAccount: "1122334455",
     dailyVerse: {
       quote: "My vocation is love! In the heart of the Church, my Mother, I will be Love.",
@@ -45,7 +45,7 @@ const PARISH_DATA = {
       id: "naiberi",
       name: "Naiberi Main Church (Parish Headquarters)",
       type: "Main Station",
-      location: "Naiberi Center, Eldoret East, Uasin Gishu County",
+      location: "Naiberi Center, Uasin Gishu County",
       patron: "St. Theresa of the Child Jesus (St. Thérèse of Lisieux)",
       massTime: "Sunday: 7:00 AM (Kiswahili), 9:00 AM (English High Mass), 11:30 AM (Youth & PMC)",
       status: "Sub-Parish 1",
@@ -209,7 +209,7 @@ const PARISH_DATA = {
       image: "https://commons.wikimedia.org/wiki/Special:FilePath/Faces_of_Kenya_-_Man_1.jpg?width=1000",
       phone: "+254 720 111 222",
       email: "fr.jomo@naiberiparish.or.ke",
-      bio: "Ordained for the Catholic Diocese of Eldoret. Passionate about pastoral evangelization, Small Christian Communities (SCCs), and youth empowerment in Uasin Gishu County.",
+      bio: "Ordained Catholic Priest. Passionate about pastoral evangelization, Small Christian Communities (SCCs), and youth empowerment in Uasin Gishu County.",
       officeDays: "Tuesday – Friday (9:00 AM – 4:00 PM)"
     },
     {
@@ -336,7 +336,7 @@ const PARISH_DATA = {
         "Sponsor Continuity: Strongly recommended that the Baptismal Godparent serve as Sponsor.",
         "Active participation in Jumuiya SCC and Parish Youth Ministry."
       ],
-      schedule: "Celebrated during the annual pastoral visit of the Bishop of Eldoret.",
+      schedule: "Celebrated during the annual episcopal pastoral visit.",
       preparation: "Intensive confirmation catechesis every Saturday afternoon.",
       coordinator: "Parish Youth & Confirmation Coordinator",
       email: "confirmation@naiberiparish.or.ke",
@@ -492,7 +492,7 @@ const PARISH_DATA = {
       time: "9:00 AM – 4:00 PM",
       location: "Naiberi Parish Grounds & Main Church",
       category: "Feast Day",
-      description: "Our grand parish feast day celebration presided over by the Lord Bishop of Eldoret, followed by community lunch, choir presentations, and church building thanksgiving.",
+      description: "Our grand parish feast day celebration presided over by our visiting Bishop, followed by community lunch, choir presentations, and church building thanksgiving.",
       image: "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Family_basilica_(Nairobi,_Kenya)_-_interior.jpg?width=1000",
       registrationOpen: true
     },
@@ -523,7 +523,7 @@ const PARISH_DATA = {
   news: [
     {
       id: "news-1",
-      title: "Naiberi Parish Celebrates 150 New Confirmations by Bishop of Eldoret",
+      title: "Naiberi Parish Celebrates 150 New Confirmations During Episcopal Visit",
       date: "July 20, 2026",
       author: "Parish Secretariat",
       category: "Sacraments",
