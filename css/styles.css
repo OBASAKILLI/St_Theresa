@@ -467,21 +467,17 @@ button {
 
 .stats-section-flat {
   background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
   padding: 4.5rem 2rem;
 }
 
 .flat-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border-color);
   background: var(--bg-card);
 }
 
 .flat-stat-item {
   padding: 2.8rem 2.2rem;
-  border-right: 1px solid var(--border-color);
   text-align: left;
   background: transparent;
   display: flex;
@@ -1393,10 +1389,6 @@ button {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
-    border-top: 1px solid var(--border-color) !important;
-    border-bottom: 1px solid var(--border-color) !important;
-    border-left: none !important;
-    border-right: none !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -1410,8 +1402,6 @@ button {
     min-width: 250px !important;
     scroll-snap-align: start;
     padding: 2.2rem 1.6rem !important;
-    border-right: 1px solid var(--border-color) !important;
-    border-bottom: none !important;
   }
 
   .flat-stat-number {
