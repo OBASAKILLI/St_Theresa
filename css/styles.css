@@ -34,8 +34,8 @@
 
   /* Clean Flat Design Shadows (No Glowing or Artificial Shadows) */
   --shadow-sm: none;
-  --shadow-md: 0 2px 8px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-md: none;
+  --shadow-lg: none;
   --shadow-gold: none;
 
   /* Transitions */
@@ -57,7 +57,7 @@
   --border-gold: #475569;
   --shadow-sm: none;
   --shadow-md: none;
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-lg: none;
 }
 
 /* Base Reset - Guaranteed Zero Horizontal Overflow / Right-Side Whitespace */
@@ -114,12 +114,11 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: var(--shadow-sm);
+ 
   transition: var(--transition);
 }
 
 .glass-card:hover {
-  transform: translateY(-2px);
   border-color: var(--royal-blue);
 }
 
@@ -197,7 +196,7 @@ button {
   font-family: 'Cinzel', serif;
   font-weight: 800;
   font-size: 1.4rem;
-  box-shadow: var(--shadow-gold);
+ 
   border: 2px solid var(--gold);
 }
 
@@ -276,7 +275,6 @@ button {
 .btn-primary:hover {
   background: var(--royal-blue-dark);
   color: #fff;
-  transform: translateY(-1px);
 }
 
 .btn-gold {
@@ -289,7 +287,6 @@ button {
 .btn-gold:hover {
   background: var(--gold-light);
   color: #072545;
-  transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -302,7 +299,6 @@ button {
   border-color: var(--royal-blue);
   color: var(--royal-blue);
   background: var(--bg-secondary);
-  transform: translateY(-1px);
 }
 
 /* Theme Toggle & Bell Button */
@@ -589,9 +585,7 @@ button {
 }
 
 .info-card:hover {
-  transform: translateY(-2px);
   border-color: var(--royal-blue);
-  box-shadow: var(--shadow-md);
 }
 
 /* Leadership Card */
@@ -605,9 +599,7 @@ button {
 }
 
 .leader-card:hover {
-  transform: translateY(-2px);
   border-color: var(--gold);
-  box-shadow: var(--shadow-md);
 }
 
 .leader-img {
@@ -617,7 +609,7 @@ button {
   object-fit: cover;
   margin: 0 auto 1.2rem;
   border: 3px solid var(--gold);
-  box-shadow: var(--shadow-sm);
+ 
 }
 
 .leader-name {
@@ -644,7 +636,7 @@ button {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   background: var(--bg-card);
-  box-shadow: var(--shadow-sm);
+ 
 }
 
 .gov-table {
@@ -738,7 +730,7 @@ button {
   max-height: 90vh;
   overflow-y: auto;
   padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
+ 
   position: relative;
   transform: scale(0.95);
   transition: transform 0.3s ease;
@@ -784,7 +776,7 @@ button {
   overflow: hidden;
   max-width: 900px;
   margin: 3rem auto;
-  box-shadow: var(--shadow-md);
+ 
 }
 
 .rose-petal-container {
@@ -825,7 +817,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 30px rgba(201, 162, 39, 0.5);
+
   cursor: pointer;
   transition: var(--transition);
   border: 2px solid #fff;
@@ -845,7 +837,7 @@ button {
   background: var(--bg-modal);
   border: 1px solid var(--border-gold);
   border-radius: 24px;
-  box-shadow: var(--shadow-lg);
+ 
   z-index: 1500;
   display: flex;
   flex-direction: column;
@@ -996,7 +988,7 @@ button {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-top: 1px solid var(--border-gold);
-  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.18);
+
   z-index: 1800;
   padding: 0 1rem;
 }
@@ -1049,7 +1041,7 @@ button {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
+
   border: 3px solid var(--bg-primary);
   display: flex;
   align-items: center;
@@ -1095,7 +1087,7 @@ button {
   height: 100%;
   background: var(--bg-modal);
   border-left: 2px solid var(--gold);
-  box-shadow: -15px 0 45px rgba(0, 0, 0, 0.45);
+
   z-index: 2600;
   padding: 1.8rem 1.5rem 3rem;
   display: flex;
@@ -1309,7 +1301,7 @@ button {
     width: 48px;
     height: 48px;
     font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  
   }
 
   .ai-chat-box {
@@ -1536,9 +1528,9 @@ button {
 }
 
 @keyframes pulseLive {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(30, 142, 62, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(30, 142, 62, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(30, 142, 62, 0); }
+  0% { transform: scale(0.95); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(0.95); }
 }
 
 .live-dot {
