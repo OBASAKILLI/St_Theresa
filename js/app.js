@@ -263,7 +263,7 @@ class AppController {
     const todayName = daysOfWeek[new Date().getDay()];
 
     const liveBanner = `
-      <div style="grid-column: 1 / -1; background:var(--bg-card); border:1px solid var(--border-color); border-left:4px solid #1E8E3E; border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <div style="grid-column: 1 / -1; background:transparent; border:none; border-left:4px solid #1E8E3E; padding:1.25rem 1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
         <div style="display:flex; align-items:center; gap:1rem;">
           <span style="display:inline-block; width:12px; height:12px; background:#1E8E3E; border-radius:50%; box-shadow:0 0 8px #1E8E3E;"></span>
           <div>
@@ -278,30 +278,30 @@ class AppController {
     `;
 
     const cardsHtml = items.map(m => `
-      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
+      <div style="display:flex; flex-direction:column; padding:0; background:transparent;">
         <div>
           ${m.image ? `
-          <div style="position:relative; height:200px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+          <div style="position:relative; height:200px; overflow:hidden; margin-bottom:1.5rem;">
             <img src="${m.image}" alt="${m.title || m.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
-            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.85rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+            <div style="position:absolute; bottom:12px; left:12px; background:var(--royal-blue); color:#fff; padding:0.35rem 0.85rem; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
               <i class="fa-solid fa-clock"></i> ${m.day} • ${m.type}
             </div>
           </div>
           ` : ''}
-          <div style="padding: 1.8rem;">
-            <span class="badge badge-gold" style="margin-bottom:0.6rem;"><i class="fa-solid fa-language"></i> ${m.language}</span>
-            <h3 style="font-size: 1.45rem; margin: 0.4rem 0 0.5rem; line-height:1.25;">${m.time}</h3>
+          <div>
+            <span style="color:var(--gold); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:inline-block;"><i class="fa-solid fa-language"></i> ${m.language}</span>
+            <h3 style="font-size: 1.45rem; margin: 0.4rem 0 0.5rem; line-height:1.25; font-family:'Cinzel', serif;">${m.time}</h3>
             <h4 style="color: var(--royal-blue); margin-bottom: 0.8rem; font-size: 1.15rem;">${m.title || m.name}</h4>
             <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.6; font-size:0.95rem;">${m.description || ''}</p>
-            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; border:1px solid var(--border-color);">
+            <div style="background:var(--bg-secondary); padding:0.85rem 1rem; margin-bottom:1.5rem;">
               <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> ${m.location}</p>
               <p style="margin:0.3rem 0 0 0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-language"></i> Liturgical Language:</strong> ${m.language}</p>
             </div>
           </div>
         </div>
-        <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
-          <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center;" onclick="sacramentalBooking.openBookingModal('Mass Intention: ${m.title || m.name}')"><i class="fa-solid fa-calendar-plus"></i> Book Mass Intention</button>
-          <button class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center;" onclick="alert('Added ${m.title || m.name} (${m.time}) to your calendar reminder.')"><i class="fa-solid fa-bell"></i> Remind Me</button>
+        <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:auto;">
+          <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center; border-radius:0;" onclick="sacramentalBooking.openBookingModal('Mass Intention: ${m.title || m.name}')"><i class="fa-solid fa-calendar-plus"></i> Book Mass Intention</button>
+          <button class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; border-radius:0;" onclick="alert('Added ${m.title || m.name} (${m.time}) to your calendar reminder.')"><i class="fa-solid fa-bell"></i> Remind Me</button>
         </div>
       </div>
     `).join("");
