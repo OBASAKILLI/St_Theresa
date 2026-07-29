@@ -319,25 +319,42 @@ class AppController {
     if (!container) return;
 
     container.innerHTML = PARISH_DATA.ministries.map(m => `
-      <div class="info-card">
+      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; background:var(--bg-card);">
         <div>
-          <span class="badge badge-blue"><i class="fa-solid fa-users"></i> Parish Group / Apostolate</span>
-          <h3 style="font-size: 1.5rem; margin: 0.8rem 0 0.4rem;">${m.name}</h3>
-          ${m.tagline ? `<small style="color:var(--text-gold); font-weight:600; display:block; margin-bottom:0.8rem;">${m.tagline}</small>` : ''}
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 0.6rem;"><strong><i class="fa-solid fa-shield-halved"></i> Patron:</strong> ${m.patron} • <strong>${m.membersCount} Active Members</strong></p>
-          <p style="color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7;">${m.description}</p>
-          <p style="color: var(--text-main); font-size: 0.92rem; margin-bottom: 1.5rem;"><strong><i class="fa-solid fa-clock"></i> Meeting Time:</strong> ${m.meetingTime || m.meeting || 'See Sunday bulletin'}</p>
+          ${m.image ? `
+          <div style="position:relative; height:220px; overflow:hidden; border-bottom:1px solid var(--border-color);">
+            <img src="${m.image}" alt="${m.name}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;" />
+            <div style="position:absolute; bottom:12px; left:12px; background:rgba(11,60,111,0.88); color:#fff; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+              <i class="fa-solid fa-users"></i> ${m.membersCount} Active Members
+            </div>
+          </div>
+          ` : ''}
+          <div style="padding: 1.8rem;">
+            <span class="badge badge-gold" style="margin-bottom:0.6rem;"><i class="fa-solid fa-shield-halved"></i> Patron: ${m.patron}</span>
+            <h3 style="font-size: 1.5rem; margin: 0.4rem 0 0.5rem; line-height: 1.25;">${m.name}</h3>
+            ${m.tagline ? `<p style="color:var(--text-gold); font-weight:600; font-size:0.95rem; margin-bottom:1rem; border-left:3px solid var(--gold); padding-left:0.8rem;">${m.tagline}</p>` : ''}
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; font-size: 0.95rem;">${m.description}</p>
+            <div style="background:var(--bg-secondary); border-radius:6px; padding:0.85rem 1rem; margin-bottom:0.5rem; border:1px solid var(--border-color);">
+              <p style="margin:0; font-size:0.88rem; color:var(--text-main);"><strong><i class="fa-solid fa-clock"></i> Schedule:</strong> ${m.meetingTime}</p>
+              ${m.leader ? `<p style="margin:0.3rem 0 0 0; font-size:0.88rem; color:var(--royal-blue);"><strong><i class="fa-solid fa-user-tie"></i> Leader:</strong> ${m.leader}</p>` : ''}
+            </div>
+          </div>
         </div>
-        <button class="btn btn-primary" style="width: 100%;" onclick="alert('Thank you! Your interest in joining ${m.name} has been received by the Parish Secretariat. You will receive an SMS confirmation.')"><i class="fa-solid fa-user-plus"></i> Join This Catholic Group</button>
+        <div style="padding: 0 1.8rem 1.8rem 1.8rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+          <button class="btn btn-primary" style="flex:1; min-width:140px; justify-content:center;" onclick="alert('Thank you! Your interest in joining ${m.name} has been received by the Parish Secretariat. You will receive an SMS confirmation.')"><i class="fa-solid fa-user-plus"></i> Join Ministry</button>
+          ${m.whatsapp ? `<a href="https://wa.me/${m.whatsapp}?text=${encodeURIComponent('Hello ' + (m.leader || m.name) + ', I would like to inquire about joining ' + m.name)}" target="_blank" class="btn btn-outline" style="flex:1; min-width:140px; justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.1rem;"></i> WhatsApp Chair</a>` : ''}
+        </div>
       </div>
     `).join("");
   }
 
   renderEvents() {
-    const container = document.getElementById("events-container");
-    if (!container) return;
+    const containers = [
+      document.getElementById("events-container"),
+      document.getElementById("home-events-container")
+    ];
 
-    container.innerHTML = PARISH_DATA.events.map(e => `
+    const html = PARISH_DATA.events.map(e => `
       <div class="info-card">
         <div>
           <span class="badge badge-gold"><i class="fa-solid fa-calendar-days"></i> ${e.date}</span>
@@ -351,23 +368,39 @@ class AppController {
         </div>
       </div>
     `).join("");
+
+    containers.forEach(container => {
+      if (container) container.innerHTML = html;
+    });
   }
 
   renderNews() {
-    const container = document.getElementById("news-container");
-    if (!container) return;
+    const containers = [
+      document.getElementById("news-container"),
+      document.getElementById("home-news-container")
+    ];
 
-    container.innerHTML = PARISH_DATA.news.map(n => `
-      <div class="info-card">
+    const html = PARISH_DATA.news.map(n => `
+      <div class="info-card" style="display:flex; flex-direction:column; justify-content:space-between; padding: 1.5rem;">
         <div>
-          <span class="badge badge-blue"><i class="fa-solid fa-newspaper"></i> ${n.category}</span>
-          <small style="float:right; color:var(--text-muted);"><i class="fa-solid fa-calendar-days"></i> ${n.date}</small>
-          <h3 style="font-size: 1.45rem; margin: 1rem 0 0.8rem; clear:both;">${n.title}</h3>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">${n.summary}</p>
+          ${n.image ? `<img src="${n.image}" alt="${n.title}" style="width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:1rem; border:1px solid var(--border-color);" />` : ''}
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem;">
+            <span class="badge badge-blue"><i class="fa-solid fa-newspaper"></i> ${n.category}</span>
+            <small style="color:var(--text-muted); font-weight:600;"><i class="fa-solid fa-calendar-days"></i> ${n.date}</small>
+          </div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.8rem; line-height: 1.35;">${n.title}</h3>
+          <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem;">${n.summary}</p>
         </div>
-        <button class="btn btn-outline" style="width: 100%;" onclick="alert('Downloading Naiberi Parish Weekly Bulletin (PDF format) for ${n.date}...')"><i class="fa-solid fa-file-pdf"></i> Read Full Bulletin / Article</button>
+        <div>
+          <button class="btn btn-outline" style="width: 100%; margin-bottom: 0.5rem;" onclick="alert('Downloading Naiberi Parish Weekly Bulletin (PDF format) for ${n.date}...')"><i class="fa-solid fa-file-pdf"></i> Read Full Bulletin / Article</button>
+          <small style="display:block; text-align:center; color:var(--text-muted); font-size:0.8rem;">Published by: ${n.author}</small>
+        </div>
       </div>
     `).join("");
+
+    containers.forEach(container => {
+      if (container) container.innerHTML = html;
+    });
   }
 
   renderHomilies() {

@@ -231,9 +231,9 @@
               Let us walk together in our Jumuiya Small Christian Communities and emulate St. Thérèse by offering our daily lives with immense love.
             </p>
             <div style="display:flex; align-items:center; gap:1.2rem;">
-              <img src="assets/images/st-therese.jpg" alt="Rev. Fr. Michael Omondi" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--gold); object-fit:cover;" />
+              <img src="assets/images/st-therese.jpg" alt="Rev. Fr. Eliud Jomo" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--gold); object-fit:cover;" />
               <div>
-                <h4 style="font-size:1.15rem; margin:0;">Rev. Fr. Michael Omondi</h4>
+                <h4 style="font-size:1.15rem; margin:0;">Rev. Fr. Eliud Jomo</h4>
                 <p style="font-size:0.85rem; color:var(--text-gold); font-weight:600; margin:0;">Parish Priest (Father-in-Charge)</p>
               </div>
             </div>
@@ -266,6 +266,17 @@
         </div>
 
         <div class="cards-grid" id="mass-schedule-container"></div>
+      </div>
+
+      <!-- Homepage Parish News & Upcoming Liturgical Events Section -->
+      <div id="home-events-section" class="section-wrapper" style="padding: 4rem 1.5rem;">
+        <div class="section-header">
+          <span class="section-subtitle">PARISH BULLETIN & UPCOMING EVENTS</span>
+          <h2 class="section-title">Latest Parish News & Liturgical Calendar</h2>
+          <p class="section-desc">Stay updated on diocesan celebrations, youth retreats, Caritas projects, and Sunday liturgical rosters.</p>
+        </div>
+        <div class="cards-grid" id="home-news-container" style="margin-bottom: 2.5rem;"></div>
+        <div class="cards-grid" id="home-events-container"></div>
       </div>
 
       <!-- Quick Sacraments & Ministries Showcases -->
@@ -456,6 +467,16 @@
           <p class="section-desc">There is a place for everyone in God's vineyard. Find a ministry that resonates with your gifts and join today.</p>
         </div>
 
+        <!-- Creative Ministry Inspiration Banner -->
+        <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:12px; padding:2rem; margin-bottom:2.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+          <div style="max-width:700px;">
+            <span class="badge badge-gold" style="margin-bottom:0.8rem;"><i class="fa-solid fa-quote-left"></i> THE LITTLE WAY IN ACTION</span>
+            <h3 style="font-size:1.5rem; margin:0 0 0.5rem 0;">"Miss no single opportunity of making some small sacrifice... of doing the smallest right and doing it all for love."</h3>
+            <p style="color:var(--text-muted); margin:0;">— St. Thérèse of Lisieux. Our parish ministries are built on daily acts of service across Naiberi, Stroback, Kapsirwo, Uhuru, Sigot, Berur, and Holy Trinity.</p>
+          </div>
+          <button class="btn btn-primary" onclick="appController.navigateTo('register')"><i class="fa-solid fa-user-plus"></i> Join a Small Christian Community</button>
+        </div>
+
         <div class="cards-grid" id="ministries-container"></div>
       </div>
     </section>
@@ -492,7 +513,7 @@
         <div class="section-header">
           <span class="section-subtitle">BREAKING THE WORD OF GOD</span>
           <h2 class="section-title">Parish Homilies & Audio Archive</h2>
-          <p class="section-desc">Listen to recorded Sunday sermons by Rev. Fr. Michael Omondi and parish clergy.</p>
+          <p class="section-desc">Listen to recorded Sunday sermons by Rev. Fr. Eliud Jomo and parish clergy.</p>
         </div>
 
         <div class="cards-grid" id="homilies-container"></div>

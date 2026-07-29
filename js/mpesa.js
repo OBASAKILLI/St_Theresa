@@ -217,7 +217,7 @@ class MPesaGivingPortal {
 
         <div class="signature">
           <div class="sign-line">Parish Secretariat Stamp</div>
-          <div class="sign-line">Rev. Fr. Michael Omondi (Parish Priest)</div>
+          <div class="sign-line">Rev. Fr. Eliud Jomo (Parish Priest)</div>
         </div>
 
         <div class="footer">

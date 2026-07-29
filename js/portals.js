@@ -76,7 +76,7 @@ class AdminPortalController {
   constructor() {
     this.pendingBookings = [
       { id: "BK-101", type: "Sacrament of Baptism", applicant: "Paul & Grace Tanui", date: "Aug 29, 2026", status: "Pending SCC Verification" },
-      { id: "BK-102", type: "Wedding Counseling", applicant: "David & Mercy Chepkemoi", date: "Sep 04, 2026", status: "Approved by Fr. Omondi" },
+      { id: "BK-102", type: "Wedding Counseling", applicant: "David & Mercy Chepkemoi", date: "Sep 04, 2026", status: "Approved by Fr. Eliud Jomo" },
       { id: "BK-103", type: "Mass Intention (Thanksgiving)", applicant: "St. Monica CWA Group", date: "Aug 02, 2026", status: "Pending Secretariat" }
     ];
   }
@@ -106,7 +106,7 @@ class AdminPortalController {
   }
 
   approveBooking(idx) {
-    this.pendingBookings[idx].status = "Approved by Fr. Omondi";
+    this.pendingBookings[idx].status = "Approved by Fr. Eliud Jomo";
     this.renderAdminQueue();
     alert(`Appointment ${this.pendingBookings[idx].id} has been officially approved and a confirmation SMS sent to the parishioner.`);
   }

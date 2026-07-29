@@ -84,7 +84,7 @@ class CatholicAIAssistant {
               "Baptisms are celebrated on the last Saturday of every month at 10:00 AM.";
     } else if (q.includes("confess") || q.includes("reconciliation") || q.includes("penance")) {
       reply = '<i class="fa-solid fa-cross" style="color:var(--gold);"></i> <strong>Sacrament of Confession:</strong><br>' +
-              "Confessions are heard every <strong>Saturday from 4:00 PM to 5:30 PM</strong> in the church confessionals, or anytime by appointment with our Parish Priest, Rev. Fr. Michael Omondi.";
+              "Confessions are heard every <strong>Saturday from 4:00 PM to 5:30 PM</strong> in the church confessionals, or anytime by appointment with our Parish Priest, Rev. Fr. Eliud Jomo.";
     } else if (q.includes("wedding") || q.includes("marriage") || q.includes("marry")) {
       reply = '<i class="fa-solid fa-ring" style="color:var(--gold);"></i> <strong>Holy Matrimony Guidelines:</strong><br>' +
               "Couples should give at least 6 months advance notice to the Parish Office and complete our 10-week Pre-Marital Counseling sessions.";
@@ -94,9 +94,9 @@ class CatholicAIAssistant {
     } else if (q.includes("where") || q.includes("location") || q.includes("direction") || q.includes("address") || q.includes("eldoret") || q.includes("uasin")) {
       reply = '<i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <strong>Parish Location:</strong><br>' +
               "We are located in <strong>Naiberi, Uasin Gishu County, Kenya</strong> within the <strong>Catholic Diocese of Eldoret</strong>. You can view our interactive Google Maps directions on the Contact page.";
-    } else if (q.includes("priest") || q.includes("father") || q.includes("omondi") || q.includes("josephat")) {
+    } else if (q.includes("priest") || q.includes("father") || q.includes("eliud") || q.includes("jomo") || q.includes("josephat")) {
       reply = '<i class="fa-solid fa-user-tie" style="color:var(--gold);"></i> <strong>Parish Clergy:</strong><br>' +
-              "• <strong>Rev. Fr. Michael Omondi:</strong> Parish Priest-in-Charge<br>" +
+              "• <strong>Rev. Fr. Eliud Jomo:</strong> Parish Priest (Father-in-Charge)<br>" +
               "• <strong>Rev. Fr. Josephat Kipkorir:</strong> Assistant Parish Priest<br>" +
               "You can book an office consultation through our Sacramental Booking form.";
     }

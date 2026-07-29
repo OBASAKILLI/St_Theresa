@@ -189,13 +189,13 @@ const PARISH_DATA = {
   leadership: [
     {
       id: "priest-1",
-      name: "Rev. Fr. Michael Omondi",
+      name: "Rev. Fr. Eliud Jomo",
       role: "Parish Priest (Father-in-Charge)",
       category: "Clergy",
       image: "assets/images/st-therese.jpg",
       phone: "+254 720 111 222",
-      email: "fr.omondi@naiberiparish.or.ke",
-      bio: "Ordained in 2011 for the Catholic Diocese of Eldoret. Passionate about pastoral evangelization, Small Christian Communities (SCCs), and youth empowerment in Uasin Gishu County.",
+      email: "fr.jomo@naiberiparish.or.ke",
+      bio: "Ordained for the Catholic Diocese of Eldoret. Passionate about pastoral evangelization, Small Christian Communities (SCCs), and youth empowerment in Uasin Gishu County.",
       officeDays: "Tuesday – Friday (9:00 AM – 4:00 PM)"
     },
     {
@@ -354,7 +354,7 @@ const PARISH_DATA = {
       ],
       schedule: "Every Saturday 4:00 PM – 5:30 PM in the church confessionals, or anytime by appointment.",
       preparation: "Examination of conscience booklets available at the church entrance.",
-      coordinator: "Rev. Fr. Michael Omondi (Parish Priest)",
+      coordinator: "Rev. Fr. Eliud Jomo (Parish Priest)",
       email: "priest@naiberiparish.or.ke",
       phone: "+254 720 123 456"
     },
@@ -384,7 +384,10 @@ const PARISH_DATA = {
       patron: "St. Joseph the Worker",
       membersCount: 240,
       meetingTime: "Every 3rd Sunday after 9:00 AM Mass",
-      description: "CMA empowers Catholic men, fathers, and husbands to lead their families in faith, support parish infrastructure development across all 7 stations, and mentor young men."
+      description: "CMA empowers Catholic men, fathers, and husbands to lead their families in faith, support parish infrastructure development across all 7 stations, and mentor young men.",
+      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
+      leader: "Mr. Joseph Kiplagat (CMA Chair)",
+      whatsapp: "254720111001"
     },
     {
       id: "cwa",
@@ -393,7 +396,10 @@ const PARISH_DATA = {
       patron: "St. Monica & Our Lady of Good Counsel",
       membersCount: 320,
       meetingTime: "Every 2nd Sunday after 9:00 AM Mass",
-      description: "CWA is the cornerstone of family apostolate in Naiberi Parish, engaging in charity, church welfare, retreat formation, and caring for orphans and the elderly."
+      description: "CWA is the cornerstone of family apostolate in Naiberi Parish, engaging in charity, church welfare, retreat formation, and caring for orphans and the elderly.",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
+      leader: "Mrs. Monica Tarus (CWA Chairperson)",
+      whatsapp: "254722222002"
     },
     {
       id: "youth",
@@ -402,7 +408,10 @@ const PARISH_DATA = {
       patron: "St. John Bosco & St. Thérèse of Lisieux",
       membersCount: 310,
       meetingTime: "Every Sunday at 2:00 PM",
-      description: "Our active young adults (18+ years) dedicated to parish evangelization, choir animation, Jumuiya leadership, career mentorship, and charity outreach."
+      description: "Our active young adults (18+ years) dedicated to parish evangelization, choir animation, Jumuiya leadership, career mentorship, and charity outreach.",
+      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80",
+      leader: "Brian Kiprop (Youth Chair)",
+      whatsapp: "254723333003"
     },
     {
       id: "mym",
@@ -411,7 +420,10 @@ const PARISH_DATA = {
       patron: "St. Carlo Acutis & St. Thérèse",
       membersCount: 280,
       meetingTime: "Every Saturday at 10:00 AM & Sunday 11:30 AM",
-      description: "Dedicated to youth aged 13 to 17 years (high school & early teens), fostering discipleship, Catholic moral formation, leadership, and missionary spirit."
+      description: "Dedicated to youth aged 13 to 17 years (high school & early teens), fostering discipleship, Catholic moral formation, leadership, and missionary spirit.",
+      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+      leader: "Sr. Mary Clare (Youth Animator)",
+      whatsapp: "254724444004"
     },
     {
       id: "pmc",
@@ -420,7 +432,10 @@ const PARISH_DATA = {
       patron: "Holy Innocents & St. Thérèse of the Child Jesus",
       membersCount: 520,
       meetingTime: "Every Sunday 10:30 AM during Sunday School",
-      description: "Nurturing children aged 0 to 12 years in the Catholic faith, Bible storytelling, early Catechism, missionary charity, and serving as altar servers."
+      description: "Nurturing children aged 0 to 12 years in the Catholic faith, Bible storytelling, early Catechism, missionary charity, and serving as altar servers.",
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
+      leader: "Michael Kiptoo (Head Catechist)",
+      whatsapp: "254725555005"
     },
     {
       id: "choir",
@@ -429,7 +444,10 @@ const PARISH_DATA = {
       patron: "St. Cecilia",
       membersCount: 85,
       meetingTime: "Thursdays 5:30 PM & Saturdays 3:00 PM",
-      description: "Our award-winning parish choir animates Sunday liturgies across our stations with solemn English hymns, traditional Swahili melodies, and Gregorian chants."
+      description: "Our award-winning parish choir animates Sunday liturgies across our stations with solemn English hymns, traditional Swahili melodies, and Gregorian chants.",
+      image: "assets/images/parish_worship_choir.jpg",
+      leader: "Vincent Cheruiyot (Choir Master)",
+      whatsapp: "254726666006"
     },
     {
       id: "caritas",
@@ -438,7 +456,10 @@ const PARISH_DATA = {
       patron: "St. Vincent de Paul & St. Teresa of Calcutta",
       membersCount: 65,
       meetingTime: "Every 1st Saturday at 10:00 AM",
-      description: "Providing food aid, medical missions, scholarship support, and agricultural empowerment to needy families in Naiberi and surrounding areas."
+      description: "Providing food aid, medical missions, scholarship support, and agricultural empowerment to needy families in Naiberi and surrounding areas.",
+      image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80",
+      leader: "Mrs. Anne Wambui (Caritas Coordinator)",
+      whatsapp: "254727777007"
     }
   ],
 
@@ -503,7 +524,7 @@ const PARISH_DATA = {
       id: "news-3",
       title: "Weekly Bulletin: 17th Sunday in Ordinary Time — Liturgical Roster",
       date: "July 26, 2026",
-      author: "Fr. Michael Omondi",
+      author: "Fr. Eliud Jomo",
       category: "Bulletin",
       summary: "Download this week's full parish bulletin including Jumuiya cleaning schedules, upcoming marriage banns, tithe report, and Mass intentions.",
       content: "Special gratitude to St. Joseph Jumuiya for animators of last Sunday's liturgy. Next Sunday will be animated by St. Francis of Assisi SCC.",
@@ -515,7 +536,7 @@ const PARISH_DATA = {
     {
       id: "homily-1",
       title: "The Little Way of Kindness in Our Daily Families",
-      preacher: "Rev. Fr. Michael Omondi",
+      preacher: "Rev. Fr. Eliud Jomo",
       date: "July 26, 2026",
       scripture: "John 6:1-15 (Multiplication of Loaves)",
       duration: "18:45",
