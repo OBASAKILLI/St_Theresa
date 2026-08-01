@@ -905,18 +905,18 @@ button {
   bottom: 2rem;
   right: 2rem;
   z-index: 1500;
-  background: linear-gradient(135deg, var(--royal-blue), var(--gold));
-  color: #fff;
+  background: linear-gradient(135deg, #1e40af, var(--royal-blue));
+  color: var(--gold);
   width: 64px;
   height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
   cursor: pointer;
   transition: var(--transition);
-  border: 2px solid #fff;
+  border: 2px solid var(--gold);
 }
 
 .ai-assistant-btn:hover {
