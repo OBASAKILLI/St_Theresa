@@ -459,7 +459,7 @@ button {
 /* Sleek Small Parallax Hero Section (Flat Editorial Parallax Style) */
 .hero-section {
   position: relative;
-  min-height: 85vh;
+  min-height: 65vh;
   background: linear-gradient(135deg, rgba(8, 20, 38, 0.45) 0%, rgba(13, 31, 56, 0.60) 50%, rgba(4, 10, 18, 0.75) 100%),
               url('../assets/images/hero_church_exterior.jpg') center/cover no-repeat fixed;
   display: flex;
