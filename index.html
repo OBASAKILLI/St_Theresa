@@ -224,12 +224,12 @@
           <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
 
           <!-- Filter Pills -->
-          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
-            <button class="btn btn-primary mass-filter-btn" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
+          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem; border-bottom:1px solid var(--border-color); padding-bottom:0;">
+            <button class="mass-filter-tab mass-filter-btn active" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
+            <button class="mass-filter-tab mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
+            <button class="mass-filter-tab mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
+            <button class="mass-filter-tab mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
+            <button class="mass-filter-tab mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
           </div>
         </div>
 

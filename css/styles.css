@@ -1249,6 +1249,30 @@ button {
   display: none;
 }
 
+/* Mass Filter Tabs */
+.mass-filter-tab {
+  background: transparent;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.mass-filter-tab:hover {
+  color: var(--royal-blue);
+}
+
+.mass-filter-tab.active {
+  color: var(--royal-blue);
+  border-bottom: 2px solid var(--gold);
+}
+
 /* 4. Multi-Tier Breakpoint Architecture */
 
 /* Tablet & iPad Pro (max-width: 1024px) */

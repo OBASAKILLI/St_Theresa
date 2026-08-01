@@ -323,14 +323,12 @@ class AppController {
     const container = document.getElementById("mass-schedule-container");
     if (!container) return;
 
-    // Update button active state
+    // Update tab active state
     document.querySelectorAll(".mass-filter-btn").forEach(btn => {
       if (btn.getAttribute("data-filter") === filter) {
-        btn.classList.remove("btn-outline");
-        btn.classList.add("btn-primary");
+        btn.classList.add("active");
       } else {
-        btn.classList.remove("btn-primary");
-        btn.classList.add("btn-outline");
+        btn.classList.remove("active");
       }
     });
 
