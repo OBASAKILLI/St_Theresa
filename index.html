@@ -553,59 +553,38 @@
           <p class="section-desc">"I will spend my heaven doing good upon earth. I will let fall a shower of roses."</p>
         </div>
 
-        <!-- St. Thérèse Biography & Little Way Grid -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; align-items:center; margin-bottom:4rem;">
+        <!-- Flat Editorial Layout -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; margin-bottom:4rem; align-items:center;">
           <div>
-            <img src="assets/images/st-therese.jpg" alt="St. Therese of Lisieux with Roses" style="width:100%; border-radius:24px; border:3px solid var(--gold);" />
+            <img src="assets/images/st-therese.jpg" alt="St. Therese of Lisieux" style="width:100%; border:1px solid var(--border-color);" />
           </div>
           <div>
-            <span class="badge badge-gold" style="margin-bottom:1rem;"><i class="fa-solid fa-calendar-days"></i> Feast Day: October 1</span>
-            <h3 style="font-size:2rem; margin-bottom:1rem;">The Little Way of Spiritual Childhood</h3>
+            <span style="display:inline-block; margin-bottom:1rem; font-size:0.85rem; font-weight:600; color:var(--royal-blue); text-transform:uppercase; letter-spacing:0.05em;"><i class="fa-solid fa-calendar-days"></i> Feast Day: October 1</span>
+            <h3 style="font-size:2rem; margin-bottom:1rem; font-family:'Outfit', sans-serif;">The Little Way of Spiritual Childhood</h3>
             <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
               Born in France in 1873, Thérèse Martin entered the Carmelite convent of Lisieux at age 15. Although her life was short and hidden, her spiritual autobiography <em>Story of a Soul</em> inspired millions worldwide.
             </p>
             <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.8; margin-bottom:2rem;">
               Her "Little Way" teaches us that holiness is attainable for everyone by doing ordinary daily tasks with immense love and absolute trust in God's mercy. She was proclaimed a Doctor of the Church by St. John Paul II in 1997.
             </p>
-            <div style="padding:1.5rem; background:rgba(201,162,39,0.12); border-left:4px solid var(--gold); border-radius:12px;">
+            <div style="border-left:2px solid var(--gold); padding-left:1.5rem; margin-bottom:2rem;">
               <p style="font-style:italic; font-size:1.1rem; color:var(--text-main); margin-bottom:0.5rem;">
                 "Miss no single opportunity of making some small sacrifice, here by a smiling look, there by a kindly word; always doing the smallest right and doing it all for love."
               </p>
-              <small style="font-weight:700; color:var(--gold-dark);">— ST. THÉRÈSE OF LISIEUX</small>
+              <small style="font-weight:600; color:var(--text-muted);">— ST. THÉRÈSE OF LISIEUX</small>
             </div>
-            <div style="margin-top: 1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-              <a href="https://www.littleflower.org/st-therese/" target="_blank" class="btn btn-gold" style="padding: 0.8rem 1.4rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official Society of the Little Flower</a>
-              <button class="btn btn-outline" onclick="thereseShrine.offerRose()"><i class="fa-solid fa-spa"></i> Offer a Spiritual Rose</button>
-            </div>
+            <a href="https://www.littleflower.org/st-therese/" target="_blank" class="btn btn-outline" style="border-radius:0;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Official Society of the Little Flower</a>
           </div>
         </div>
 
-        <!-- Interactive Virtual Rose Petal Shrine & Novena -->
-        <div class="therese-shrine" id="therese-shrine">
-          <div id="rose-shower-container" class="rose-petal-container"></div>
-          <span class="badge badge-gold"><i class="fa-solid fa-spa"></i> INTERACTIVE PARISH SHRINE</span>
-          <h3 style="font-size:2.2rem; margin:1rem 0;">Offer a Spiritual Rose to St. Thérèse</h3>
-          <p style="max-width:640px; margin:0 auto 2rem; color:var(--text-muted);">
-            Join parishioners across Uasin Gishu and around the world in offering a spiritual rose and praying the miraculous 9-Day Novena to St. Thérèse of Lisieux.
-          </p>
-
-          <div style="margin:2rem 0; font-size:1.3rem;">
-            <i class="fa-solid fa-spa" style="color:var(--gold);"></i> Total Spiritual Roses Offered: <strong id="rose-counter-display" style="color:var(--gold-dark); font-size:1.8rem;">1,842</strong>
-          </div>
-
-          <button class="btn btn-gold" style="padding:1rem 2.5rem; font-size:1.1rem;" onclick="thereseShrine.offerSpiritualRose()">
-            <i class="fa-solid fa-spa"></i> Drop a Rose & Pray Novena
-          </button>
-
-          <!-- Hidden Novena Prayer Card (Revealed on click) -->
-          <div id="novena-prayer-card" style="display:none; margin-top:3rem; padding:2rem; background:var(--bg-modal); border:2px solid var(--gold); border-radius:20px; text-align:left;">
-            <h4 style="font-size:1.4rem; color:var(--royal-blue); margin-bottom:1rem; text-align:center;">The Miraculous Novena Prayer to St. Thérèse</h4>
-            <p style="line-height:1.8; color:var(--text-main); font-size:1.02rem; margin-bottom:1.5rem;">
+        <!-- Novena Prayer (Flat Text) -->
+        <div style="background:var(--bg-secondary); padding: 4rem 2rem; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); text-align:center;">
+          <div style="max-width:700px; margin:0 auto;">
+            <h3 style="font-size:1.8rem; font-family:'Outfit', sans-serif; margin-bottom:1rem;">The Miraculous Novena Prayer</h3>
+            <p style="line-height:1.8; color:var(--text-main); font-size:1.1rem; font-style:italic; margin-bottom:2rem;">
               "O Little Therese of the Child Jesus, please pick for me a rose from the heavenly gardens and send it to me as a message of love. O Little Flower of Jesus, ask God today to grant the favor I now place with confidence in your hands... <em>(mention your prayer intention)</em>. St. Therese, help me to always believe as you did, in God's great love for me, so that I might imitate your 'Little Way' each day. Amen."
             </p>
-            <div style="text-align:center;">
-              <button class="btn btn-primary" onclick="appController.navigateTo('prayer-requests')"><i class="fa-solid fa-hands-praying"></i> Add Intention to Parish Prayer Wall</button>
-            </div>
+            <button class="btn btn-primary" style="border-radius:0;" onclick="appController.navigateTo('prayer-requests')"><i class="fa-solid fa-hands-praying"></i> Submit Intention to Parish Prayer Wall</button>
           </div>
         </div>
       </div>
