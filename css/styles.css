@@ -229,6 +229,7 @@ button {
   padding: 0.4rem 0;
   cursor: pointer;
   transition: var(--transition-fast);
+  white-space: nowrap;
 }
 
 .nav-item:hover, .nav-item.active {
