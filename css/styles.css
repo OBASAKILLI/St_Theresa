@@ -905,7 +905,7 @@ button {
   bottom: 2rem;
   right: 2rem;
   z-index: 1500;
-  background: linear-gradient(135deg, #1e40af, var(--royal-blue));
+  background: var(--royal-blue);
   color: var(--gold);
   width: 64px;
   height: 64px;
