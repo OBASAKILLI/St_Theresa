@@ -1642,4 +1642,11 @@ button {
   animation: pulseLive 2s infinite;
 }
 
-
+/* Bouncing Map Marker */
+@keyframes bounce-marker {
+  0%, 100% { transform: translate(-50%, -100%); }
+  50% { transform: translate(-50%, -120%); }
+}
+.bouncing-marker {
+  animation: bounce-marker 1.5s infinite ease-in-out;
+}
