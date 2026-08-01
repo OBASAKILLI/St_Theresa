@@ -46,8 +46,12 @@
   <header class="navbar">
     <div class="navbar-container">
       <!-- Logo -->
-      <div class="brand" onclick="appController.navigateTo('home')" style="cursor: pointer;">
-        <img src="assets/images/LOGOMAIN.png" alt="St. Theresa's Naiberi Parish Logo" style="height: 60px; width: auto; object-fit: contain;">
+      <div class="brand" onclick="appController.navigateTo('home')" style="cursor: pointer; display: flex; align-items: center; gap: 0.8rem;">
+        <img src="assets/images/LOGOMAIN.png" alt="St. Theresa's Naiberi Parish Logo" style="height: 55px; width: auto; object-fit: contain;">
+        <div class="brand-text">
+          <h1 style="font-family:'Outfit', sans-serif; font-size:1.4rem; margin:0;">ST. THERESA'S NAIBERI</h1>
+          <span style="display:block; font-size:0.85rem; color:var(--text-muted);">Catholic Parish</span>
+        </div>
       </div>
 
       <!-- Main Navigation Links -->
