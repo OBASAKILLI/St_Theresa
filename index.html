@@ -218,22 +218,47 @@
 
       <!-- Homepage Liturgical & Mass Schedule Section (Moved) -->
       <div id="home-mass-schedule-section" class="section-wrapper" style="background:var(--bg-secondary); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding: 4rem 1.5rem;">
-        <div class="section-header">
+        <div class="section-header" style="margin-bottom: 3rem;">
           <span class="section-subtitle">HOLY EUCHARIST, ADORATION & CONFESSION</span>
           <h2 class="section-title">Liturgical & Mass Timetable</h2>
-          <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
-
-          <!-- Filter Pills -->
-          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem; border-bottom:1px solid var(--border-color); padding-bottom:0;">
-            <button class="mass-filter-tab mass-filter-btn active" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
-            <button class="mass-filter-tab mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
-            <button class="mass-filter-tab mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
-            <button class="mass-filter-tab mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
-            <button class="mass-filter-tab mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
-          </div>
         </div>
 
-        <div class="cards-grid" id="mass-schedule-container"></div>
+        <div style="max-width: 1000px; margin: 0 auto; background: var(--bg-card); padding: 3rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            
+            <!-- Column 1 -->
+            <div>
+              <h4 style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Weekend Mass</h4>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Sunday</strong> - 7:00 AM (Kiswahili)</p>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Sunday</strong> - 9:00 AM (English High Mass)</p>
+              <p style="margin: 0 0 2rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Sunday</strong> - 11:30 AM (Youth & PMC)</p>
+
+              <h4 style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Weekday Mass</h4>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Mon-Sat</strong> - 6:30 AM (Morning Mass)</p>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Mon-Fri</strong> - 5:30 PM (Evening Mass)</p>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+              <h4 style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Confessions</h4>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Saturday</strong> - 4:00 PM - 5:30 PM</p>
+              <p style="margin: 0 0 2rem 0; font-size: 0.95rem; color: var(--text-muted);">or call to schedule with a Priest</p>
+
+              <h4 style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Parish Office Hours</h4>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Monday-Friday</strong> - 8:00 AM - 5:00 PM</p>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+              <h4 style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Adoration</h4>
+              <p style="margin: 0 0 2rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Thurs & Fri</strong> - 4:00 PM - 5:30 PM</p>
+
+              <h4 style="color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 1rem; text-transform: uppercase;">Rosary & Devotions</h4>
+              <p style="margin: 0 0 0.4rem 0; font-size: 0.95rem; color: var(--text-main);"><strong>Jumuiya Prayers</strong> - As scheduled in SCCs</p>
+            </div>
+            
+          </div>
+        </div>
       </div>
 
       <!-- Parish Statistics Counters (Pure Flat Timeless Website Editorial Design - No App Cards) -->
