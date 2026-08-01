@@ -214,7 +214,26 @@
             <button class="btn btn-primary" style="padding: 1rem 2.2rem; font-size: 1.05rem;" onclick="appController.navigateTo('livestream')"><i class="fa-solid fa-video"></i> Watch Sunday Mass</button>
           </div>
         </div>
+      </div>
+
+      <!-- Homepage Liturgical & Mass Schedule Section (Moved) -->
+      <div id="home-mass-schedule-section" class="section-wrapper" style="background:var(--bg-secondary); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding: 4rem 1.5rem;">
+        <div class="section-header">
+          <span class="section-subtitle">HOLY EUCHARIST, ADORATION & CONFESSION</span>
+          <h2 class="section-title">Liturgical & Mass Timetable</h2>
+          <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
+
+          <!-- Filter Pills -->
+          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
+            <button class="btn btn-primary mass-filter-btn" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
+            <button class="btn btn-outline mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
+          </div>
         </div>
+
+        <div class="cards-grid" id="mass-schedule-container"></div>
       </div>
 
       <!-- Parish Statistics Counters (Pure Flat Timeless Website Editorial Design - No App Cards) -->
@@ -377,25 +396,7 @@
         </div>
       </div>
 
-      <!-- Homepage Liturgical & Mass Schedule Section -->
-      <div id="home-mass-schedule-section" class="section-wrapper" style="background:var(--bg-secondary); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding: 4rem 1.5rem;">
-        <div class="section-header">
-          <span class="section-subtitle">HOLY EUCHARIST, ADORATION & CONFESSION</span>
-          <h2 class="section-title">Liturgical & Mass Timetable</h2>
-          <p class="section-desc">Join us in worshipping the Lord. You can filter by Weekend, Daily, Adoration, or Confession schedules.</p>
 
-          <!-- Filter Pills -->
-          <div class="scrollable-chips" style="justify-content:center; margin-top:2rem;">
-            <button class="btn btn-primary mass-filter-btn" data-filter="All" onclick="appController.renderMassSchedule('All')">All Schedules</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Weekend" onclick="appController.renderMassSchedule('Weekend')">Sunday Masses</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Daily" onclick="appController.renderMassSchedule('Daily')">Daily Masses</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Adoration" onclick="appController.renderMassSchedule('Adoration')">Eucharistic Adoration</button>
-            <button class="btn btn-outline mass-filter-btn" data-filter="Confession" onclick="appController.renderMassSchedule('Confession')">Confession</button>
-          </div>
-        </div>
-
-        <div class="cards-grid" id="mass-schedule-container"></div>
-      </div>
 
       <!-- Homepage Parish News & Upcoming Liturgical Events Section -->
       <div id="home-events-section" class="section-wrapper" style="padding: 4rem 1.5rem;">
