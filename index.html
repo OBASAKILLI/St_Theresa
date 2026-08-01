@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -82,7 +82,7 @@
 
       <!-- Action Buttons & Theme Toggle -->
       <div class="nav-actions">
-        <button class="btn btn-outline" style="padding:0.4rem 1rem; border-radius:0;" onclick="appController.navigateTo('donate')"><i class="fa-solid fa-hand-holding-heart"></i> Give Online</button>
+
         <button class="icon-btn" title="Ring Solemn Angelus Bell" onclick="appController.showBellModal()"><i class="fa-solid fa-bell"></i></button>
         <button class="icon-btn" id="theme-toggle-icon" title="Toggle Dark/Light Mode" onclick="appController.toggleTheme()"><i class="fa-solid fa-moon"></i></button>
         <button class="mobile-toggle" onclick="appController.openMobileDrawer()"><i class="fa-solid fa-bars"></i></button>
@@ -810,23 +810,6 @@
               <button class="btn btn-outline" style="width:100%; border-radius:0;" onclick="alert('Bank transfer details copied to clipboard!')"><i class="fa-solid fa-copy"></i> Copy Bank Details</button>
             </div>
           </div>
-        </div>
-
-        <!-- Donation History Table -->
-        <div class="gov-table-wrapper" style="padding:1.5rem;">
-          <h3 style="margin:0 0 1rem 1rem;">Recent Session Contribution Receipts</h3>
-          <table class="gov-table">
-            <thead>
-              <tr>
-                <th>Tx Code</th>
-                <th>Parishioner & SCC</th>
-                <th>Fund Category</th>
-                <th>Amount (KES)</th>
-                <th>Date & Time</th>
-              </tr>
-            </thead>
-            <tbody id="donor-history-table"></tbody>
-          </table>
         </div>
       </div>
     </section>
