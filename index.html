@@ -437,50 +437,81 @@
         </div>
 
         <script>
-          // Initialize map after script loads
+          // Initialize map only when it becomes visible to fix Leaflet grey-tile bug in SPA
           document.addEventListener('DOMContentLoaded', function() {
-            var map = L.map('parish-map').setView([0.5143, 35.3000], 11);
+            var mapInitialized = false;
+            var map;
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors',
-                maxZoom: 18,
-            }).addTo(map);
+            function initParishMap() {
+              if (mapInitialized) return;
+              mapInitialized = true;
 
-            var iconRed = L.icon({
-                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                iconSize: [25, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shadowSize: [41, 41]
-            });
+              map = L.map('parish-map').setView([0.5143, 35.3000], 11);
 
-            var iconBlue = L.icon({
-                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                iconSize: [25, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shadowSize: [41, 41]
-            });
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; OpenStreetMap contributors',
+                  maxZoom: 18,
+              }).addTo(map);
 
-            var churches = [
-              { name: "Naiberi Main Church (Parish HQ)", coords: [0.5143, 35.3000], desc: "Sunday Mass: 7:00 AM, 9:00 AM, 11:30 AM", type: "hq" },
-              { name: "Stroback Church (Sub-Parish 2)", coords: [0.5543, 35.2600], desc: "6.2 km - Sunday Mass: 8:00 AM, 10:30 AM", type: "outstation" },
-              { name: "Kapsirwo Church (Outstation)", coords: [0.5843, 35.3600], desc: "11.5 km - Sunday Mass: 9:00 AM", type: "outstation" },
-              { name: "Uhuru Church (Outstation)", coords: [0.4643, 35.3500], desc: "8.0 km - Sunday Mass: 8:30 AM", type: "outstation" },
-              { name: "Holy Trinity Church (7th Station)", coords: [0.4693, 35.3000], desc: "5.0 km - Sunday Mass: 11:00 AM", type: "outstation" },
-              { name: "Sigot Church (Outstation)", coords: [0.4143, 35.2000], desc: "14.8 km - Sunday Mass: 10:30 AM", type: "outstation" },
-              { name: "Berur Church (Outstation)", coords: [0.5143, 35.2140], desc: "9.5 km - Sunday Mass: 9:30 AM", type: "outstation" }
-            ];
+              var iconRed = L.icon({
+                  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+                  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                  iconSize: [25, 41],
+                  iconAnchor: [12, 41],
+                  popupAnchor: [1, -34],
+                  shadowSize: [41, 41]
+              });
 
-            churches.forEach(function(church) {
-              var markerIcon = church.type === 'hq' ? iconRed : iconBlue;
-              var marker = L.marker(church.coords, {icon: markerIcon}).addTo(map);
-              marker.bindPopup(`<div style="text-align:center; font-family:'Outfit',sans-serif;"><b>${church.name}</b><br><span style="color:#666;">${church.desc}</span></div>`);
-              if(church.type === 'hq') {
-                  marker.openPopup();
+              var iconBlue = L.icon({
+                  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                  iconSize: [25, 41],
+                  iconAnchor: [12, 41],
+                  popupAnchor: [1, -34],
+                  shadowSize: [41, 41]
+              });
+
+              var churches = [
+                { name: "Naiberi Main Church (Parish HQ)", coords: [0.5143, 35.3000], desc: "Sunday Mass: 7:00 AM, 9:00 AM, 11:30 AM", type: "hq" },
+                { name: "Stroback Church (Sub-Parish 2)", coords: [0.5543, 35.2600], desc: "6.2 km - Sunday Mass: 8:00 AM, 10:30 AM", type: "outstation" },
+                { name: "Kapsirwo Church (Outstation)", coords: [0.5843, 35.3600], desc: "11.5 km - Sunday Mass: 9:00 AM", type: "outstation" },
+                { name: "Uhuru Church (Outstation)", coords: [0.4643, 35.3500], desc: "8.0 km - Sunday Mass: 8:30 AM", type: "outstation" },
+                { name: "Holy Trinity Church (7th Station)", coords: [0.4693, 35.3000], desc: "5.0 km - Sunday Mass: 11:00 AM", type: "outstation" },
+                { name: "Sigot Church (Outstation)", coords: [0.4143, 35.2000], desc: "14.8 km - Sunday Mass: 10:30 AM", type: "outstation" },
+                { name: "Berur Church (Outstation)", coords: [0.5143, 35.2140], desc: "9.5 km - Sunday Mass: 9:30 AM", type: "outstation" }
+              ];
+
+              churches.forEach(function(church) {
+                var markerIcon = church.type === 'hq' ? iconRed : iconBlue;
+                var marker = L.marker(church.coords, {icon: markerIcon}).addTo(map);
+                marker.bindPopup(`<div style="text-align:center; font-family:'Outfit',sans-serif;"><b>${church.name}</b><br><span style="color:#666;">${church.desc}</span></div>`);
+                if(church.type === 'hq') {
+                    marker.openPopup();
+                }
+              });
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+              if (entries[0].isIntersecting) {
+                initParishMap();
+                if (map) {
+                    setTimeout(() => map.invalidateSize(), 100);
+                }
               }
+            }, { threshold: 0.1 });
+
+            observer.observe(document.getElementById('parish-map'));
+            
+            // Catch-all for navigation tab switching
+            window.addEventListener('hashchange', function() {
+                if (mapInitialized && map) {
+                    setTimeout(() => map.invalidateSize(), 300);
+                }
+            });
+            document.addEventListener('click', function() {
+                if (mapInitialized && map) {
+                    setTimeout(() => map.invalidateSize(), 300);
+                }
             });
           });
         </script>
