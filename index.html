@@ -446,10 +446,9 @@
               if (mapInitialized) return;
               mapInitialized = true;
 
-              map = L.map('parish-map').setView([0.5143, 35.3000], 11);
+              map = L.map('parish-map', { attributionControl: false }).setView([0.5143, 35.3000], 11);
 
               L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                  attribution: '&copy; OpenStreetMap contributors',
                   maxZoom: 18,
               }).addTo(map);
 
