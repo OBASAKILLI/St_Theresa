@@ -5,8 +5,8 @@
 
 class ShopController {
   constructor() {
-    // This is where we will put the Google Sheets CSV publish link when ready
-    this.sheetCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRapZPMtN8Ldbex9iA9HbIw1kpgvJub0rch2QAUu2aIyhpBHx3emoF0Hqb6j1mbv1ApNRKxil3L5oGT/pub?output=csv"; 
+    // This is the live Google Sheets CSV publish link
+    this.sheetCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRapZPMtN8Ldbex9iA9HbIw1kpgvJub0rch2QAUu2aIyhpBHx3emoF0Hqb6j1mbv1ApNRKxil3L5oGT/pub?gid=0&single=true&output=csv"; 
     
     this.products = [];
     this.cart = JSON.parse(localStorage.getItem('naiberi_cart')) || [];
@@ -28,15 +28,6 @@ class ShopController {
       "Gifts",
       "Seasonal",
       "Church Goods"
-    ];
-
-    this.mockData = [
-      { id: 1, name: "St. Benedict Wood Rosary", category: "Rosaries", subcategory: "Wooden", price: 450, image: "https://images.unsplash.com/photo-1598463953549-015822b34a62?auto=format&fit=crop&w=600&q=80" },
-      { id: 2, name: "Daily Roman Missal", category: "Books & Media", subcategory: "Liturgy", price: 2500, image: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=600&q=80" },
-      { id: 3, name: "Guide to Confession", category: "Books & Media", subcategory: "Confession", price: 300, image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" },
-      { id: 4, name: "Children's Bible Story Book", category: "Children's", subcategory: "Books", price: 1200, image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" },
-      { id: 5, name: "Bronze Crucifix (Wall)", category: "Crucifixes", subcategory: "Wall", price: 3500, image: "https://images.unsplash.com/photo-1587847053535-64cce12053da?auto=format&fit=crop&w=600&q=80" },
-      { id: 6, name: "Our Lady of Grace Statue", category: "Statuary/Art", subcategory: "Marian", price: 4200, image: "https://images.unsplash.com/photo-1602832309326-e1af26a157c1?auto=format&fit=crop&w=600&q=80" }
     ];
   }
 
@@ -67,14 +58,10 @@ class ShopController {
         },
         error: (err) => {
           console.error("Error loading products from CSV:", err);
-          this.products = this.mockData; // fallback
+          this.products = []; 
           this.renderProducts();
         }
       });
-    } else {
-      // No CSV URL provided yet, use mock data
-      this.products = this.mockData;
-      this.renderProducts();
     }
   }
 
