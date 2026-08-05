@@ -73,14 +73,18 @@
           </ul>
         </li>
         <li class="nav-item" data-view="ministries" onclick="appController.navigateTo('ministries')">Ministries</li>
-
+        <li class="nav-item" data-view="shop" onclick="appController.navigateTo('shop')">Parish Shop</li>
         <li class="nav-item" data-view="donate" onclick="appController.navigateTo('donate')">Give</li>
         <li class="nav-item" data-view="contact" onclick="appController.navigateTo('contact')">Contact</li>
       </ul>
 
       <!-- Action Buttons & Theme Toggle -->
       <div class="nav-actions">
-
+        <button class="icon-btn" title="Wishlist" onclick="shopController.openWishlistModal()"><i class="fa-solid fa-heart"></i></button>
+        <button class="icon-btn" title="Cart" style="position:relative;" onclick="shopController.openCartModal()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" style="display:none; position:absolute; top:-5px; right:-8px; background:var(--royal-blue); color:#fff; font-size:0.65rem; padding:2px 5px; border-radius:10px; font-weight:bold;">0</span>
+        </button>
         <button class="icon-btn" title="Ring Solemn Angelus Bell" onclick="appController.showBellModal()"><i class="fa-solid fa-bell"></i></button>
         <button class="icon-btn" id="theme-toggle-icon" title="Toggle Dark/Light Mode" onclick="appController.toggleTheme()"><i class="fa-solid fa-moon"></i></button>
         <button class="mobile-toggle" onclick="appController.openMobileDrawer()"><i class="fa-solid fa-bars"></i></button>
@@ -181,6 +185,7 @@
         <li class="drawer-item" data-view="library" onclick="appController.navigateTo('library'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-book-bible" style="margin-right:0.6rem; color: var(--gold);"></i> Catholic Digital Library</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="contact" onclick="appController.navigateTo('contact'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-location-dot" style="margin-right:0.6rem; color: var(--gold);"></i> Contact & Google Maps</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
         <li class="drawer-item" data-view="admin-portal" onclick="appController.navigateTo('admin-portal'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-shield-halved" style="margin-right:0.6rem; color: var(--gold);"></i> Secretariat Admin Portal</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
+        <li class="drawer-item" data-view="shop" onclick="appController.navigateTo('shop'); appController.closeMobileDrawer();"><span><i class="fa-solid fa-store" style="margin-right:0.6rem; color: var(--gold);"></i> Parish Shop</span><span><i class="fa-solid fa-chevron-right"></i></span></li>
       </ul>
 
       <!-- Mobile Emergency Call & WhatsApp Quick Buttons -->
@@ -1207,6 +1212,64 @@
   </div>
 
   <!-- ========================================================
+       PARISH SHOP VIEW (E-Commerce)
+       ======================================================== -->
+  <section class="view-section" id="view-shop">
+    <div class="page-header" style="background: linear-gradient(rgba(11,60,111,0.85), rgba(11,60,111,0.85)), url('assets/images/hero_church_exterior.jpg') center/cover; padding: 5rem 1.5rem; text-align:center;">
+      <h2 style="color:var(--gold); font-family:'Cinzel', serif; font-size:2.5rem; margin-bottom:0.5rem; letter-spacing:1px;">Parish Shop</h2>
+      <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:0 auto;">Catholic Books, Media, Rosaries, Statuary, and Church Goods.</p>
+    </div>
+    <div class="section-wrapper" style="padding: 3rem 1.5rem; display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start;">
+      <!-- Shop Sidebar -->
+      <div style="flex: 1 1 250px; min-width: 250px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; position: sticky; top: 90px;">
+        <h3 style="font-family:'Cinzel', serif; font-size:1.2rem; color:var(--royal-blue); margin-bottom:1.5rem; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem;">Categories</h3>
+        <div id="shop-categories">
+          <!-- Populated by shop.js -->
+        </div>
+      </div>
+      <!-- Shop Main Grid -->
+      <div style="flex: 3 1 700px; min-width: 300px;">
+        <div class="shop-grid" id="shop-product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2rem;">
+          <!-- Populated by shop.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CART MODAL -->
+  <div id="cart-modal" class="drawer-overlay" onclick="if(event.target === this) shopController.closeCartModal()">
+    <div class="cart-drawer" style="position: absolute; right: 0; top: 0; bottom: 0; width: 100%; max-width: 400px; background: var(--bg-card); display: flex; flex-direction: column; box-shadow: -5px 0 25px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+      <div style="padding: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--royal-blue); color: #fff;">
+        <h3 style="margin:0; font-family:'Cinzel',serif; font-size: 1.25rem;"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</h3>
+        <button onclick="shopController.closeCartModal()" style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="cart-items-container" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Cart Items Populated by shop.js -->
+      </div>
+      <div style="padding: 1.5rem; border-top: 1px solid var(--border-color); background: var(--bg-secondary);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-weight: 700; font-size: 1.2rem; color: var(--text-main);">
+          <span>Total:</span>
+          <span id="cart-total-price">KES 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem; font-size: 1.1rem; border-radius: 8px;" onclick="shopController.checkoutCart()"><i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST MODAL -->
+  <div id="wishlist-modal" class="drawer-overlay" onclick="if(event.target === this) shopController.closeWishlistModal()">
+    <div class="cart-drawer" style="position: absolute; right: 0; top: 0; bottom: 0; width: 100%; max-width: 400px; background: var(--bg-card); display: flex; flex-direction: column; box-shadow: -5px 0 25px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+      <div style="padding: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--bg-secondary);">
+        <h3 style="margin:0; font-family:'Cinzel',serif; color:var(--royal-blue); font-size: 1.25rem;"><i class="fa-solid fa-heart" style="color:#e91e63;"></i> My Wishlist</h3>
+        <button onclick="shopController.closeWishlistModal()" style="background:none; border:none; color:var(--text-main); font-size:1.5rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="wishlist-items-container" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Wishlist Items Populated by shop.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
        FOOTER (Solemn Vatican Philosophy)
        ======================================================== -->
   <footer class="footer">
@@ -1260,6 +1323,10 @@
   <script src="js/therese.js"></script>
   <script src="js/portals.js"></script>
   <script src="js/assistant.js"></script>
+  <!-- Third-party CSV Parser for Shop Data -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Shop Controller -->
+  <script src="js/shop.js"></script>
   <script src="js/app.js"></script>
   <!-- Map Tooltip -->
   <div id="map-tooltip" style="display:none; position:absolute; z-index:9999; background:var(--bg-card); padding:1rem; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.2); width:240px; border:1px solid var(--border-color); pointer-events:none;"></div>
