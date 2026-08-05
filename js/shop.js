@@ -39,8 +39,11 @@ class ShopController {
 
   loadProducts() {
     if (this.sheetCsvUrl) {
+      // Append a timestamp to bypass browser caching
+      const cacheBusterUrl = this.sheetCsvUrl + "&t=" + new Date().getTime();
+      
       // Use PapaParse to fetch from Google Sheets CSV
-      Papa.parse(this.sheetCsvUrl, {
+      Papa.parse(cacheBusterUrl, {
         download: true,
         header: true,
         transformHeader: (h) => h.toLowerCase().trim(),
