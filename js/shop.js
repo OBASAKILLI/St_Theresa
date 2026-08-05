@@ -6,7 +6,7 @@
 class ShopController {
   constructor() {
     // This is where we will put the Google Sheets CSV publish link when ready
-    this.sheetCsvUrl = ""; 
+    this.sheetCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRapZPMtN8Ldbex9iA9HbIw1kpgvJub0rch2QAUu2aIyhpBHx3emoF0Hqb6j1mbv1ApNRKxil3L5oGT/pub?output=csv"; 
     
     this.products = [];
     this.cart = JSON.parse(localStorage.getItem('naiberi_cart')) || [];
@@ -52,6 +52,7 @@ class ShopController {
       Papa.parse(this.sheetCsvUrl, {
         download: true,
         header: true,
+        transformHeader: (h) => h.toLowerCase().trim(),
         complete: (results) => {
           // Parse results, ensuring numbers are parsed properly
           this.products = results.data.filter(row => row.name).map((row, index) => ({
