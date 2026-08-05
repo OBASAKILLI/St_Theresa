@@ -15,20 +15,8 @@ class ShopController {
     this.currentCategory = 'All';
     this.currentSubcategory = 'All';
 
-    // Provided categories from user
-    this.categories = [
-      "All",
-      "Books & Media",
-      "Children's",
-      "Rosaries",
-      "Crucifixes",
-      "Statuary/Art",
-      "Jewelry",
-      "Sacraments",
-      "Gifts",
-      "Seasonal",
-      "Church Goods"
-    ];
+    // Categories are built dynamically from the spreadsheet data
+    this.categories = ['All'];
   }
 
   init() {
@@ -57,6 +45,14 @@ class ShopController {
             price: parseFloat(row.price) || 0,
             image: row.image || 'assets/images/placeholder.jpg'
           }));
+          // Build categories dynamically from the loaded products
+          const uniqueCategories = ['All', ...new Set(
+            this.products
+              .map(p => p.category)
+              .filter(c => c && c.trim() !== '')
+          )];
+          this.categories = uniqueCategories;
+          this.renderCategorySidebar();
           this.renderProducts();
         },
         error: (err) => {
