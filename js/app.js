@@ -632,10 +632,25 @@ class AppController {
 // Instantiate Global App Controller
 const appController = new AppController();
 
-// Instantiate Parish Shop Controller
-const shopController = new ShopController();
+// Instantiate Parish Shop Controller safely — wrapped so any error never breaks the main app
+let shopController;
+try {
+  shopController = new ShopController();
+} catch(e) {
+  console.error('ShopController failed to instantiate:', e);
+  shopController = { 
+    init: () => {}, openCartModal: () => {}, closeCartModal: () => {},
+    openWishlistModal: () => {}, closeWishlistModal: () => {},
+    addToCart: () => {}, buyNow: () => {}, toggleWishlist: () => {},
+    updateQty: () => {}, removeFromCart: () => {}, checkoutCart: () => {}
+  };
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   appController.init();
-  shopController.init();
+  try {
+    shopController.init();
+  } catch(e) {
+    console.error('ShopController init failed:', e);
+  }
 });

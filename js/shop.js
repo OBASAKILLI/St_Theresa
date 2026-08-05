@@ -9,8 +9,12 @@ class ShopController {
     this.sheetCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRapZPMtN8Ldbex9iA9HbIw1kpgvJub0rch2QAUu2aIyhpBHx3emoF0Hqb6j1mbv1ApNRKxil3L5oGT/pub?gid=0&single=true&output=csv"; 
     
     this.products = [];
-    this.cart = JSON.parse(localStorage.getItem('naiberi_cart')) || [];
-    this.wishlist = JSON.parse(localStorage.getItem('naiberi_wishlist')) || [];
+
+    // Safe localStorage reads — prevents crash if data is corrupted
+    try { this.cart = JSON.parse(localStorage.getItem('naiberi_cart')) || []; } 
+    catch(e) { this.cart = []; }
+    try { this.wishlist = JSON.parse(localStorage.getItem('naiberi_wishlist')) || []; } 
+    catch(e) { this.wishlist = []; }
     
     this.currentCategory = 'All';
     this.currentSubcategory = 'All';
