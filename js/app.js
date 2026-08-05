@@ -632,6 +632,10 @@ class AppController {
 // Instantiate Global App Controller
 const appController = new AppController();
 
+// Instantiate Parish Shop Controller
+const shopController = new ShopController();
+
 document.addEventListener("DOMContentLoaded", () => {
   appController.init();
+  shopController.init();
 });
