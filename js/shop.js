@@ -69,13 +69,22 @@ class ShopController {
     if (!sidebar) return;
 
     let html = `<ul class="shop-nav">`;
-    this.categories.forEach(cat => {
+    this.categories.forEach((cat, idx) => {
       const activeClass = this.currentCategory === cat ? 'active' : '';
-      html += `<li class="shop-nav-item ${activeClass}" onclick="shopController.setCategory('${cat}')">${cat}</li>`;
+      // Use data-idx to avoid apostrophes in onclick breaking the HTML
+      html += `<li class="shop-nav-item ${activeClass}" data-idx="${idx}">${cat}</li>`;
     });
     html += `</ul>`;
     
     sidebar.innerHTML = html;
+
+    // Attach click listeners safely (avoids apostrophe issue in category names)
+    sidebar.querySelectorAll('.shop-nav-item').forEach(li => {
+      li.addEventListener('click', () => {
+        const idx = parseInt(li.getAttribute('data-idx'));
+        this.setCategory(this.categories[idx]);
+      });
+    });
   }
 
   setCategory(category) {
