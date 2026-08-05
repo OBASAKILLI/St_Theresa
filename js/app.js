@@ -5,7 +5,11 @@
 class AppController {
   constructor() {
     this.currentView = "home";
-    this.theme = localStorage.getItem("naiberi_theme") || "light";
+    try {
+      this.theme = localStorage.getItem("naiberi_theme") || "light";
+    } catch(e) {
+      this.theme = "light";
+    }
     this.audioCtx = null;
   }
 
@@ -51,7 +55,7 @@ class AppController {
     if (viewId === "mass-schedule") {
       this.currentView = "home";
       if (updateHash) {
-        window.history.pushState(null, null, "#mass-schedule");
+        try { window.history.pushState(null, null, "#mass-schedule"); } catch(e) {}
       }
       document.querySelectorAll(".view-section").forEach(sec => {
         sec.classList.remove("active");
@@ -81,7 +85,7 @@ class AppController {
     this.currentView = viewId;
 
     if (updateHash) {
-      window.history.pushState(null, null, `#${viewId}`);
+      try { window.history.pushState(null, null, `#${viewId}`); } catch(e) {}
     }
 
     // Show target view
@@ -165,7 +169,7 @@ class AppController {
     }
 
     this.currentView = "sacrament-detail";
-    window.history.pushState(null, null, `#sacrament-${sacramentId}`);
+    try { window.history.pushState(null, null, `#sacrament-${sacramentId}`); } catch(e) {}
 
     // Hide all views, show sacrament detail
     document.querySelectorAll(".view-section").forEach(sec => sec.classList.remove("active"));
@@ -187,7 +191,7 @@ class AppController {
 
   toggleTheme() {
     this.theme = (this.theme === "light") ? "dark" : "light";
-    localStorage.setItem("naiberi_theme", this.theme);
+    try { localStorage.setItem("naiberi_theme", this.theme); } catch(e) {}
     this.applyTheme(this.theme);
   }
 
