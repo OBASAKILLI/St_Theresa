@@ -239,7 +239,7 @@ class ShopController {
               <button onclick="shopController.updateCartQty(${item.id}, 1)">+</button>
             </div>
           </div>
-          <button class="cart-remove-btn" onclick="shopController.removeFromCart(${item.id})"><i class="fa-solid fa-trash"></i></button>
+          <button class="cart-remove-btn" onclick="shopController.removeFromCart(${item.id})" style="font-size: 1.5rem; background: transparent; border: none; cursor: pointer; color: var(--text-muted);">&times;</button>
         </div>
       `;
     });
@@ -330,7 +330,7 @@ class ShopController {
             <div class="cart-item-price">KES ${item.price.toLocaleString()}</div>
             <button class="btn btn-outline btn-sm" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; margin-top:0.4rem;" onclick="shopController.addToCart(${item.id}); shopController.toggleWishlist(${item.id});">Move to Cart</button>
           </div>
-          <button class="cart-remove-btn" onclick="shopController.toggleWishlist(${item.id})"><i class="fa-solid fa-trash"></i></button>
+          <button class="cart-remove-btn" onclick="shopController.toggleWishlist(${item.id})" style="font-size: 1.5rem; background: transparent; border: none; cursor: pointer; color: var(--text-muted);">&times;</button>
         </div>
       `;
     });
